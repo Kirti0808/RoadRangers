@@ -12,9 +12,23 @@ if($arr[0]==1)
     <head>
         <title>index</title>
         <style>
-            td,th{
-                text-align: center;
+             body{
+                background: url(img1.jpg) no-repeat center;
+                background-size: cover;
             }
+            table th,td{
+                text-align: center;
+                
+               
+                
+            }
+            table th{
+                font-family: Verdana, sans-serif;
+            }
+            td{
+                
+                font-size: 1.5em;
+                font-family: Georgia, serif;
         </style>
         <link rel="stylesheet" href="style.css" />
          <link rel="stylesheet" href="style.css" />
@@ -25,7 +39,10 @@ if($arr[0]==1)
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>  
     <body>
-      
+      <?php 
+      include 'header.php';
+      ?>
+        <div class="container">
         
         <table class="table table-hover">
                 <tr>
@@ -39,9 +56,10 @@ if($arr[0]==1)
                     <br />
        <div class="btn-group">
         <input type="button" class="btn btn-warning" onclick="location.href='shop.php'" value="FIND ITEMS"/>
-       <input type="button" class="btn btn-warning" onclick="location.href='r1table.php'" value="ROUND 1 TABLE"/>
-       <input type="button" class="btn btn-warning" onclick="location.href='leaderboard.php'" value="LEADERBOARD"/>
+       
        </div>
+                    <br />
+                    <br />
                 <?php
  $user_id=$_SESSION['id'];
     $select_query="Select * from items_users where userid='$user_id'";
@@ -84,5 +102,6 @@ if($arr[0]==1)
                     
                 </tr>
             </table>
+        </div>
     </body>
   </html>

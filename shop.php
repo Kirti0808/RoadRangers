@@ -19,23 +19,38 @@ if($arr[0]==1)
 		
 	</head>
         <style>
-            th,td{
-                text-align: center;
+            body{
+                background: url(img1.jpg) no-repeat center;
+                background-size: cover;
             }
+             table th,td{
+                text-align: center;
+                
+               
+                
+            }
+            table th{
+                font-family: Verdana, sans-serif;
+            }
+            td{
+                color: red;
+                font-size: 1.5em;
+                font-family: Georgia, serif;
+            }
+            
         </style>
 	<body>
 		
                                         <?php
                                         include 'ifadded.php';
                                         include 'number_type.php';
-        
+                                        include 'header.php';
         
         ?>
             <br />
+            <div class="container">
        <div class="btn-group">
         
-       <input type="button" class="btn btn-warning" onclick="location.href='r1table.php'" value="ROUND 1 table"/>
-       <input type="button" class="btn btn-warning" onclick="location.href='leaderboard.php'" value="LEADERBOARD"/>
        <input type="button"  float="right" class="btn btn-warning" onclick="location.href='addedlist.php'" value="CHECK ADDED ITEMS"/>
        </div>
         <?php
@@ -47,7 +62,7 @@ if($arr[0]==1)
        
             <h2 class="text-danger">Balance:<?php echo $row[0];?></h2>
         
-        <h4 class="text-danger">
+        <h4 style="font-family: Times, Times New Roman, serif; font-size: 2em;">
             1. SUSPENSION
         </h4>
         <table class="table table-hover">
@@ -75,19 +90,19 @@ if($arr[0]==1)
             <?php if(if_added($row1['id'])==0 && $row1['cost']<=$bal)
             { ?>
             <?php if( count_type($row1['type'])<1){ ?>
-            <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD PLAYER" >ADD PLAYER</a></td>
+            <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
             <?php } else { ?>
-                <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD PLAYER" >ADD PLAYER</a></td>
+                <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  }
              }
             else
             {
-             ?> <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD PLAYER" >ADD PLAYER</a></td>
+             ?> <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  } ?>
             </tr>
             <?php } ?>
         </table>
-             <h4 class="text-danger">
+             <h4 style="font-family: Times, Times New Roman, serif; font-size: 2em;">
             2. TYRES
         </h4>
         <table class="table table-hover">
@@ -116,19 +131,19 @@ if($arr[0]==1)
             <?php if(if_added($row1['id'])==0 && $row1['cost']<=$bal)
             { ?>
             <?php if( count_type($row1['type'])<1){ ?>
-            <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD PLAYER" >ADD PLAYER</a></td>
+            <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
             <?php } else { ?>
-                <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD PLAYER" >ADD PLAYER</a></td>
+                <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  }
              }
             else
             {
-             ?> <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD PLAYER" >ADD PLAYER</a></td>
+             ?> <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  } ?>
             </tr>
             <?php } ?>
         </table>
-             <h4 class="text-danger">
+             <h4 style="font-family: Times, Times New Roman, serif; font-size: 2em;">
             3. SPOILERS
         </h4>
         <table class="table table-hover">
@@ -157,19 +172,19 @@ if($arr[0]==1)
             <?php if(if_added($row1['id'])==0 && $row1['cost']<=$bal)
             { ?>
             <?php if( count_type($row1['type'])<1){ ?>
-            <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD PLAYER" >ADD PLAYER</a></td>
+            <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
             <?php } else { ?>
-                <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD PLAYER" >ADD PLAYER</a></td>
+                <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  }
              }
             else
             {
-             ?> <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD PLAYER" >ADD PLAYER</a></td>
+             ?> <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  } ?>
             </tr>
             <?php } ?>
         </table>
-             <h4 class="text-danger">
+             <h4 style="font-family: Times, Times New Roman, serif; font-size: 2em;">
             4. AERODYNAMIC DESIGN
         </h4>
         <table class="table table-hover">
@@ -198,19 +213,19 @@ if($arr[0]==1)
             <?php if(if_added($row1['id'])==0 && $row1['cost']<=$bal)
             { ?>
             <?php if( count_type($row1['type'])<1){ ?>
-            <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD PLAYER" >ADD PLAYER</a></td>
+            <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
             <?php } else { ?>
-                <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD PLAYER" >ADD PLAYER</a></td>
+                <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  }
              }
             else
             {
-             ?> <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD PLAYER" >ADD PLAYER</a></td>
+             ?> <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  } ?>
             </tr>
             <?php } ?>
         </table>
-             <h4 class="text-danger">
+             <h4 style="font-family: Times, Times New Roman, serif; font-size: 2em;">
             5. BRAKING
         </h4>
         <table class="table table-hover">
@@ -239,19 +254,19 @@ if($arr[0]==1)
             <?php if(if_added($row1['id'])==0 && $row1['cost']<=$bal)
             { ?>
             <?php if( count_type($row1['type'])<1){ ?>
-            <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD PLAYER" >ADD PLAYER</a></td>
+            <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
             <?php } else { ?>
-                <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD PLAYER" >ADD PLAYER</a></td>
+                <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  }
              }
             else
             {
-             ?> <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD PLAYER" >ADD PLAYER</a></td>
+             ?> <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  } ?>
             </tr>
             <?php } ?>
         </table>
-             <h4 class="text-danger">
+             <h4 style="font-family: Times, Times New Roman, serif; font-size: 2em;">
             6. ABS
         </h4>
         <table class="table table-hover">
@@ -280,19 +295,19 @@ if($arr[0]==1)
             <?php if(if_added($row1['id'])==0 && $row1['cost']<=$bal)
             { ?>
             <?php if( count_type($row1['type'])<1){ ?>
-            <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD PLAYER" >ADD PLAYER</a></td>
+            <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
             <?php } else { ?>
-                <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD PLAYER" >ADD PLAYER</a></td>
+                <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  }
              }
             else
             {
-             ?> <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD PLAYER" >ADD PLAYER</a></td>
+             ?> <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  } ?>
             </tr>
             <?php } ?>
         </table>
-             <h4 class="text-danger">
+             <h4 style="font-family: Times, Times New Roman, serif; font-size: 2em;">
             7. STEERING
         </h4>
         <table class="table table-hover">
@@ -321,17 +336,18 @@ if($arr[0]==1)
             <?php if(if_added($row1['id'])==0 && $row1['cost']<=$bal)
             { ?>
             <?php if( count_type($row1['type'])<1){ ?>
-            <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD PLAYER" >ADD PLAYER</a></td>
+            <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
             <?php } else { ?>
-                <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD PLAYER" >ADD PLAYER</a></td>
+                <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  }
              }
             else
             {
-             ?> <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD PLAYER" >ADD PLAYER</a></td>
+             ?> <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  } ?>
             </tr>
             <?php } ?>
         </table>
+            </div>
 	</body>
 </html>

@@ -6,9 +6,25 @@ require 'includes/common.php';
     <head>
         <title>index</title>
         <style>
-            th,td{
-                text-align: center;
+            body{
+                background: url(img3.jpg) no-repeat center;
+                background-size: cover;
             }
+          table th,td{
+                text-align: center;
+                
+               
+                
+            }
+            table th{
+                font-family: Verdana, sans-serif;
+            }
+            td{
+                
+                font-size: 1.5em;
+                font-family: Georgia, serif;
+            }
+            
         </style>
         <link rel="stylesheet" href="style.css" />
          <link rel="stylesheet" href="style.css" />
@@ -19,11 +35,15 @@ require 'includes/common.php';
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>  
     <body>
-       
+
+        <?php
+        include 'header.php';
+        ?>
+        <div class="container">
         <table class="table table-hover">
                 <tr>
-                    <td class="text-danger"><b>User Number</b></td>
-                    <td class="text-danger"><b>User Name</b></td>
+                    <td class="text-danger"><b>POSITION</b></td>
+                    <td class="text-danger"><b>NAME</b></td>
                                        <td class="text-danger"><b>POINTS</b></td>
                 <td></td>
                 </tr>
@@ -32,11 +52,7 @@ require 'includes/common.php';
         
        ?>
                  <br />
-       <div class="btn-group">
-        <input type="button" class="btn btn-warning" onclick="location.href='r1table.php'" value="ROUND 1 TABLE"/>
-       <input type="button" class="btn btn-warning" onclick="location.href='r2table.php'" value="ROUND 2 TABLE"/>
-       <input type="button" class="btn btn-warning" onclick="location.href='leaderboard.php'" value="LEADERBOARD"/>
-       </div>
+      
         
                 <?php
         $sel_query="Select name, points2 from users where submit2='1' order by points2 desc";
@@ -80,5 +96,6 @@ require 'includes/common.php';
         $upd="Update users set balance='$bal1' where name='$b'";
         $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));}
         ?>
+        </div>
     </body>
 </html>

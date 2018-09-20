@@ -5,9 +5,23 @@ require 'includes/common.php';
     <head>
         <title>index</title>
         <style>
-            td,th{
-                text-align: center;
+             body{
+                background: url(img1.jpg) no-repeat center;
+                background-size: cover;
             }
+            table th,td{
+                text-align: center;
+                
+               
+                
+            }
+            table th{
+                font-family: Verdana, sans-serif;
+            }
+            td{
+                
+                font-size: 1.5em;
+                font-family: Georgia, serif;
         </style>
         <link rel="stylesheet" href="style.css" />
          <link rel="stylesheet" href="style.css" />
@@ -18,22 +32,22 @@ require 'includes/common.php';
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>  
     <body>
+        <?php 
+        include 'header.php';
+        ?>
+        <div class="container">
        
         <table class="table table-hover">
                 <tr>
-                    <td class="text-danger"><b>Player Number</b></td>
-                    <td class="text-danger"><b>Player Name</b></td>
+                    <td class="text-danger"><b>Item Number</b></td>
+                    <td class="text-danger"><b>Item Name</b></td>
                     <td class="text-danger"><b>Type</b></td>
                     <td class="text-danger"><b>COST</b></td>
                 <td></td>
                 </tr>
        
                     <br />
-       <div class="btn-group">
        
-       <input type="button" class="btn btn-warning" onclick="location.href='r1table.php'" value="ROUND 1 TABLE"/>
-       <input type="button" class="btn btn-warning" onclick="location.href='leaderboard.php'" value="LEADERBOARD"/>
-       </div>
                 <?php
  $user_id=$_SESSION['id'];
     $select_query="Select * from items_users where user_id='$user_id'";
@@ -101,5 +115,6 @@ require 'includes/common.php';
         ?>
         
         <input type="button" class="btn btn-warning" onclick="location.href='shop2.php'" value="ROUND 2" />
+        </div>
     </body>
   </html>
