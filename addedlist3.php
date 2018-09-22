@@ -1,12 +1,21 @@
 <?php
 require 'includes/common.php';
+$uid=$_SESSION['id'];
+$sel="Select submit3,qual,qual1,qual2,qual3 from users where id='$uid'";
+$sel_res=mysqli_query($con,$sel) or die(mysqli_error($con));
+$arr=mysqli_fetch_array($sel_res);
+if($arr[0]==1)
+    header('Location:index.php');
+else if($arr[1]==0 || $arr[2]==0 || $arr[3]==0)
+{header('Location: index.php'); }
 ?>
+
 <html>
     <head>
         <title>index</title>
         <style>
-             body{
-                background: url(img1.jpg) no-repeat center;
+            body{
+                background: url(img2.jpg) no-repeat center;
                 background-size: cover;
             }
             table th,td{
@@ -22,6 +31,7 @@ require 'includes/common.php';
                 
                 font-size: 1.5em;
                 font-family: Georgia, serif;
+            }
         </style>
         <link rel="stylesheet" href="style.css" />
          <link rel="stylesheet" href="style.css" />
@@ -32,11 +42,10 @@ require 'includes/common.php';
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>  
     <body>
-        <?php 
-        include 'header.php';
-        ?>
-        <div class="container">
-       
+      <?php
+      include 'header.php';
+      ?>
+        <div class="container"> 
         <table class="table table-hover">
                 <tr>
                     <td class="text-danger"><b>Item Number</b></td>
@@ -45,12 +54,16 @@ require 'includes/common.php';
                     <td class="text-danger"><b>COST</b></td>
                 <td></td>
                 </tr>
-       
+        
                     <br />
-       
+       <div class="btn-group">
+        <input type="button" class="btn btn-warning" onclick="location.href='shop3.php'" value="FIND ITEMS"/>
+        <br />
+       </div>
+                    <br />
                 <?php
  $user_id=$_SESSION['id'];
-    $select_query="Select * from items_users where user_id='$user_id'";
+    $select_query="Select * from items_users where userid='$user_id'";
     $select_query_1="Select * from items i inner join items_users iu on i.id=iu.itemid where userid='$user_id'";
     $select_query_2="Select *from users u inner join items_users iu on u.id=iu.userid";
     $select_query_res=mysqli_query($con,$select_query_1) or die(mysqli_error($con));
@@ -66,11 +79,10 @@ require 'includes/common.php';
     else{
         $sum=0;
         $c=0;
-       $r=0;
+       
         while($row= mysqli_fetch_array($select_query_res))
     {
         $sum=$sum+$row[3];
-        $r=$r+$row[4];
         
         $c+=1;
         ?>
@@ -79,44 +91,18 @@ require 'includes/common.php';
                     <td><?php echo $c; ?></td>
                     <td><?php echo $row[1]; ?></td>
                     <td><?php echo $row[2];   ?></td>
-    <td><?php echo $row[3]; }?></td> 
-                    <td class="text primary"> Confirmed!</td>
+                    <td><?php echo $row[3]; ?></td> 
+    <td> <a href='removeitem3.php?id=<?php echo $row[0]?>' class='remove_item_link'> Remove</a><?php } ?></td>
                 </tr>
                 <tr>
                     <td></td>
                     <td></td>
                     <td>Total</td>
-    <td><?php echo $sum; }  ?></td>
-                    <td></td>
+                <td><?php echo $sum; }   ?></td>
+                <td><input type="button" class="btn btn-primary" onclick="location.href='success3.php'" value="Confirm" /></td>
                     
                 </tr>
             </table>
-        <h3>Your rating for this round is: <?php echo $r; ?></h3>
-        <?php
-        
-        $upd="Update users set points1='$r' where id='$user_id'";
-        $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
-        $sel="Select totalpoints,points1,points2,points3,points4,balance,submit1 from users where id='$user_id'";
-        $sel_res=mysqli_query($con,$sel) or die(mysqli_error($con));
-        $arr=mysqli_fetch_array($sel_res);
-        
-        $tp=$arr[1]+$arr[2]+$arr[3]+$arr[4];
-        $balance=$arr[5];
-        $upd="Update users set points1='$r' where id='$user_id'";
-        $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
-        $upd="Update users set totalpoints='$tp' where id='$user_id'";
-        $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
-        if($arr['submit1']==0){
-        $upd="Update users set bal1='$balance' where id='$user_id'";
-        $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));}
-        
-        $upd="Update users set submit1='1' where id='$user_id'";
-        $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
-        $upd="Update users set qual1='1' where id='$user_id'";
-        $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
-        ?>
-        
-        <input type="button" class="btn btn-warning" onclick="location.href='shop2.php'" value="ROUND 2" />
         </div>
     </body>
   </html>

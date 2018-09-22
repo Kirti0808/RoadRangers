@@ -4,12 +4,12 @@
 
 require 'includes/common.php';
 $uid=$_SESSION['id'];
-$sel="Select submit2,qual,qual1,qual2,qual3 from users where id='$uid'";
+$sel="Select submit3,qual,qual1,qual2,qual3 from users where id='$uid'";
 $sel_res=mysqli_query($con,$sel) or die(mysqli_error($con));
 $arr=mysqli_fetch_array($sel_res);
 if($arr[0]==1)
     header('Location:index.php');
-else if($arr[1]==0 || $arr[2]==0)
+else if($arr[1]==0 || $arr[2]==0 || $arr[3]==0)
 {header('Location: index.php'); }
 ?>
 <html lang="en" class="no-js">
@@ -54,7 +54,7 @@ else if($arr[1]==0 || $arr[2]==0)
        <div class="btn-group">
         
       
-       <input type="button"  float="right" class="btn btn-warning" onclick="location.href='addedlist2.php'" value="CHECK ADDED ITEMS"/>
+       <input type="button"  float="right" class="btn btn-warning" onclick="location.href='addedlist3.php'" value="CHECK ADDED ITEMS"/>
        </div>
         <?php
         $userid=$_SESSION['id'];
@@ -95,14 +95,14 @@ else if($arr[1]==0 || $arr[2]==0)
             <?php if(if_added($row1['id'])==0 && $row1['cost']<=$bal)
             { ?>
             <?php if( count_type($row1['type'])<1){ ?>
-            <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
+            <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
             <?php } else { ?>
-                <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
+                <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  }
              }
             else
             {
-             ?> <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
+             ?> <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  } ?>
             </tr>
             <?php } ?>
@@ -136,14 +136,14 @@ else if($arr[1]==0 || $arr[2]==0)
             <?php if(if_added($row1['id'])==0 && $row1['cost']<=$bal)
             { ?>
             <?php if( count_type($row1['type'])<1){ ?>
-            <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
+            <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
             <?php } else { ?>
-                <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
+                <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  }
              }
             else
             {
-             ?> <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
+             ?> <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  } ?>
             </tr>
             <?php } ?>
@@ -177,14 +177,14 @@ else if($arr[1]==0 || $arr[2]==0)
             <?php if(if_added($row1['id'])==0 && $row1['cost']<=$bal)
             { ?>
             <?php if( count_type($row1['type'])<1){ ?>
-            <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
+            <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
             <?php } else { ?>
-                <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
+                <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  }
              }
             else
             {
-             ?> <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
+             ?> <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  } ?>
             </tr>
             <?php } ?>
@@ -218,14 +218,14 @@ else if($arr[1]==0 || $arr[2]==0)
             <?php if(if_added($row1['id'])==0 && $row1['cost']<=$bal)
             { ?>
             <?php if( count_type($row1['type'])<1){ ?>
-            <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
+            <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
             <?php } else { ?>
-                <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
+                <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  }
              }
             else
             {
-             ?> <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
+             ?> <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  } ?>
             </tr>
             <?php } ?>
@@ -259,14 +259,14 @@ else if($arr[1]==0 || $arr[2]==0)
             <?php if(if_added($row1['id'])==0 && $row1['cost']<=$bal)
             { ?>
             <?php if( count_type($row1['type'])<1){ ?>
-            <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
+            <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
             <?php } else { ?>
-                <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
+                <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  }
              }
             else
             {
-             ?> <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
+             ?> <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  } ?>
             </tr>
             <?php } ?>
@@ -300,14 +300,14 @@ else if($arr[1]==0 || $arr[2]==0)
             <?php if(if_added($row1['id'])==0 && $row1['cost']<=$bal)
             { ?>
             <?php if( count_type($row1['type'])<1){ ?>
-            <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
+            <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
             <?php } else { ?>
-                <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
+                <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  }
              }
             else
             {
-             ?> <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
+             ?> <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  } ?>
             </tr>
             <?php } ?>
@@ -341,14 +341,14 @@ else if($arr[1]==0 || $arr[2]==0)
             <?php if(if_added($row1['id'])==0 && $row1['cost']<=$bal)
             { ?>
             <?php if( count_type($row1['type'])<1){ ?>
-            <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
+            <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
             <?php } else { ?>
-                <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
+                <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  }
              }
             else
             {
-             ?> <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
+             ?> <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  } ?>
             </tr>
             <?php } ?>
@@ -382,14 +382,14 @@ else if($arr[1]==0 || $arr[2]==0)
             <?php if(if_added($row1['id'])==0 && $row1['cost']<=$bal)
             { ?>
             <?php if( count_type($row1['type'])<1){ ?>
-            <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
+            <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
             <?php } else { ?>
-                <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
+                <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  }
              }
             else
             {
-             ?> <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
+             ?> <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  } ?>
             </tr>
             <?php } ?>
@@ -423,14 +423,14 @@ else if($arr[1]==0 || $arr[2]==0)
             <?php if(if_added($row1['id'])==0 && $row1['cost']<=$bal)
             { ?>
             <?php if( count_type($row1['type'])<1){ ?>
-            <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
+            <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
             <?php } else { ?>
-                <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
+                <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  }
              }
             else
             {
-             ?> <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
+             ?> <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  } ?>
             </tr>
             <?php } ?>
@@ -464,14 +464,14 @@ else if($arr[1]==0 || $arr[2]==0)
             <?php if(if_added($row1['id'])==0 && $row1['cost']<=$bal)
             { ?>
             <?php if( count_type($row1['type'])<1){ ?>
-            <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
+            <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
             <?php } else { ?>
-                <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
+                <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  }
              }
             else
             {
-             ?> <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
+             ?> <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  } ?>
             </tr>
             <?php } ?>
@@ -505,14 +505,14 @@ else if($arr[1]==0 || $arr[2]==0)
             <?php if(if_added($row1['id'])==0 && $row1['cost']<=$bal)
             { ?>
             <?php if( count_type($row1['type'])<1){ ?>
-            <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
+            <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
             <?php } else { ?>
-                <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
+                <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  }
              }
             else
             {
-             ?> <td> <a href="additem2.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
+             ?> <td> <a href="additem3.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
           <?php  } ?>
             </tr>
             <?php } ?>

@@ -97,5 +97,6 @@ require 'includes/common.php';
         $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));}
         ?>
         </div>
+        
     </body>
 </html>

@@ -109,6 +109,53 @@ require 'includes/common.php';
          $upd="Update users set submit2='1' where id='$user_id'";
         $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
         ?>
+        <?php
+         $sel="Select * from users order by totalpoints desc";
+         $sel_q=mysqli_query($con,$sel) or die(mysqli_error($con));
+         $uid=$_SESSION['id'];
+        
+         $i=0;
+         $k=0;
+         while($row=mysqli_fetch_array($sel_q))
+         {
+             
+             if($i==3)
+                 break;
+             else{
+                 if($_SESSION['id']==$row['id']){
+                     $k=1;
+                 ?>
+         
+      <div class="container">
+         <div class="jumbotron">
+             <h3>Congratulations! You've qualified for next round! </h3>
+             <?php
+             $upd="Update users set qual2=1 where id='$uid'";
+         $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
+         ?>
+             <input type='button' class="btn btn-primary"onclick="location.href='shop3.php'" value="Move to next round" />
+         </div>
+         <?php 
+                break;
+             }
+             $i+=1;
+             }
+             
+         }
+         ?>
+<?php         if($k!=1){
+    ?>
+      </div>
+         <div class="container">
+         <div class="jumbotron" >
+        <h3>
+            Sorry! You've been eliminated!
+        </h3>
+</div>
+         <?php
+}
+         ?>
+    </div>
         
         <input type="button" class="btn btn-warning" onclick="location.href='shop3.php'" value="ROUND 3" />
         </div>

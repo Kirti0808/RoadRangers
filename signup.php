@@ -33,6 +33,7 @@ time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  color: black;
 }
 
 article, aside, details, figcaption, figure,
@@ -379,11 +380,11 @@ input {
 		<div class="content">
 			<header class="codrops-header">
 				<div class="codrops-links">
-					<a class="codrops-icon codrops-icon--prev" href="https://tympanus.net/Development/ExpandingBarMenus/" title="Previous Demo"><svg class="icon icon--arrow"><use xlink:href="#icon-arrow"></use></svg></a>
-					<a class="codrops-icon codrops-icon--drop" href="https://tympanus.net/codrops/?p=30534" title="Back to the article"><svg class="icon icon--drop"><use xlink:href="#icon-drop"></use></svg></a>
+					<a class="codrops-icon codrops-icon--prev" href="http://saenitd.com" title="LINK TO SAE"><svg class="icon icon--arrow"><use xlink:href="#icon-arrow"></use></svg></a>
+					<a class="codrops-icon codrops-icon--drop" href="https://avskr.in/" title="LINK TO AAVISHKAR 2.0"><svg class="icon icon--drop"><use xlink:href="#icon-drop"></use></svg></a>
 				</div>
 				<h1 class="codrops-header__title">SOCIETY OF AUTOMOTIVE ENGINEERS</h1>
-				<div class="subject">SAE ONLINE EVENT</div>
+				<div class="subject">AAVISHKAR 2.0</div>
 				<button class="btn btn--info btn--toggle">
 					<svg class="icon icon--info"><use xlink:href="#icon-info"></use></svg>
 					<svg class="icon icon--cross"><use xlink:href="#icon-cross"></use></svg>	
@@ -396,16 +397,16 @@ input {
 					<ul class="menu">
                                             <?php 
                                             if(!isset($_SESSION['email'])) {?>
-						<li class="menu__item menu__item--current"><a class="menu__link" href="login.php">RULES</a></li>
+						
                                                 <br />
-                                              <li class="menu__item"><a class="menu__link" href="login.php">Shop</a></li>
+                                              <li class="menu__item"><a class="menu__link" href="login.php">PLAY</a></li>
                                               <br />
                                               <li class="menu__item"><a class="menu__link" href="signup.php">Signup</a></li>
                                               <br />
 						<li class="menu__item"><a class="menu__link" href="login.php">Login</a></li>
                                             <?php }
                                                 else{ ?>
-                                                    <li class="menu__item menu__item--current"><a class="menu__link" href="rules.php">RULES</a></li>
+                                                  
                                                     <br />
                                               <li class="menu__item"><a class="menu__link" href="shop.php">Shop</a></li>
                                               <br />
@@ -415,7 +416,7 @@ input {
 						</ul>
 				</div>
 				<div class="overlay overlay--info">
-					<p class="info">&ldquo;Life in Pieces&rdquo; is the subject of all exhibitions taking place in the Mirai Art Gallery in 2017. Fragments of lost memories, fleeting moments and the breaking apart of human nature are this year's highlighted topics. We welcome you to a exploration space of a unique kind&mdash;the one that will stay with you and impact you on many levels. Come visit us.</p>
+					<p class="info">&ldquo;Buy and Win&rdquo; an event in which one has to use his technical knowledge and also optimization skills to make the best possible car out of the given budget in a specified track. The event will be held in 4 rounds, each of which will be on a specific track. The participant will be dealt with a certain fixed budget at the beginning which may vary depending on their performance in the Autoquiz event. For the first round, the participant will have to buy one part from each type, each of which is associated with a specific rating. The rating will remain confidential throughout the event and will vary depending on the track. It should also be noted that higher price might not guarantee a higher rating. After buying all the desired parts, participants need to confirm and submit. Once submitted, the rankings of the round will be shown after 1 hour. Rankings will be done on the basis of total ratings. There will also be a separate table which will be made on the basis of total ratings of all the rounds thus completed. <b>Once a part if bought in round 1 is sold in subsequent rounds(i.e, in 2,3,4), the amount that it would be sold for would be 50% of the price the participant bought it for.</b> Also the budget for rounds 2 and above will be the budget unused plus the money awarded on the basis of their rankings in the previous rounds.      </p>
 				</div>
 			</header>
                     <div class="slides">

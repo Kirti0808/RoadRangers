@@ -5,8 +5,8 @@ require 'includes/common.php';
     <head>
         <title>index</title>
         <style>
-             body{
-                background: url(img1.jpg) no-repeat center;
+            body{
+                background: url(img2.jpg) no-repeat center;
                 background-size: cover;
             }
             table th,td{
@@ -22,6 +22,7 @@ require 'includes/common.php';
                 
                 font-size: 1.5em;
                 font-family: Georgia, serif;
+            }
         </style>
         <link rel="stylesheet" href="style.css" />
          <link rel="stylesheet" href="style.css" />
@@ -32,11 +33,10 @@ require 'includes/common.php';
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>  
     <body>
-        <?php 
-        include 'header.php';
-        ?>
+       <?php 
+       include 'header.php';
+       ?>
         <div class="container">
-       
         <table class="table table-hover">
                 <tr>
                     <td class="text-danger"><b>Item Number</b></td>
@@ -70,7 +70,7 @@ require 'includes/common.php';
         while($row= mysqli_fetch_array($select_query_res))
     {
         $sum=$sum+$row[3];
-        $r=$r+$row[4];
+        $r=$r+$row['rating3'];
         
         $c+=1;
         ?>
@@ -93,30 +93,71 @@ require 'includes/common.php';
             </table>
         <h3>Your rating for this round is: <?php echo $r; ?></h3>
         <?php
-        
-        $upd="Update users set points1='$r' where id='$user_id'";
+       
+        $upd="Update users set points2='$r' where id='$user_id'";
         $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
-        $sel="Select totalpoints,points1,points2,points3,points4,balance,submit1 from users where id='$user_id'";
+         $sel="Select totalpoints,points1,points2,points3,points4,balance,submit2 from users where id='$user_id'";
         $sel_res=mysqli_query($con,$sel) or die(mysqli_error($con));
         $arr=mysqli_fetch_array($sel_res);
-        
-        $tp=$arr[1]+$arr[2]+$arr[3]+$arr[4];
         $balance=$arr[5];
-        $upd="Update users set points1='$r' where id='$user_id'";
-        $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
+        $tp=$arr[1]+$arr[2]+$arr[3]+$arr[4];
         $upd="Update users set totalpoints='$tp' where id='$user_id'";
         $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
-        if($arr['submit1']==0){
-        $upd="Update users set bal1='$balance' where id='$user_id'";
+        if($arr['submit2']==0){
+        $upd="Update users set bal3='$balance' where id='$user_id'";
         $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));}
-        
-        $upd="Update users set submit1='1' where id='$user_id'";
-        $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
-        $upd="Update users set qual1='1' where id='$user_id'";
+         $upd="Update users set submit3='1' where id='$user_id'";
         $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
         ?>
+        <?php
+         $sel="Select * from users order by totalpoints desc";
+         $sel_q=mysqli_query($con,$sel) or die(mysqli_error($con));
+         $uid=$_SESSION['id'];
         
-        <input type="button" class="btn btn-warning" onclick="location.href='shop2.php'" value="ROUND 2" />
+         $i=0;
+         $k=0;
+         while($row=mysqli_fetch_array($sel_q))
+         {
+             
+             if($i==3)
+                 break;
+             else{
+                 if($_SESSION['id']==$row['id']){
+                     $k=1;
+                 ?>
+         
+      <div class="container">
+         <div class="jumbotron">
+             <h3>Congratulations! You've qualified for next round! </h3>
+             <?php
+             $upd="Update users set qual3=1 where id='$uid'";
+         $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
+         ?>
+             <input type='button' class="btn btn-primary"onclick="location.href='shop4.php'" value="Move to next round" />
+         </div>
+         <?php 
+                break;
+             }
+             $i+=1;
+             }
+             
+         }
+         ?>
+<?php         if($k!=1){
+    ?>
+      </div>
+         <div class="container">
+         <div class="jumbotron" >
+        <h3>
+            Sorry! You've been eliminated!
+        </h3>
+</div>
+         <?php
+}
+         ?>
+    </div>
+        
+        <input type="button" class="btn btn-warning" onclick="location.href='shop3.php'" value="ROUND 3" />
         </div>
     </body>
   </html>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php 
 require 'includes/common.php';
+
 ?>
 <html lang="en" class="no-js">
 	<head>
@@ -132,12 +133,15 @@ require 'includes/common.php';
 		<div class="content">
 			<header class="codrops-header">
 				<div class="codrops-links">
-					<a class="codrops-icon codrops-icon--prev" href="http://saenitd.com" title="Previous Demo"><svg class="icon icon--arrow"><use xlink:href="#icon-arrow"></use></svg></a>
-					<a class="codrops-icon codrops-icon--drop" href="https://tympanus.net/codrops/?p=30534" title="Back to the article"><svg class="icon icon--drop"><use xlink:href="#icon-drop"></use></svg></a>
+					<a class="codrops-icon codrops-icon--prev" href="http://saenitd.com" title="LINK TO SAE"><svg class="icon icon--arrow"><use xlink:href="#icon-arrow"></use></svg></a>
+					<a class="codrops-icon codrops-icon--drop" href="https://avskr.in/" title="LINK TO AAVISHKAR 2.0"><svg class="icon icon--drop"><use xlink:href="#icon-drop"></use></svg></a>
 				</div>
 				<h1 class="codrops-header__title">SOCIETY OF AUTOMOTIVE ENGINEERS</h1>
-				<div class="subject">AAVISHKAR 2.0 </div>
-				<button class="btn btn--info btn--toggle">
+                                
+				<div class="subject">AAVISHKAR 2.0 
+				<img src="img4.jpg" width="100px" height="100px" />
+                                </div>
+                                <button class="btn btn--info btn--toggle">
 					<svg class="icon icon--info"><use xlink:href="#icon-info"></use></svg>
 					<svg class="icon icon--cross"><use xlink:href="#icon-cross"></use></svg>	
 				</button>
@@ -151,21 +155,25 @@ require 'includes/common.php';
                                             if(isset($_SESSION['email'])) {?>
                                                
                                                  <?php $uid=$_SESSION['id'];
-                                              $sel="Select submit1,submit2,submit3,submit4 from users where id='$uid'";
+                                              $sel="Select submit1,submit2,submit3,submit4,score from users where id='$uid'";
                                               $selres=mysqli_query($con,$sel) or die(mysqli_error($con));
                                               $arr=mysqli_fetch_array($selres);
+                                              $s=$arr['score'];
+                                              $i=($s/10)+1;
                                               if($arr[0]=='0') { ?>
                                               <li class="menu__item"><a class="menu__link" href="shop.php">PLAY ROUND 1</a></li>
                                               <?php }
                                                else if($arr[0]=='1' &&$arr[1]=='0') { ?>
                                               <li class="menu__item"><a class="menu__link" href="shop2.php">PLAY ROUND 2</a></li>
                                                <?php } ?>
+                                              <li class="menu__item"><a class="menu__link" href="autoquiz.php?id=<?php echo $i; ?> ">Autoquiz</a></li>
+                                              <li class="menu__item"><a class="menu__link" href="leaderboard.php">Leaderboard</a></li>
                                               <li class="menu__item"><a class="menu__link" href="logout.php">Logout</a></li>
 						
                                             <?php }
                                                 else { ?>
                                               
-                                              <li class="menu__item"><a class="menu__link" href="login.php">Shop</a></li>
+                                              <li class="menu__item"><a class="menu__link" href="login.php">PLAY</a></li>
                                               <li class="menu__item"><a class="menu__link" href="signup.php">Signup</a></li>
 						<li class="menu__item"><a class="menu__link" href="login.php">Login</a></li>
                                                     

@@ -2,11 +2,15 @@
 <?php 
 require 'includes/common.php';
 $uid=$_SESSION['id'];
-$sel="Select submit1 from users where id='$uid'";
+$sel="Select submit1,qual,qual2,qual3 from users where id='$uid'";
 $sel_res=mysqli_query($con,$sel) or die(mysqli_error($con));
 $arr=mysqli_fetch_array($sel_res);
 if($arr[0]==1)
     header('Location:index.php');
+else if($arr[1]==0)
+{ 
+   header('Location: index.php');
+ }
 
 ?>
 <html lang="en" class="no-js">
@@ -323,6 +327,170 @@ if($arr[0]==1)
             //$userid=$_SESSION['id'];
             $bal=$row[0];
             $sel_query1="Select * from items where type=7";
+            $sel_query_res1=mysqli_query($con,$sel_query1);
+           
+            while($row1=mysqli_fetch_array($sel_query_res1))
+            {
+                ?>
+            <tr>
+            <td class="text-danger"><?php echo $row1['name']; ?></td>
+            <td class="text-danger"><?php echo $row1['type']; ?></td>
+            <td class="text-danger"><?php echo $row1['cost']; ?></td>
+            
+            <?php if(if_added($row1['id'])==0 && $row1['cost']<=$bal)
+            { ?>
+            <?php if( count_type($row1['type'])<1){ ?>
+            <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
+            <?php } else { ?>
+                <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
+          <?php  }
+             }
+            else
+            {
+             ?> <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
+          <?php  } ?>
+            </tr>
+            <?php } ?>
+        </table>
+             <h4 style="font-family: Times, Times New Roman, serif; font-size: 2em;">
+            8. DRIVE WHEELS
+        </h4>
+        <table class="table table-hover">
+            <tr>
+            <th >Name</th>
+            <th>Type</th>
+            
+            <th >COST</th>
+            <th>COST</th>
+            <th></th>
+            </tr>
+            <?php
+            //$userid=$_SESSION['id'];
+            $bal=$row[0];
+            $sel_query1="Select * from items where type=8";
+            $sel_query_res1=mysqli_query($con,$sel_query1);
+           
+            while($row1=mysqli_fetch_array($sel_query_res1))
+            {
+                ?>
+            <tr>
+            <td class="text-danger"><?php echo $row1['name']; ?></td>
+            <td class="text-danger"><?php echo $row1['type']; ?></td>
+            <td class="text-danger"><?php echo $row1['cost']; ?></td>
+            
+            <?php if(if_added($row1['id'])==0 && $row1['cost']<=$bal)
+            { ?>
+            <?php if( count_type($row1['type'])<1){ ?>
+            <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
+            <?php } else { ?>
+                <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
+          <?php  }
+             }
+            else
+            {
+             ?> <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
+          <?php  } ?>
+            </tr>
+            <?php } ?>
+        </table>
+             <h4 style="font-family: Times, Times New Roman, serif; font-size: 2em;">
+            9. SUPERCHARGER
+        </h4>
+        <table class="table table-hover">
+            <tr>
+            <th >Name</th>
+            <th>Type</th>
+            
+            <th >COST</th>
+            <th>COST</th>
+            <th></th>
+            </tr>
+            <?php
+            //$userid=$_SESSION['id'];
+            $bal=$row[0];
+            $sel_query1="Select * from items where type=9";
+            $sel_query_res1=mysqli_query($con,$sel_query1);
+           
+            while($row1=mysqli_fetch_array($sel_query_res1))
+            {
+                ?>
+            <tr>
+            <td class="text-danger"><?php echo $row1['name']; ?></td>
+            <td class="text-danger"><?php echo $row1['type']; ?></td>
+            <td class="text-danger"><?php echo $row1['cost']; ?></td>
+            
+            <?php if(if_added($row1['id'])==0 && $row1['cost']<=$bal)
+            { ?>
+            <?php if( count_type($row1['type'])<1){ ?>
+            <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
+            <?php } else { ?>
+                <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
+          <?php  }
+             }
+            else
+            {
+             ?> <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
+          <?php  } ?>
+            </tr>
+            <?php } ?>
+        </table>
+             <h4 style="font-family: Times, Times New Roman, serif; font-size: 2em;">
+            10. TURBOCHARGER
+        </h4>
+        <table class="table table-hover">
+            <tr>
+            <th >Name</th>
+            <th>Type</th>
+            
+            <th >COST</th>
+            <th>COST</th>
+            <th></th>
+            </tr>
+            <?php
+            //$userid=$_SESSION['id'];
+            $bal=$row[0];
+            $sel_query1="Select * from items where type=10";
+            $sel_query_res1=mysqli_query($con,$sel_query1);
+           
+            while($row1=mysqli_fetch_array($sel_query_res1))
+            {
+                ?>
+            <tr>
+            <td class="text-danger"><?php echo $row1['name']; ?></td>
+            <td class="text-danger"><?php echo $row1['type']; ?></td>
+            <td class="text-danger"><?php echo $row1['cost']; ?></td>
+            
+            <?php if(if_added($row1['id'])==0 && $row1['cost']<=$bal)
+            { ?>
+            <?php if( count_type($row1['type'])<1){ ?>
+            <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary "  value="ADD ITEM" >ADD ITEM</a></td>
+            <?php } else { ?>
+                <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
+          <?php  }
+             }
+            else
+            {
+             ?> <td> <a href="additem.php?id=<?php echo $row1['id']; ?>" class="btn btn-primary disabled "  value="ADD ITEM" >ADD ITEM</a></td>
+          <?php  } ?>
+            </tr>
+            <?php } ?>
+        </table>
+             <h4 style="font-family: Times, Times New Roman, serif; font-size: 2em;">
+            11. NITROBOOSTER
+        </h4>
+        <table class="table table-hover">
+            <tr>
+            <th >Name</th>
+            <th>Type</th>
+            
+            <th >COST</th>
+            <th>COST</th>
+            <th></th>
+            </tr>
+            <?php
+            //$userid=$_SESSION['id'];
+            $bal=$row[0];
+            $sel_query1="Select * from items where type=11";
             $sel_query_res1=mysqli_query($con,$sel_query1);
            
             while($row1=mysqli_fetch_array($sel_query_res1))

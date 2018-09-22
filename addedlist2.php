@@ -1,11 +1,13 @@
 <?php
 require 'includes/common.php';
- $uid=$_SESSION['id'];
-$sel="Select submit2 from users where id='$uid'";
+$uid=$_SESSION['id'];
+$sel="Select submit2,qual,qual1,qual2,qual3 from users where id='$uid'";
 $sel_res=mysqli_query($con,$sel) or die(mysqli_error($con));
 $arr=mysqli_fetch_array($sel_res);
 if($arr[0]==1)
     header('Location:index.php');
+else if($arr[1]==0 || $arr[2]==0)
+{header('Location: index.php'); }
 ?>
 
 <html>
