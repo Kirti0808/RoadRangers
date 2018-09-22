@@ -93,28 +93,59 @@ require 'includes/common.php';
             </table>
         <h3>Your rating for this round is: <?php echo $r; ?></h3>
         <?php
-        
+       
         $upd="Update users set points1='$r' where id='$user_id'";
         $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
-        $sel="Select totalpoints,points1,points2,points3,points4,balance,submit1 from users where id='$user_id'";
+         $sel="Select totalpoints,points1,points2,points3,points4,balance,submit1 from users where id='$user_id'";
         $sel_res=mysqli_query($con,$sel) or die(mysqli_error($con));
         $arr=mysqli_fetch_array($sel_res);
-        
-        $tp=$arr[1]+$arr[2]+$arr[3]+$arr[4];
         $balance=$arr[5];
-        $upd="Update users set points1='$r' where id='$user_id'";
-        $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
+        $tp=$arr[1]+$arr[2]+$arr[3]+$arr[4];
         $upd="Update users set totalpoints='$tp' where id='$user_id'";
         $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
         if($arr['submit1']==0){
         $upd="Update users set bal1='$balance' where id='$user_id'";
         $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));}
-        
-        $upd="Update users set submit1='1' where id='$user_id'";
-        $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
-        $upd="Update users set qual1='1' where id='$user_id'";
+         $upd="Update users set submit1='1' where id='$user_id'";
         $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
         ?>
+         <?php
+       
+         $sel="Select * from users order by points1 desc";
+         $sel_q=mysqli_query($con,$sel) or die(mysqli_error($con));
+         $uid=$_SESSION['id'];
+        
+         $i=1;
+         $k=0;
+         $sel1="Select balance,bal1 from users where id='$uid'";
+                     $sel_q1=mysqli_query($con,$sel1) or die(mysqli_error($con));
+                     $arr=mysqli_fetch_array($sel_q1);
+         while($row=mysqli_fetch_array($sel_q))
+         {
+             
+             
+                 if($_SESSION['id']==$row['id']){
+                     $k=1;
+                     $sel="Select balance,bal1 from users where id='$uid'";
+                     $sel_q=mysqli_query($con,$sel) or die(mysqli_error($con));
+                     $arr=mysqli_fetch_array($sel_q);
+                     if($i==1){
+                        $bal=$arr[1]+25;
+                        break;
+                     }
+                     else if($i==2){
+                         $bal=$arr[1]+20;
+                         break;
+                     }
+                    
+                 }
+                 $i+=1;
+         }
+                     $upd="Update users set balance='$bal' where id='$uid'";
+                     $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
+                     
+                    
+                 ?>
         
         <input type="button" class="btn btn-warning" onclick="location.href='shop2.php'" value="ROUND 2" />
         </div>

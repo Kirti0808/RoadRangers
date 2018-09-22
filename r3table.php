@@ -23,8 +23,6 @@ require 'includes/common.php';
                 
                 font-size: 1.5em;
                 font-family: Georgia, serif;
-            }
-            
         </style>
         <link rel="stylesheet" href="style.css" />
          <link rel="stylesheet" href="style.css" />
@@ -35,11 +33,11 @@ require 'includes/common.php';
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>  
     <body>
-
         <?php
         include 'header.php';
         ?>
         <div class="container">
+       
         <table class="table table-hover">
                 <tr>
                     <td class="text-danger"><b>POSITION</b></td>
@@ -52,10 +50,10 @@ require 'includes/common.php';
         
        ?>
                  <br />
-      
+       
         
                 <?php
-        $sel_query="Select name, points2 from users where submit2='1' order by points2 desc";
+        $sel_query="Select name, points3 from users where submit3='1' order by points1 desc";
         $sel_query_res=mysqli_query($con,$sel_query);
       
         while($row=mysqli_fetch_array($sel_query_res))
@@ -75,6 +73,5 @@ require 'includes/common.php';
         </table>
         
         </div>
-        
     </body>
 </html>

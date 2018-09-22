@@ -27,21 +27,30 @@
     </div>
        <ul class="nav navbar-nav">
         <li> 
-            <?php if($arr[0]=='1')?>
+            <?php if($arr[0]=='1'){ ?>
             <a href="r1table.php">ROUND 1 TABLE</a>
       </li>
       
       <li>
-         <?php if($arr[1]=='1')?>
+            <?php } if($arr[1]=='1'){ ?>
             <a href="r2table.php">ROUND 2 TABLE</a>
       </li>
-        <?php if($arr[0]=='1' || $arr[1]=='1' || $arr[2]=='1' || $arr[3]=='1')?>
+       <li>
+            <?php } if($arr[2]=='1'){ ?>
+            <a href="r3table.php">ROUND 3 TABLE</a>
+      </li>
+       <li>
+            <?php } if($arr[3]=='1'){ ?>
+            <a href="r4table.php">ROUND 4 TABLE</a>
+      </li>
+      
+            <?php } if($arr[0]=='1' || $arr[1]=='1' || $arr[2]=='1' || $arr[3]=='1') { ?>
       <li> <a href="leaderboard.php">LEADERBOARD</a> </li>
        </ul>
     
       <div class="collapse navbar-collapse">
            <ul class="nav navbar-nav navbar-right">
- <?php
+        <?php }
       if(!isset($_SESSION['email']))
       { ?>
      

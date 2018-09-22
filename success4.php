@@ -94,109 +94,21 @@ require 'includes/common.php';
         <h3>Your rating for this round is: <?php echo $r; ?></h3>
         <?php
        
-        $upd="Update users set points3='$r' where id='$user_id'";
+        $upd="Update users set points4='$r' where id='$user_id'";
         $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
-         $sel="Select totalpoints,points1,points2,points3,points4,balance,submit3 from users where id='$user_id'";
+         $sel="Select totalpoints,points1,points2,points3,points4,balance,submit4 from users where id='$user_id'";
         $sel_res=mysqli_query($con,$sel) or die(mysqli_error($con));
         $arr=mysqli_fetch_array($sel_res);
         $balance=$arr[5];
         $tp=$arr[1]+$arr[2]+$arr[3]+$arr[4];
         $upd="Update users set totalpoints='$tp' where id='$user_id'";
         $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
-        if($arr['submit3']==0){
-        $upd="Update users set bal3='$balance' where id='$user_id'";
+        if($arr['submit4']==0){
+        $upd="Update users set bal2='$balance' where id='$user_id'";
         $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));}
-         $upd="Update users set submit3='1' where id='$user_id'";
+         $upd="Update users set submit4='1' where id='$user_id'";
         $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
         ?>
-        <?php
-         $sel="Select * from users order by totalpoints desc";
-         $sel_q=mysqli_query($con,$sel) or die(mysqli_error($con));
-         $uid=$_SESSION['id'];
-        
-         $i=0;
-         $k=0;
-         while($row=mysqli_fetch_array($sel_q))
-         {
-             
-             if($i==3)
-                 break;
-             else{
-                 if($_SESSION['id']==$row['id']){
-                     $k=1;
-                 ?>
-         
-      <div class="container">
-         <div class="jumbotron">
-             <h3>Congratulations! You've qualified for next round! </h3>
-             <?php
-             $upd="Update users set qual3=1 where id='$uid'";
-         $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
-         ?>
-             <input type='button' class="btn btn-primary"onclick="location.href='shop4.php'" value="ROUND4" />
-         </div>
-         <?php 
-                break;
-             }
-             $i+=1;
-             }
-             
-         }
-         ?>
-<?php         if($k!=1){
-    ?>
-      </div>
-         <div class="container">
-         <div class="jumbotron" >
-        <h3>
-            Sorry! You've been eliminated!
-        </h3>
-</div>
-         <?php
-}
-         ?>
-    </div>
-        
-        
-        </div>
-     <?php
-       
-         $sel="Select * from users order by points3 desc";
-         $sel_q=mysqli_query($con,$sel) or die(mysqli_error($con));
-         $uid=$_SESSION['id'];
-        
-         $i=1;
-         $k=0;
-          $sel1="Select balance,bal3 from users where id='$uid'";
-                     $sel_q1=mysqli_query($con,$sel1) or die(mysqli_error($con));
-                     $arr=mysqli_fetch_array($sel_q1);
-         $bal=$arr[0];
-         while($row=mysqli_fetch_array($sel_q))
-         {
-             
-             
-                 if($_SESSION['id']==$row['id']){
-                     $k=1;
-                     $sel="Select balance,bal3 from users where id='$uid'";
-                     $sel_q=mysqli_query($con,$sel) or die(mysqli_error($con));
-                     $arr=mysqli_fetch_array($sel_q);
-                     if($i==1){
-                        $bal=$arr[1]+25;
-                        break;
-                     }
-                     else if($i==2){
-                         $bal=$arr[1]+20;
-                         break;
-                     }
-                    
-                 }
-                 $i+=1;
-         }
-                     $upd="Update users set balance='$bal' where id='$uid'";
-                     $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
-                     
-                    
-                 ?>
         
     </body>
   </html>

@@ -133,7 +133,7 @@ require 'includes/common.php';
              $upd="Update users set qual2=1 where id='$uid'";
          $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
          ?>
-             <input type='button' class="btn btn-primary"onclick="location.href='shop3.php'" value="Move to next round" />
+             <input type='button' class="btn btn-primary"onclick="location.href='shop3.php'" value="ROUND3" />
          </div>
          <?php 
                 break;
@@ -157,7 +157,47 @@ require 'includes/common.php';
          ?>
     </div>
         
-        <input type="button" class="btn btn-warning" onclick="location.href='shop3.php'" value="ROUND 3" />
+        
         </div>
+        <?php
+       
+         $sel="Select * from users order by points2 desc";
+         $sel_q=mysqli_query($con,$sel) or die(mysqli_error($con));
+         $uid=$_SESSION['id'];
+        
+         $i=1;
+         $k=0;
+         $sel="Select balance,bal2 from users where id='$uid'";
+                     $sel_q1=mysqli_query($con,$sel) or die(mysqli_error($con));
+                     $arr=mysqli_fetch_array($sel_q1);
+         $bal=$arr[0];
+         while($row=mysqli_fetch_array($sel_q))
+         {
+             
+             
+                 if($_SESSION['id']==$row['id']){
+                     $k=1;
+                     $sel="Select balance,bal2 from users where id='$uid'";
+                     $sel_q=mysqli_query($con,$sel) or die(mysqli_error($con));
+                     $arr=mysqli_fetch_array($sel_q);
+                     if($i==1){
+                        $bal=$arr[1]+25;
+                        break;
+                     }
+                     else if($i==2){
+                         $bal=$arr[1]+20;
+                         break;
+                     }
+                    
+                 }
+                 $i+=1;
+         }
+                     $upd="Update users set balance='$bal' where id='$uid'";
+                     $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
+                     
+                    
+                 ?>
+        
+        
     </body>
   </html>

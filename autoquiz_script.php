@@ -39,6 +39,14 @@ if($row[0]=='1')
       #ghi{
           color: red;
       }
+      .card{
+          margin-top: 15%;
+          margin-right: 50%;
+          margin: 25px solid;
+          border: 1px solid;
+          padding: 25px;
+          
+      }
   </style>      
   <title>Fabricate your dream </title>
     </head>
@@ -82,13 +90,12 @@ $_COOKIE['a']=1;
            <div class="card" >
                <h3 class="text-danger">CORRECT ANSWER!</h3>
              <?php  if($qid==1) { ?>
-               <button class="btn btn-primary" onclick="location.href='autoquiz.php?id=<?php echo $qid+1; ?>'" > Go to Next Question </button>
-               <br />
-               <br />
-                <button class="btn btn-primary" onclick="location.href='autoquiz_submit.php'" > Final Submit </button> 
+               <button class="btn btn-primary" onclick="location.href='autoquiz.php?id=<?php echo $qid+1; ?>'" > NEXT QUESTION </button>
+              
+                <button class="btn btn-primary" onclick="location.href='autoquiz_submit.php'" > FINAL SUBMIT </button> 
              <?php } else
              { ?>
-                <button class="btn btn-primary" onclick="location.href='autoquiz_submit.php'" > Final Submit </button> 
+                <button class="btn btn-primary" onclick="location.href='autoquiz_submit.php'" > FINAL SUBMIT </button> 
             <?php  } ?>
                <br />
                <br />
@@ -102,10 +109,9 @@ else{
     ?>
    <div class="card" >
                <h3 class="text-danger">INCORRECT ANSWER!</h3>
-               <button class="btn btn-primary" onclick="location.href='autoquiz.php?id=<?php echo $qid; ?>'" > Go BACK </button>
-               <br />
-               <br />
-               <button class="btn btn-primary" onclick="location.href='autoquiz_submit.php'" > Final Submit </button> 
+               <button class="btn btn-primary" onclick="location.href='autoquiz.php?id=<?php echo $qid; ?>'" > GO BACK </button>
+               
+               <button class="btn btn-primary" onclick="location.href='autoquiz_submit.php'" > FINAL SUBMIT </button> 
                <br />
                <br />
                <button class="btn btn-primary" onclick="location.href='autoquiz_leaderboard.php'" > LEADERBOARD </button>

@@ -37,6 +37,18 @@ if($row[0]=='1')
       #ghi{
           color: red;
       }
+      #text1{
+          font-size: 1.5em;
+          color: blue;
+      }
+      .card{
+          margin-top: 15%;
+          margin-right: 50%;
+          margin: 25px solid;
+          border: 1px solid;
+          padding: 25px;
+          
+      }
   </style>      
   <title>Fabricate your dream </title>
     </head>
@@ -47,15 +59,16 @@ if($row[0]=='1')
         ?>
         <div class="container">
            <h1 style="text-align:center; font-family: 'Georgia', serif; color:#CB4335  ;">AUTOQUIZ</h1>
+           <div class="card">
            <?php
            $sel="Select question from quiz where id='$qid'";
            $sel_query=mysqli_query($con,$sel) or die(mysqli_error($con));
            $arr=mysqli_fetch_array($sel_query);
            ?>
             <p style="font-family:Bradley Hand, cursive; font-size:1.7em; color: #F39C12  ;"><?php echo $qid.".".$arr['question']; $GLOBALS['qid']=$qid; ?></p>
-            <div class="col-md-6">
+            
             <form method="POST" action="autoquiz_script.php?id=<?php echo $qid; ?>" class="form-group">
-                <input type="textarea" name="ans" placeholder="Type your answer here" />
+                <input type="textarea" name="ans" placeholder="Type your answer here" id="text1"/>
                 
                 <br />
                 <br />
@@ -78,7 +91,7 @@ if($row[0]=='1')
                 
                      
             </form>
-                <button class="btn btn-primary" onclick="location.href='autoquiz_submit.php'" > Final Submit </button> 
+                <button class="btn btn-primary" onclick="location.href='autoquiz_submit.php'" > FINAL SUBMIT </button> 
                      
       
         </div>

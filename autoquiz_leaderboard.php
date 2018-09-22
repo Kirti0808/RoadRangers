@@ -37,10 +37,10 @@ $email=$_SESSION['email'];
       }
       
   </style>      
-  <title>Fabricate your dream </title>
+  <title>AUTOQUIZ </title>
     </head>
     <body>
-       
+        
         <?php
         include 'header.php';
         $c=1;
@@ -48,6 +48,7 @@ $email=$_SESSION['email'];
         $selres=mysqli_query($con,$sel);    
         
         ?>
+        <div class="container">
          <h1 style="text-align:center; font-family: 'Georgia', serif; color:#CB4335  ;">LEADERBOARD</h1>
         <table class="table table-hover"  >
             <tr>
@@ -75,6 +76,6 @@ $email=$_SESSION['email'];
             $c+=1;
         } ?>
         </table>
-     
+        </div>
     </body>
 </html>

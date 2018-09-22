@@ -72,27 +72,7 @@ require 'includes/common.php';
                <?php  } ?>
         </table>
         <?php
-        $uid=$_SESSION['id'];
-        $sel1="Select max(points2) from users";
-        $selres1=mysqli_query($con,$sel1) or die(mysqli_error($con));
-        $arr= mysqli_fetch_array($selres1);
-        $m1=$arr[0];
-        $sel="Select balance,bal1 from users where id='$a'";
-        $selres1=mysqli_query($con,$sel) or die(mysqli_error($con));
-        $arr= mysqli_fetch_array($selres1);
         
-        $bal1=25+$arr[1];
-        $upd="Update users set balance='$bal1' where id='$a'";
-        $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
-        if($c>1){
-        $sel="Select balance,bal1 from users where name='$b'";
-        $selres1=mysqli_query($con,$sel) or die(mysqli_error($con));
-        $arr= mysqli_fetch_array($selres1);
-        
-        $bal1=20+$arr[1];
-        
-        $upd="Update users set balance='$bal1' where name='$b'";
-        $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));}
         ?>
         </div>
     </body>
