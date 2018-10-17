@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <?php 
 
@@ -65,22 +66,22 @@ else if($arr[1]==0 || $arr[2]==0)
               <div class="container">
        
             <h2 class="text-danger">Balance:<?php echo $row[0];?></h2>
-        
-        <h4 style="font-family: Times, Times New Roman, serif; font-size: 2em;">
-            1. SUSPENSION
-        </h4>
+<h4 style="font-family: Times, Times New Roman, serif; font-size: 2em;">
+            3. AERODYNAMIC DESIGN
+            </h4>
         <table class="table table-hover">
             <tr>
             <th >Name</th>
-            <th >Type</th>
+            <th>Type</th>
             
             <th >COST</th>
+            <th>COST</th>
             <th></th>
             </tr>
             <?php
             //$userid=$_SESSION['id'];
             $bal=$row[0];
-            $sel_query1="Select * from items where type=1";
+            $sel_query1="Select * from items where type=4";
             $sel_query_res1=mysqli_query($con,$sel_query1);
            
             while($row1=mysqli_fetch_array($sel_query_res1))
@@ -106,8 +107,8 @@ else if($arr[1]==0 || $arr[2]==0)
             </tr>
             <?php } ?>
         </table>
-             <button class="btn btn-primary" onclick="location.href='tyres2.php'" value="Continue" >CONTINUE</button> 
+            <button class="btn btn-primary" onclick="location.href='braking2.php'" value="Continue" >CONTINUE</button>
+            <button class="btn btn-primary" onclick="location.href='spoilers2.php'" value="Back" >BACK</button>
             </div>
-            
-	</body>
+        </body>
 </html>

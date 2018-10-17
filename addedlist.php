@@ -37,13 +37,14 @@ if($arr[0]==1)
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="auto_submit.js"></script>
     </head>  
     <body>
       <?php 
       include 'header.php';
       ?>
         <div class="container">
-        
+            <div><h2>Registration closes in <span id="time"></span></h2></div>
         <table class="table table-hover">
                 <tr>
                     <td class="text-danger"><b>Item Number</b></td>
@@ -98,7 +99,20 @@ if($arr[0]==1)
                     <td></td>
                     <td>Total</td>
                 <td><?php echo $sum; }   ?></td>
-                <td><input type="button" class="btn btn-primary" onclick="location.href='success1.php'" value="Confirm" /></td>
+                <?php
+                $uid=$_SESSION['id'];
+                $sel="Select COUNT(DISTINCT type) from items_users where userid='$uid'";
+                $selres=mysqli_query($con,$sel) or diemysqli_error($con);
+                $arr=mysqli_fetch_array($selres);
+                
+                if($arr[0]==11){
+               ?>
+                 <td><input type="button" class="btn btn-primary" onclick="location.href='success1.php'" value="Confirm" /></td>
+                <?php 
+                }
+                
+                ?>
+               
                     
                 </tr>
             </table>

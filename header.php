@@ -56,8 +56,10 @@
      
           <li><a href="signup.php">SIGN-UP<span class="glyphicon glyphicon-user"></span></a></li>
           <li><A href="login.php">LOGIN<span class="glyphicon glyphicon-log-in"></span></a></li>
+           </ul>
       <?php }
  else {?>
+           <ul class="nav navbar-nav navbar-right">
           <li><a href="settings.php">SETTINGS</a></li>
               <li><a href="logout.php">LOGOUT<span class="glyphicon glyphicon-log-out"></span></a></li>
              

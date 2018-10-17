@@ -517,6 +517,7 @@ else if($arr[1]==0 || $arr[2]==0 || $arr[3]==0)
             </tr>
             <?php } ?>
         </table>
-            </div>    
+            </div>   
+             <button class="btn btn-primary" onclick="location.href='tyres4.php'" value="Continue" >CONTINUE</button> 
 	</body>
 </html>

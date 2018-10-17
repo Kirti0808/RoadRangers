@@ -99,8 +99,17 @@ else if($arr[1]==0 || $arr[2]==0)
                     <td></td>
                     <td>Total</td>
                 <td><?php echo $sum; }   ?></td>
-                <td><input type="button" class="btn btn-primary" onclick="location.href='success2.php'" value="Confirm" /></td>
-                    
+              <?php
+                $uid=$_SESSION['id'];
+                $sel="Select COUNT(DISTINCT type) from items_users where id='$uid'";
+                $selres=mysqli_query($con,$sel) or diemysqli_error($con);
+                $arr=mysqli_fetch_array($selres);
+                if($arr[0]==11){
+               ?>
+                 <td><input type="button" class="btn btn-primary" onclick="location.href='success1.php'" value="Confirm" /></td>
+                <?php 
+                }
+               ?>
                 </tr>
             </table>
         </div>

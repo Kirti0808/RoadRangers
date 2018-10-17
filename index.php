@@ -139,8 +139,7 @@ require 'includes/common.php';
 				<h1 class="codrops-header__title">SOCIETY OF AUTOMOTIVE ENGINEERS</h1>
                                 
 				<div class="subject">AAVISHKAR 2.0 
-				<img src="img4.jpg" width="100px" height="100px" />
-                                </div>
+				</div>
                                 <button class="btn btn--info btn--toggle">
 					<svg class="icon icon--info"><use xlink:href="#icon-info"></use></svg>
 					<svg class="icon icon--cross"><use xlink:href="#icon-cross"></use></svg>	
@@ -195,13 +194,13 @@ require 'includes/common.php';
 						</ul>
 				</div>
 				<div class="overlay overlay--info">
-                                    <p class="info">&ldquo;Buy and Win&rdquo; an event in which one has to use his technical knowledge and also optimization skills to make the best possible car out of the given budget in a specified track. The event will be held in 4 rounds, each of which will be on a specific track. The participant will be dealt with a certain fixed budget at the beginning which may vary depending on their performance in the Autoquiz event. For the first round, the participant will have to buy one part from each type, each of which is associated with a specific rating. The rating will remain confidential throughout the event and will vary depending on the track. It should also be noted that higher price might not guarantee a higher rating. After buying all the desired parts, participants need to confirm and submit. Once submitted, the rankings of the round will be shown after 1 hour. Rankings will be done on the basis of total ratings. There will also be a separate table which will be made on the basis of total ratings of all the rounds thus completed. <b>Once a part if bought in round 1 is sold in subsequent rounds(i.e, in 2,3,4), the amount that it would be sold for would be 50% of the price the participant bought it for.</b> Also the budget for rounds 2 and above will be the budget unused plus the money awarded on the basis of their rankings in the previous rounds.      </p>
+                                    <p class="info">&ldquo;Roadrangers&rdquo; an event in which one has to use his technical knowledge and also optimization skills to make the best possible car out of the given budget in a specified track. The event will be held in 4 rounds, each of which will be on a specific track. The participant will be dealt with a certain fixed budget at the beginning which may vary depending on their performance in the Autoquiz event. For the first round, the participant will have to buy one part from each type, each of which is associated with a specific rating. The rating will remain confidential throughout the event and will vary depending on the track. It should also be noted that higher price mig ht not guarantee a higher rating. After buying all the desired parts, participants need to confirm and submit. Once submitted, the rankings of the round will be shown after 1 hour. Rankings will be done on the basis of total ratings. There will also be a separate table which will be made on the basis of total ratings of all the rounds thus completed. <b>Once a part if bought in round 1 is sold in subsequent rounds(i.e, in 2,3,4), the amount that it would be sold for would be 50% of the price the participant bought it for.</b> Also the budget for rounds 2 and above will be the budget unused plus the money awarded on the basis of their rankings in the previous rounds.      </p>
 				</div>
 			</header>
 			<h4 class="location">NIT DURGAPUR</h4>
 			<div class="slides">
 				<div class="slide">
-					<h4 class="slide__name">Buy and Win <br/></h4>
+					<h4 class="slide__name">Roadrangers <br/></h4>
 					<h3 class="slide__title">
 						<span>&ldquo;Make the best possible car with the given budget&rdquo;</span>
 					<!--	<div class="slide__number">Room <strong>Tenjin</strong></div> -->
