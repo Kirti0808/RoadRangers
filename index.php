@@ -177,7 +177,7 @@ require 'includes/common.php';
                                               else if($arr[0]=='1' && $arr[1]=='1' && $arr[2]=='1' && $arr[3]=='1') { ?>
                                               <li class="menu__item"><a class="menu__link" href="success4.php">PLAY ROUND 4</a></li>
                                             <?php } ?>
-                                              <li class="menu__item"><a class="menu__link" href="autoquiz.php?id=<?php echo $i; ?> ">Autoquiz</a></li>
+                                              <li class="menu__item"><a class="menu__link" href="autoquiz1.php?id=<?php echo $i; ?> ">Autoquiz</a></li>
                                               <li class="menu__item"><a class="menu__link" href="autoquiz_leaderboard.php ">Autoquiz Leaderboard</a></li>
                                               <li class="menu__item"><a class="menu__link" href="leaderboard.php">Leaderboard</a></li>
                                               <li class="menu__item"><a class="menu__link" href="logout.php">Logout</a></li>

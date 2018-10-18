@@ -6,7 +6,7 @@ require 'includes/common.php';
         <title>index</title>
         <style>
             body{
-                background: url(img2.jpg) no-repeat center;
+                background: url(img8.jpg) no-repeat center;
                 background-size: cover;
             }
             table th,td{
@@ -31,18 +31,21 @@ require 'includes/common.php';
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="auto-submit2.js"></script>
     </head>  
     <body>
        <?php 
        include 'header.php';
        ?>
         <div class="container">
+             <div><h2 style="color:#3498DB   ; float: right; font-family: Verdana, Arial, Helvetica, sans-serif"><b>Time left: <span id="time" class="text-danger"></span></b></h2></div>
+        
         <table class="table table-hover">
                 <tr>
-                    <td class="text-danger"><b>Item Number</b></td>
-                    <td class="text-danger"><b>Item Name</b></td>
-                    <td class="text-danger"><b>Type</b></td>
-                    <td class="text-danger"><b>COST</b></td>
+                    <td class="text-primary"><b>Item Number</b></td>
+                    <td class="text-primary"><b>Item Name</b></td>
+                    <td class="text-primary"><b>Type</b></td>
+                    <td class="text-primary"><b>COST</b></td>
                 <td></td>
                 </tr>
        
@@ -76,22 +79,23 @@ require 'includes/common.php';
         ?>
 
                 <tr>
-                    <td><?php echo $c; ?></td>
-                    <td><?php echo $row[1]; ?></td>
-                    <td><?php echo $row[2];   ?></td>
-    <td><?php echo $row[3]; }?></td> 
-                    <td class="text primary"> Confirmed!</td>
+                    <td class="text-danger"><?php echo $c; ?></td>
+                    <td class="text-danger"><?php echo $row[1]; ?></td>
+                    <td class="text-danger"><?php echo $row[2];   ?></td>
+    <td class="text-danger"><?php echo $row[3];?></td> 
+                    <td class="text-primary"> Confirmed!</td>
+    <?php } ?>
                 </tr>
                 <tr>
                     <td></td>
                     <td></td>
-                    <td>Total</td>
-    <td><?php echo $sum; }  ?></td>
+                    <td class="text-danger">Total</td>
+    <td class="text-primary"><?php echo $sum; }  ?></td>
                     <td></td>
                     
                 </tr>
             </table>
-        <h3>Your rating for this round is: <?php echo $r; ?></h3>
+        <h3 class="text-danger">Your rating for this round is: <?php echo $r; ?></h3>
         <?php
        
         $upd="Update users set points2='$r' where id='$user_id'";
@@ -128,7 +132,7 @@ require 'includes/common.php';
          
       <div class="container">
          <div class="jumbotron">
-             <h3>Congratulations! You've qualified for next round! </h3>
+             <h3 class="text-danger">Congratulations! You've qualified for next round! </h3>
              <?php
              $upd="Update users set qual2=1 where id='$uid'";
          $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
@@ -148,7 +152,7 @@ require 'includes/common.php';
       </div>
          <div class="container">
          <div class="jumbotron" >
-        <h3>
+        <h3 class="text-danger">
             Sorry! You've been eliminated!
         </h3>
 </div>

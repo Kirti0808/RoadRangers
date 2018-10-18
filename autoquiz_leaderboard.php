@@ -25,9 +25,10 @@ $email=$_SESSION['email'];
           text-align: center;
           position: relative;
       }
-      body{
+     body{
       background: url(img4.jpg) no-repeat center;
-      background-size: cover;
+      background-size: 100% 130%;
+      background-position-y: 5px;
       }
       td,th{
            padding: 30px;

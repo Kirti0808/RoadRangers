@@ -6,7 +6,7 @@ require 'includes/common.php';
         <title>index</title>
         <style>
             body{
-                background: url(img2.jpg) no-repeat center;
+                background: url(img11.jpg) no-repeat center;
                 background-size: cover;
             }
             table th,td{
@@ -39,10 +39,10 @@ require 'includes/common.php';
         <div class="container">
         <table class="table table-hover">
                 <tr>
-                    <td class="text-danger"><b>Item Number</b></td>
-                    <td class="text-danger"><b>Item Name</b></td>
-                    <td class="text-danger"><b>Type</b></td>
-                    <td class="text-danger"><b>COST</b></td>
+                    <td class="text-primary"><b>Item Number</b></td>
+                    <td class="text-primary"><b>Item Name</b></td>
+                    <td class="text-primary"><b>Type</b></td>
+                    <td class="text-primary"><b>COST</b></td>
                 <td></td>
                 </tr>
        
@@ -76,22 +76,22 @@ require 'includes/common.php';
         ?>
 
                 <tr>
-                    <td><?php echo $c; ?></td>
-                    <td><?php echo $row[1]; ?></td>
-                    <td><?php echo $row[2];   ?></td>
-    <td><?php echo $row[3]; }?></td> 
-                    <td class="text primary"> Confirmed!</td>
+                    <td class="text-danger"><?php echo $c; ?></td>
+                    <td class="text-danger"><?php echo $row[1]; ?></td>
+                    <td class="text-danger"><?php echo $row[2];   ?></td>
+    <td class="text-danger"><?php echo $row[3]; ?></td> 
+    <td class="text-primary"> Confirmed!</td> <?php } ?>
                 </tr>
                 <tr>
                     <td></td>
                     <td></td>
-                    <td>Total</td>
-    <td><?php echo $sum; }  ?></td>
+                    <td class="text-danger">Total</td>
+    <td class="text-primary"><?php echo $sum; }  ?></td>
                     <td></td>
                     
                 </tr>
             </table>
-        <h3>Your rating for this round is: <?php echo $r; ?></h3>
+        <h3 class="text-danger">Your rating for this round is: <?php echo $r; ?></h3>
         <?php
        
         $upd="Update users set points4='$r' where id='$user_id'";

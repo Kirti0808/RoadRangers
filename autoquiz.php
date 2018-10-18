@@ -32,7 +32,8 @@ if($row[0]=='1')
       }
       body{
       background: url(img4.jpg) no-repeat center;
-      background-size: cover;
+      background-size: 100% 130%;
+      background-position-y: 5px;
       }
       #ghi{
           color: red;
@@ -45,16 +46,18 @@ if($row[0]=='1')
           margin-top: 15%;
           margin-right: 50%;
           margin: 25px solid;
-          border: 1px solid;
+          
           padding: 25px;
           
       }
   </style>      
   <title>Fabricate your dream </title>
     </head>
+    <?php
+        include 'header.php';
+        ?>
     <body>
         <?php
-        include 'header.php';
         include 'if_answered.php';
         ?>
         <div class="container">
@@ -77,21 +80,21 @@ if($row[0]=='1')
                      <?php
                  if(if_answered($qid))
                  {?>
-                 <input name="submit" class="btn btn-primary disabled" value="SUBMIT"/>
-                  <input type='button' class="btn btn-primary " value="Go to Next Question" onclick="location.href='autoquiz.php?id=<?php echo $qid+1; ?>'"/>
+                 <input name="submit" class="btn btn-primary disabled" style="font-family: Georgia, serif;" value="SUBMIT"/>
+                  <input type='button' class="btn btn-primary " value="Go to Next Question" style="font-family: Georgia, serif;" onclick="location.href='autoquiz.php?id=<?php echo $qid+1; ?>'"/>
                   <br/>
                   <br />
                   
                  <h3 id="def"></h3>
                  <?php }    
                  else { ?>
-                     <input name="submit" type="submit" class="btn btn-primary" value="SUBMIT" />
+                 <input name="submit" type="submit" class="btn btn-primary" style="font-family: Georgia, serif;" value="SUBMIT" />
                      
                 <?php } ?>
                 
                      
             </form>
-                <button class="btn btn-primary" onclick="location.href='autoquiz_submit.php'" > FINAL SUBMIT </button> 
+                <button class="btn btn-primary" style="font-family: Georgia, serif;" onclick="location.href='autoquiz_submit.php'" > FINAL SUBMIT </button> 
                      
       
         </div>

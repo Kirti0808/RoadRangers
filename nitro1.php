@@ -20,12 +20,13 @@ else if($arr[1]==0)
                  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="auto_submit.js"></script>
 		
 	</head>
         <style>
             body{
-                background: url(img1.jpg) no-repeat center;
-                background-size: cover;
+                background: url(img5.jpg) no-repeat center;
+                
             }
              table th,td{
                 text-align: center;
@@ -54,9 +55,10 @@ else if($arr[1]==0)
         ?>
             <br />
             <div class="container">
+                 <div><h2 style="color:#3498DB   ; float: right; font-family: Verdana, Arial, Helvetica, sans-serif"><b>Time left: <span id="time" class="text-danger"></span></b></h2></div>
        <div class="btn-group">
         
-       <input type="button"  float="right" class="btn btn-warning" onclick="location.href='addedlist.php'" value="CHECK ADDED ITEMS"/>
+       <input type="button"  float="right" class="btn btn-primary" onclick="location.href='addedlist.php'" value="CHECK ADDED ITEMS"/>
        </div>
                 <?php
         $userid=$_SESSION['id'];
@@ -65,9 +67,9 @@ else if($arr[1]==0)
         $row=mysqli_fetch_array($sel_query_res);
         ?>
        
-            <h2 class="text-danger">Balance:<?php echo $row[0];?></h2>
+            <h2 class="text-danger" style="font-family:Verdana, Arial, Helvetica, sans-serif;">Balance:<?php echo $row[0];?></h2>
         
-        <h4 style="font-family: Times, Times New Roman, serif; font-size: 2em;">
+        <h4 style="font-family: Times, Times New Roman, serif; font-size: 2em;" class="text-danger">
             11. NITROBOOSTER
             </h4>
         <table class="table table-hover">

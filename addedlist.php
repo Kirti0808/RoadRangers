@@ -13,7 +13,7 @@ if($arr[0]==1)
         <title>index</title>
         <style>
              body{
-                background: url(img1.jpg) no-repeat center;
+                background: url(img5.jpg) no-repeat center;
                 background-size: cover;
             }
             table th,td{
@@ -44,19 +44,20 @@ if($arr[0]==1)
       include 'header.php';
       ?>
         <div class="container">
-            <div><h2>Registration closes in <span id="time"></span></h2></div>
+           <div><h2 style="color:#3498DB   ; float: right; font-family: Verdana, Arial, Helvetica, sans-serif"><b>Time left: <span id="time" class="text-danger"></span></b></h2></div>
+   
         <table class="table table-hover">
                 <tr>
-                    <td class="text-danger"><b>Item Number</b></td>
-                    <td class="text-danger"><b>Item Name</b></td>
-                    <td class="text-danger"><b>Type</b></td>
-                    <td class="text-danger"><b>COST</b></td>
+                    <td class="text-primary"><b>Item Number</b></td>
+                    <td class="text-primary"><b>Item Name</b></td>
+                    <td class="text-primary"><b>Type</b></td>
+                    <td class="text-primary"><b>COST</b></td>
                 <td></td>
                 </tr>
         
                     <br />
        <div class="btn-group">
-        <input type="button" class="btn btn-warning" onclick="location.href='shop.php'" value="FIND ITEMS"/>
+        <input type="button" class="btn btn-primary" onclick="location.href='shop.php'" value="FIND ITEMS"/>
        
        </div>
                     <br />
@@ -88,17 +89,17 @@ if($arr[0]==1)
         ?>
 
                 <tr>
-                    <td><?php echo $c; ?></td>
-                    <td><?php echo $row[1]; ?></td>
-                    <td><?php echo $row[2];   ?></td>
-                    <td><?php echo $row[3]; ?></td> 
-    <td> <a href='removeitem.php?id=<?php echo $row[0]?>' class='remove_item_link'> Remove</a><?php } ?></td>
+                    <td class="text-danger"><?php echo $c; ?></td>
+                    <td class="text-danger"><?php echo $row[1]; ?></td>
+                    <td class="text-danger"><?php echo $row[2];   ?></td>
+                    <td class="text-danger"><?php echo $row[3]; ?></td> 
+    <td class="text-danger"> <a href='removeitem.php?id=<?php echo $row[0]?>' class='remove_item_link'> Remove</a><?php } ?></td>
                 </tr>
                 <tr>
                     <td></td>
                     <td></td>
-                    <td>Total</td>
-                <td><?php echo $sum; }   ?></td>
+                    <td class="text-danger">Total</td>
+                <td class="text-primary"><?php echo $sum; }   ?></td>
                 <?php
                 $uid=$_SESSION['id'];
                 $sel="Select COUNT(DISTINCT type) from items_users where userid='$uid'";

@@ -15,7 +15,7 @@ else if($arr[1]==0 || $arr[2]==0 || $arr[3]==0)
         <title>index</title>
         <style>
             body{
-                background: url(img2.jpg) no-repeat center;
+                background: url(img11.jpg) no-repeat center;
                 background-size: cover;
             }
             table th,td{
@@ -40,24 +40,27 @@ else if($arr[1]==0 || $arr[2]==0 || $arr[3]==0)
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     <script src="auto-submit4.js"></script>
     </head>  
     <body>
       <?php
       include 'header.php';
       ?>
         <div class="container"> 
+            <div><h2 style="color:#3498DB   ; float: right; font-family: Verdana, Arial, Helvetica, sans-serif"><b>Time left: <span id="time" class="text-danger"></span></b></h2></div>
+      
         <table class="table table-hover">
                 <tr>
-                    <td class="text-danger"><b>Item Number</b></td>
-                    <td class="text-danger"><b>Item Name</b></td>
-                    <td class="text-danger"><b>Type</b></td>
-                    <td class="text-danger"><b>COST</b></td>
+                    <td class="text-primary"><b>Item Number</b></td>
+                    <td class="text-primary"><b>Item Name</b></td>
+                    <td class="text-primary"><b>Type</b></td>
+                    <td class="text-primary"><b>COST</b></td>
                 <td></td>
                 </tr>
         
                     <br />
        <div class="btn-group">
-        <input type="button" class="btn btn-warning" onclick="location.href='shop2.php'" value="FIND ITEMS"/>
+        <input type="button" class="btn btn-primary" onclick="location.href='shop2.php'" value="FIND ITEMS"/>
         <br />
        </div>
                     <br />
@@ -88,17 +91,17 @@ else if($arr[1]==0 || $arr[2]==0 || $arr[3]==0)
         ?>
 
                 <tr>
-                    <td><?php echo $c; ?></td>
-                    <td><?php echo $row[1]; ?></td>
-                    <td><?php echo $row[2];   ?></td>
-                    <td><?php echo $row[3]; ?></td> 
-    <td> <a href='removeitem4.php?id=<?php echo $row[0]?>' class='remove_item_link'> Remove</a><?php } ?></td>
+                    <td class="text-danger"><?php echo $c; ?></td>
+                    <td class="text-danger"><?php echo $row[1]; ?></td>
+                    <td class="text-danger"><?php echo $row[2];   ?></td>
+                    <td class="text-danger"><?php echo $row[3]; ?></td> 
+    <td class="text-danger"> <a href='removeitem4.php?id=<?php echo $row[0]?>' class='remove_item_link'> Remove</a><?php } ?></td>
                 </tr>
                 <tr>
                     <td></td>
                     <td></td>
-                    <td>Total</td>
-                <td><?php echo $sum; }   ?></td>
+                    <td class="text-primary">Total</td>
+                <td class="text-danger"><?php echo $sum; }   ?></td>
                 <td><input type="button" class="btn btn-primary" onclick="location.href='success4.php'" value="Confirm" /></td>
                     
                 </tr>
