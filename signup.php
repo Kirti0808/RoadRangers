@@ -292,86 +292,86 @@ input {
 			<div class="scroller">
 				<div class="room room--current">
 					<div class="room__side room__side--back">
-						<img class="room__img" src="img/set4/3.jpg" alt="Some image"/>
-						<img class="room__img" src="img/set4/6.jpg" alt="Some image"/>
+						<img class="room__img" src="img3.jpg" alt="Some image"/>
+						<img class="room__img" src="img4.jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--left">
-						<img class="room__img" src="img/set4/7.jpg" alt="Some image"/>
-						<img class="room__img" src="img/set4/1.jpg" alt="Some image"/>
-						<img class="room__img" src="img/set4/2.jpg" alt="Some image"/>
+						<img class="room__img" src="img5.jpg" alt="Some image"/>
+						<img class="room__img" src="img6.jpg" alt="Some image"/>
+						<img class="room__img" src="img7..jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--right">
-						<img class="room__img" src="img/set4/4.jpg" alt="Some image"/>
-						<img class="room__img" src="img/set4/5.jpg" alt="Some image"/>
-						<img class="room__img" src="img/set4/8.jpg" alt="Some image"/>
+						<img class="room__img" src="img8.jpg" alt="Some image"/>
+						<img class="room__img" src="img9.jpg" alt="Some image"/>
+						<img class="room__img" src="img10.jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--bottom"></div>
 				</div><!-- /room -->
 				<div class="room">
 					<div class="room__side room__side--back">
-						<img class="room__img" src="img/set2/1.jpg" alt="Some image"/>
-						<img class="room__img" src="img/set2/6.jpg" alt="Some image"/>
+						<img class="room__img" src="img11.jpg" alt="Some image"/>
+						<img class="room__img" src="img6.jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--left">
-						<img class="room__img" src="img/set2/3.jpg" alt="Some image"/>
-						<img class="room__img" src="img/set2/4.jpg" alt="Some image"/>
-						<img class="room__img" src="img/set2/5.jpg" alt="Some image"/>
+						<img class="room__img" src="img5.jpg" alt="Some image"/>
+						<img class="room__img" src="img6.jpg" alt="Some image"/>
+						<img class="room__img" src="img7.jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--right">
-						<img class="room__img" src="img/set2/8.jpg" alt="Some image"/>
-						<img class="room__img" src="img/set2/7.jpg" alt="Some image"/>
-						<img class="room__img" src="img/set2/2.jpg" alt="Some image"/>
+						<img class="room__img" src="img8.jpg" alt="Some image"/>
+						<img class="room__img" src="img7.jpg" alt="Some image"/>
+						<img class="room__img" src="img9.jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--bottom"></div>
 				</div><!-- /room -->
 				<div class="room">
 					<div class="room__side room__side--back">
-						<img class="room__img" src="img/set3/1.jpg" alt="Some image"/>
-						<img class="room__img" src="img/set3/6.jpg" alt="Some image"/>
+						<img class="room__img" src="img11.jpg" alt="Some image"/>
+						<img class="room__img" src="img6.jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--left">
-						<img class="room__img" src="img/set3/3.jpg" alt="Some image"/>
-						<img class="room__img" src="img/set3/4.jpg" alt="Some image"/>
-						<img class="room__img" src="img/set3/5.jpg" alt="Some image"/>
+						<img class="room__img" src="img3.jpg" alt="Some image"/>
+						<img class="room__img" src="img4.jpg" alt="Some image"/>
+						<img class="room__img" src="img5.jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--right">
-						<img class="room__img" src="img/set3/8.jpg" alt="Some image"/>
-						<img class="room__img" src="img/set3/7.jpg" alt="Some image"/>
-						<img class="room__img" src="img/set3/2.jpg" alt="Some image"/>
+						<img class="room__img" src="img9.jpg" alt="Some image"/>
+						<img class="room__img" src="img8.jpg" alt="Some image"/>
+						<img class="room__img" src="img7.jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--bottom"></div>
 				</div><!-- /room -->
 				<div class="room">
 					<div class="room__side room__side--back">
-						<img class="room__img" src="img/set1/3.jpg" alt="Some image"/>
-						<img class="room__img" src="img/set1/6.jpg" alt="Some image"/>
+						<img class="room__img" src="img4.jpg" alt="Some image"/>
+						<img class="room__img" src="img6.jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--left">
-						<img class="room__img" src="img/set1/7.jpg" alt="Some image"/>
-						<img class="room__img" src="img/set1/1.jpg" alt="Some image"/>
-						<img class="room__img" src="img/set1/2.jpg" alt="Some image"/>
+						<img class="room__img" src="img6.jpg" alt="Some image"/>
+						<img class="room__img" src="img10.jpg" alt="Some image"/>
+						<img class="room__img" src="img9.jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--right">
-						<img class="room__img" src="img/set1/4.jpg" alt="Some image"/>
-						<img class="room__img" src="img/set1/5.jpg" alt="Some image"/>
-						<img class="room__img" src="img/set1/8.jpg" alt="Some image"/>
+						<img class="room__img" src="img4.jpg" alt="Some image"/>
+						<img class="room__img" src="img5.jpg" alt="Some image"/>
+						<img class="room__img" src="img8.jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--bottom"></div>
 				</div><!-- /room -->
 				<div class="room">
 					<div class="room__side room__side--back">
-						<img class="room__img" src="img/set5/7.jpg" alt="Some image"/>
-						<img class="room__img" src="img/set5/5.jpg" alt="Some image"/>
+						<img class="room__img" src="img9.jpg" alt="Some image"/>
+						<img class="room__img" src="img5.jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--left">
-						<img class="room__img" src="img/set5/6.jpg" alt="Some image"/>
-						<img class="room__img" src="img/set5/4.jpg" alt="Some image"/>
-						<img class="room__img" src="img/set5/3.jpg" alt="Some image"/>
+						<img class="room__img" src="img8.jpg" alt="Some image"/>
+						<img class="room__img" src="img6.jpg" alt="Some image"/>
+						<img class="room__img" src="img5.jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--right">
-						<img class="room__img" src="img/set5/2.jpg" alt="Some image"/>
-						<img class="room__img" src="img/set5/1.jpg" alt="Some image"/>
-						<img class="room__img" src="img/set5/8.jpg" alt="Some image"/>
+						<img class="room__img" src="img5.jpg" alt="Some image"/>
+						<img class="room__img" src="img11.jpg" alt="Some image"/>
+						<img class="room__img" src="img8.jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--bottom"></div>
 				</div><!-- /room -->
@@ -383,8 +383,8 @@ input {
 					<a class="codrops-icon codrops-icon--prev" href="http://saenitd.com" title="LINK TO SAE"><svg class="icon icon--arrow"><use xlink:href="#icon-arrow"></use></svg></a>
 					<a class="codrops-icon codrops-icon--drop" href="https://avskr.in/" title="LINK TO AAVISHKAR 2.0"><svg class="icon icon--drop"><use xlink:href="#icon-drop"></use></svg></a>
 				</div>
-				<h1 class="codrops-header__title">SOCIETY OF AUTOMOTIVE ENGINEERS</h1>
-				<div class="subject">AAVISHKAR 2.0</div>
+				<h1 class="codrops-header__title" style="font-size:1.5em;">SOCIETY OF AUTOMOTIVE ENGINEERS</h1>
+				<div class="subject" style="font-size:2.5em; color:#7FB3D5  ;" >AAVISHKAR 2.0</div>
 				<button class="btn btn--info btn--toggle">
 					<svg class="icon icon--info"><use xlink:href="#icon-info"></use></svg>
 					<svg class="icon icon--cross"><use xlink:href="#icon-cross"></use></svg>	
@@ -416,7 +416,7 @@ input {
 						</ul>
 				</div>
 				<div class="overlay overlay--info">
-					<p class="info">&ldquo;Buy and Win&rdquo; an event in which one has to use his technical knowledge and also optimization skills to make the best possible car out of the given budget in a specified track. The event will be held in 4 rounds, each of which will be on a specific track. The participant will be dealt with a certain fixed budget at the beginning which may vary depending on their performance in the Autoquiz event. For the first round, the participant will have to buy one part from each type, each of which is associated with a specific rating. The rating will remain confidential throughout the event and will vary depending on the track. It should also be noted that higher price might not guarantee a higher rating. After buying all the desired parts, participants need to confirm and submit. Once submitted, the rankings of the round will be shown after 1 hour. Rankings will be done on the basis of total ratings. There will also be a separate table which will be made on the basis of total ratings of all the rounds thus completed. <b>Once a part if bought in round 1 is sold in subsequent rounds(i.e, in 2,3,4), the amount that it would be sold for would be 50% of the price the participant bought it for.</b> Also the budget for rounds 2 and above will be the budget unused plus the money awarded on the basis of their rankings in the previous rounds.      </p>
+					<p class="info">&ldquo;ROADRANGERS&rdquo; an event in which one has to use his technical knowledge and also optimization skills to make the best possible car out of the given budget in a specified track. The event will be held in 4 rounds, each of which will be on a specific track. The participant will be dealt with a certain fixed budget at the beginning which may vary depending on their performance in the Autoquiz event. For the first round, the participant will have to buy one part from each type, each of which is associated with a specific rating. The rating will remain confidential throughout the event and will vary depending on the track. It should also be noted that higher price might not guarantee a higher rating. After buying all the desired parts, participants need to confirm and submit. Once submitted, the rankings of the round will be shown after 1 hour. Rankings will be done on the basis of total ratings. There will also be a separate table which will be made on the basis of total ratings of all the rounds thus completed. <b>Once a part if bought in round 1 is sold in subsequent rounds(i.e, in 2,3,4), the amount that it would be sold for would be 50% of the price the participant bought it for.</b> Also the budget for rounds 2 and above will be the budget unused plus the money awarded on the basis of their rankings in the previous rounds.      </p>
 				</div>
 			</header>
                     <div class="slides">
@@ -442,7 +442,7 @@ input {
      
   
 					</h3>
-					<p class="slide__date">31 Mar – 25 Apr 2017</p>
+					<p class="slide__date">2nd November, 2018</p>
 				</div>
 				
 			</div>

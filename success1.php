@@ -33,7 +33,7 @@ require 'includes/common.php';
     </head>  
     <body>
         <?php 
-        include 'header.php';
+        include 'header1.php';
         ?>
         <div class="container">
        
@@ -117,6 +117,7 @@ require 'includes/common.php';
         
          $i=1;
          $k=0;
+         
          $sel1="Select balance,bal1 from users where id='$uid'";
                      $sel_q1=mysqli_query($con,$sel1) or die(mysqli_error($con));
                      $arr=mysqli_fetch_array($sel_q1);

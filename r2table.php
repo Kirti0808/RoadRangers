@@ -37,7 +37,7 @@ require 'includes/common.php';
     <body>
 
         <?php
-        include 'header.php';
+        include 'header1.php';
         ?>
         <div class="container">
         <table class="table table-hover">

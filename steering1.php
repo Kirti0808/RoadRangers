@@ -50,7 +50,7 @@ else if($arr[1]==0)
                                         <?php
                                         include 'ifadded.php';
                                         include 'number_type.php';
-                                        include 'header.php';
+                                        include 'header1.php';
         
         ?>
             <br />

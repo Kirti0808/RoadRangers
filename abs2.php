@@ -19,7 +19,7 @@ else if($arr[1]==0 || $arr[2]==0)
                  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="auto_submit.js"></script>
+  <script src="auto-submit2.js"></script>
 		
 	</head>
         <style>
@@ -49,7 +49,7 @@ else if($arr[1]==0 || $arr[2]==0)
                                         <?php
                                         include 'ifadded.php';
                                         include 'number_type.php';
-                                        include 'header.php';
+                                        include 'header1.php';
         
         ?>
             <br />

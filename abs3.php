@@ -49,7 +49,7 @@ else if($arr[1]==0 || $arr[2]==0 || $arr[3]==0)
                                         <?php
                                         include 'ifadded.php';
                                         include 'number_type.php';
-                                        include 'header.php';
+                                        include 'header1.php';
         
         ?>
             <br />

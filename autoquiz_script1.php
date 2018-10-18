@@ -58,7 +58,7 @@ if($row[0]=='1')
     </head>
     <body>
         <?php
-        include 'header.php';
+        include 'header1.php';
         include 'if_answered.php';
         ?>
         <div class="container">

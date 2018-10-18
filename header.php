@@ -2,9 +2,7 @@
     <head>
         <title>index</title>
         <style>
-            li{
-                font-family: Gill Sans, sans-serif;
-            }
+            
         </style>
         
         <meta charset="UTF-8">
@@ -20,26 +18,27 @@
         $selres=mysqli_query($con,$sel) or die(mysqli_error($con));
         $arr=mysqli_fetch_array($selres);
         ?>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="index.php">HOME</a>
+        <a class="navbar-brand" href="index.php" style="font-family: 'Times New Roman', Times, serif; font-size:2em;"><b>HOME</b></a>
     </div>
        <ul class="nav navbar-nav">
-        <li> 
+        
+           <li style="font-family: 'Times New Roman', Times, serif;"> 
             <?php if($arr[0]=='1'){ ?>
             <a href="r1table.php">ROUND 1 TABLE</a>
       </li>
       
-      <li>
+      <li style="font-family: 'Times New Roman', Times, serif;">
             <?php } if($arr[1]=='1'){ ?>
             <a href="r2table.php">ROUND 2 TABLE</a>
       </li>
-       <li>
+       <li style="font-family: 'Times New Roman', Times, serif;">
             <?php } if($arr[2]=='1'){ ?>
             <a href="r3table.php">ROUND 3 TABLE</a>
       </li>
-       <li>
+       <li style="font-family: 'Times New Roman', Times, serif;">
             <?php } if($arr[3]=='1'){ ?>
             <a href="r4table.php">ROUND 4 TABLE</a>
       </li>
@@ -49,19 +48,19 @@
        </ul>
     
       <div class="collapse navbar-collapse">
-           <ul class="nav navbar-nav navbar-right">
+          
         <?php }
-      if(!isset($_SESSION['email']))
-      { ?>
+        
+             
      
-          <li><a href="signup.php">SIGN-UP<span class="glyphicon glyphicon-user"></span></a></li>
-          <li><A href="login.php">LOGIN<span class="glyphicon glyphicon-log-in"></span></a></li>
-           </ul>
-      <?php }
- else {?>
+if(isset($_SESSION['email'])) {?>
+            <li style="font-family: 'Times New Roman', Times, serif;"> 
+            
+            <a href="autoquiz_leaderboard.php">AUTOQUIZ LEADERBOARD</a>
+      </li>
            <ul class="nav navbar-nav navbar-right">
-          <li><a href="settings.php">SETTINGS</a></li>
-              <li><a href="logout.php">LOGOUT<span class="glyphicon glyphicon-log-out"></span></a></li>
+          <li style="font-family: 'Times New Roman', Times, serif"><a href="settings.php">SETTINGS</a></li>
+              <li style="font-family: 'Times New Roman', Times, serif"><a href="logout.php">LOGOUT<span class="glyphicon glyphicon-log-out"></span></a></li>
              
           </ul>
           <?php

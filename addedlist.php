@@ -41,7 +41,7 @@ if($arr[0]==1)
     </head>  
     <body>
       <?php 
-      include 'header.php';
+      include 'header1.php';
       ?>
         <div class="container">
            <div><h2 style="color:#3498DB   ; float: right; font-family: Verdana, Arial, Helvetica, sans-serif"><b>Time left: <span id="time" class="text-danger"></span></b></h2></div>

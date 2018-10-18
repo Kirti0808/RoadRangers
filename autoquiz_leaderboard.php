@@ -43,7 +43,7 @@ $email=$_SESSION['email'];
     <body>
         
         <?php
-        include 'header.php';
+        include 'header1.php';
         $c=1;
         $sel="Select name,score from users order by score desc";
         $selres=mysqli_query($con,$sel);    

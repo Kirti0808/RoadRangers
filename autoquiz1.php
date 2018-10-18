@@ -59,7 +59,7 @@ if($row[0]=='1')
   <title>Fabricate your dream </title>
     </head>
     <?php
-        include 'C:/wamp/www/sae_event/header.php';
+        include 'C:/wamp/www/sae_event/header1.php';
         ?>
     <body>
         <?php
@@ -67,32 +67,31 @@ if($row[0]=='1')
         ?>
         <div class="container">
            <h1 style="text-align:center; font-family: 'Georgia', serif; color:#CB4335  ;">AUTOQUIZ</h1>
-           <div class="card">
+           
            <?php
            $sel="Select question from quiz where id='$qid'";
            $sel_query=mysqli_query($con,$sel) or die(mysqli_error($con));
            $arr=mysqli_fetch_array($sel_query);
            ?>
+           <div>
+                <span><label for="name"> <p style="font-family:Bradley Hand, cursive; font-size:1.7em; color: #E74C3C    ;"><?php echo $qid.".".$arr['question']; $GLOBALS['qid']=$qid; ?></p>
+          </label></span>
              <form id="sign-form" class="sign-form"  method="POST" action="autoquiz_script1.php?id=<?php echo $qid; ?>">
                 <ol class="questions">
                     <li>
-                        <span><label for="name"> <p style="font-family:Bradley Hand, cursive; font-size:1.7em; color: #E74C3C    ;"><?php echo $qid.".".$arr['question']; $GLOBALS['qid']=$qid; ?></p>
-          </label></span>
-						<input class="active" id="name" name="ans" type="text" placeholder="Type your answer here!" style="font-size: 1.3em;" autofocus/>
+                       
+						<input class="active" id="name" name="ans" type="text" placeholder="Type your answer here!" style="font-size: 1.3em; font-family:Bradley Hand, cursive; font-size:1.7em; color: #1678B9    ;" autofocus/>
                     </li>
                   
                     
                 </ol>
           
-               <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
-
-  
-
-    <script  src="js1/index.js"></script>
+            
+           
+           <br />
             <br />
-            <br />
-               
-                 
+           
+       
                      <?php
                  if(if_answered($qid))
                  {?>
@@ -105,17 +104,23 @@ if($row[0]=='1')
                  <?php }    
                  else { ?>
                  <input name="submit" type="submit" class="btn btn-primary" style="font-family: Georgia, serif;" value="SUBMIT" />
+                  <button class="btn btn-primary" style="font-family: Georgia, serif;" onclick="location.href='autoquiz_submit.php'" > FINAL SUBMIT </button> 
+                     
                      
                 <?php } ?>
-                
-               <br />
-               <br />
-                <button class="btn btn-primary" style="font-family: Georgia, serif;" onclick="location.href='autoquiz_submit.php'" > FINAL SUBMIT </button> 
-                     
-            
-            </form>
+            </form>     
+              
                
-        </div>
+               <br />
+        </div>            
+             <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+
+  
+
+    <script  src="js1/index.js"></script
+            
+               
+        
             <br />
         </div>
         
