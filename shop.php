@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php 
-require 'includes/common.php';
+require '/includes/common.php';
 $uid=$_SESSION['id'];
 $sel="Select submit1,qual,qual2,qual3 from users where id='$uid'";
 $sel_res=mysqli_query($con,$sel) or die(mysqli_error($con));
@@ -9,7 +9,7 @@ if($arr[0]==1)
     header('Location:index.php');
 else if($arr[1]==0)
 { 
-   header('Location: index.php');
+   header('Location:index.php');
  }
 
 ?>

@@ -162,10 +162,10 @@ $( document ).ready(function() {
 	<ul class="nav">
 		<li>
 			
-                        <a href='index.php'>HOME</a>
+                        <a href='../index.php'>HOME</a>
 		</li>
 		<li>
-                    <a href='autoquiz/autoquiz_leaderboard.php'>	Autoquiz Leaderboard</a>
+                    <a href='autoquiz_leaderboard.php'>	Autoquiz Leaderboard</a>
 					
 		</li>
 		<li>
@@ -179,9 +179,9 @@ $( document ).ready(function() {
                         <a href='r3table.php'>	<li>ROUND 3 TABLE</li></a>
                                   <?php } if($arr[3]=='1'){ ?>
                         <a href='r4table.php'> <li>ROUND 4 TABLE</li></a>
-                                 <?php } if($arr[0]=='1' || $arr[1]=='1' || $arr[2]=='1' || $arr[3]=='1') { ?>
-                        <a href='leaderboard.php'> <li>LEADERBOARD</li></a>
                                  <?php } ?>
+                        <a href='leaderboard.php'> <li>LEADERBOARD</li></a>
+                                 
 			</ul>			
 		</li>
 		<li>

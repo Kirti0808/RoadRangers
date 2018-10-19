@@ -291,86 +291,86 @@ input {
 			<div class="scroller">
 					<div class="room room--current">
 					<div class="room__side room__side--back">
-						<img class="room__img" src="img3.jpg" alt="Some image"/>
-						<img class="room__img" src="img4.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img3.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img4.jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--left">
-						<img class="room__img" src="img5.jpg" alt="Some image"/>
-						<img class="room__img" src="img6.jpg" alt="Some image"/>
-						<img class="room__img" src="img7..jpg" alt="Some image"/>
+						<img class="room__img" src="img/img5.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img6.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img7..jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--right">
-						<img class="room__img" src="img8.jpg" alt="Some image"/>
-						<img class="room__img" src="img9.jpg" alt="Some image"/>
-						<img class="room__img" src="img10.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img8.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img9.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img10.jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--bottom"></div>
 				</div><!-- /room -->
 				<div class="room">
 					<div class="room__side room__side--back">
-						<img class="room__img" src="img11.jpg" alt="Some image"/>
-						<img class="room__img" src="img6.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img11.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img6.jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--left">
-						<img class="room__img" src="img5.jpg" alt="Some image"/>
-						<img class="room__img" src="img6.jpg" alt="Some image"/>
-						<img class="room__img" src="img7.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img5.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img6.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img7.jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--right">
-						<img class="room__img" src="img8.jpg" alt="Some image"/>
-						<img class="room__img" src="img7.jpg" alt="Some image"/>
-						<img class="room__img" src="img9.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img8.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img7.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img9.jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--bottom"></div>
 				</div><!-- /room -->
 				<div class="room">
 					<div class="room__side room__side--back">
-						<img class="room__img" src="img11.jpg" alt="Some image"/>
-						<img class="room__img" src="img6.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img11.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img6.jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--left">
-						<img class="room__img" src="img3.jpg" alt="Some image"/>
-						<img class="room__img" src="img4.jpg" alt="Some image"/>
-						<img class="room__img" src="img5.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img3.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img4.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img5.jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--right">
-						<img class="room__img" src="img9.jpg" alt="Some image"/>
-						<img class="room__img" src="img8.jpg" alt="Some image"/>
-						<img class="room__img" src="img7.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img9.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img8.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img7.jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--bottom"></div>
 				</div><!-- /room -->
 				<div class="room">
 					<div class="room__side room__side--back">
-						<img class="room__img" src="img4.jpg" alt="Some image"/>
-						<img class="room__img" src="img6.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img4.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img6.jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--left">
-						<img class="room__img" src="img6.jpg" alt="Some image"/>
-						<img class="room__img" src="img10.jpg" alt="Some image"/>
-						<img class="room__img" src="img9.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img6.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img10.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img9.jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--right">
-						<img class="room__img" src="img4.jpg" alt="Some image"/>
-						<img class="room__img" src="img5.jpg" alt="Some image"/>
-						<img class="room__img" src="img8.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img4.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img5.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img8.jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--bottom"></div>
 				</div><!-- /room -->
 				<div class="room">
 					<div class="room__side room__side--back">
-						<img class="room__img" src="img9.jpg" alt="Some image"/>
-						<img class="room__img" src="img5.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img9.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img5.jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--left">
-						<img class="room__img" src="img8.jpg" alt="Some image"/>
-						<img class="room__img" src="img6.jpg" alt="Some image"/>
-						<img class="room__img" src="img5.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img8.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img6.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img5.jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--right">
-						<img class="room__img" src="img5.jpg" alt="Some image"/>
-						<img class="room__img" src="img11.jpg" alt="Some image"/>
-						<img class="room__img" src="img8.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img5.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img11.jpg" alt="Some image"/>
+						<img class="room__img" src="img/img8.jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--bottom"></div>
 				</div><!-- /room -->
@@ -406,7 +406,7 @@ input {
                                                 else{ ?>
                                                   
                                                     <br />
-                                              <li class="menu__item"><a class="menu__link" href="shop.php">Shop</a></li>
+                                              <li class="menu__item"><a class="menu__link" href="shop.php">play</a></li>
                                               <br />
                                               <li class="menu__item"><a class="menu__link" href="logout.php">Logout</a></li>
                                               <?php  } ?>

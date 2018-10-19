@@ -1,6 +1,6 @@
 <?php
 
-require 'includes/common.php';
+require '/includes/common.php';
 //$con=mysqli_connect("localhost","root","","store") or die(mysqli_error($con));
 $item_id=$_GET['id'];
 $user_id= $_SESSION['id'];

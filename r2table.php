@@ -45,6 +45,7 @@ require 'includes/common.php';
                     <td class="text-danger"><b>POSITION</b></td>
                     <td class="text-danger"><b>NAME</b></td>
                                        <td class="text-danger"><b>POINTS</b></td>
+                                       <td class="text-danger"><b>BALANCE</b></td>
                 <td></td>
                 </tr>
         <?php
@@ -55,7 +56,7 @@ require 'includes/common.php';
       
         
                 <?php
-        $sel_query="Select name, points2 from users where submit2='1' order by points2 desc";
+        $sel_query="Select name, points2,balance from users where submit2='1' order by points2 desc,balance desc";
         $sel_query_res=mysqli_query($con,$sel_query);
       
         while($row=mysqli_fetch_array($sel_query_res))
@@ -70,6 +71,7 @@ require 'includes/common.php';
                 <td><?php echo $c; ?></td>
                 <td><?php echo $row[0]; ?></td>
                 <td><?php echo $row[1]; ?></td>
+                <td><?php echo $row[2]; ?></td>
                 </tr>
                <?php  } ?>
         </table>
