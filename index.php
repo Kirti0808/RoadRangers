@@ -5,7 +5,7 @@ require 'includes/common.php';
 ?>
 <html lang="en" class="no-js">
 	<head>
-		<meta charset="UTF-8" />
+		
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>SAE ONLINE EVENT</title>
 		<meta name="description" content="An experimental 3D room template that aims to show exhibition details in an interesting way" />
@@ -76,7 +76,7 @@ require 'includes/common.php';
 						<img class="room__img" src="img/img9.jpg" alt="Some image"/>
 					</div>
 					<div class="room__side room__side--bottom"></div>
-				</div><!-- /room -->
+   				</div><!-- /room -->
 				<div class="room">
 					<div class="room__side room__side--back">
 						<img class="room__img" src="img/img11.jpg" alt="Some image"/>
@@ -160,26 +160,26 @@ require 'includes/common.php';
                                               $s=$arr['score'];
                                               $i=($s/10)+1;
                                               if($arr[0]=='0') { ?>
-                                              <li class="menu__item"><a class="menu__link" href="shop.php">PLAY ROUND 1</a></li>
+                                              <li class="menu__item"><a class="menu__link" href="round1/shop.php">PLAY ROUND 1</a></li>
                                               <?php }
                                                else if($arr[0]=='1' &&$arr[1]=='0') { ?>
-                                              <li class="menu__item"><a class="menu__link" href="shop2.php">PLAY ROUND 2</a></li>
+                                              <li class="menu__item"><a class="menu__link" href="round2/shop2.php">PLAY ROUND 2</a></li>
                                               
                                                <?php } 
                                               else if($arr[0]=='1' && $arr[1]=='1' && $arr[2]=='0') { ?>
-                                              <li class="menu__item"><a class="menu__link" href="shop3.php">PLAY ROUND 3</a></li>
+                                              <li class="menu__item"><a class="menu__link" href="round3/shop3.php">PLAY ROUND 3</a></li>
                                               
                                               <?php }
                                               else if($arr[0]=='1' && $arr[1]=='1' && $arr[2]=='1' && $arr[3]=='0') { ?>
-                                              <li class="menu__item"><a class="menu__link" href="shop4.php">PLAY ROUND 4</a></li>
+                                              <li class="menu__item"><a class="menu__link" href="round4/shop4.php">PLAY ROUND 4</a></li>
                                             <?php } 
                                                
                                               else if($arr[0]=='1' && $arr[1]=='1' && $arr[2]=='1' && $arr[3]=='1') { ?>
-                                              <li class="menu__item"><a class="menu__link" href="success4.php">PLAY ROUND 4</a></li>
+                                              <li class="menu__item"><a class="menu__link" href="round4/success4.php">PLAY ROUND 4</a></li>
                                             <?php } ?>
                                               <li class="menu__item"><a class="menu__link" href="autoquiz/autoquiz1.php?id=<?php echo $i; ?> ">Autoquiz</a></li>
                                               <li class="menu__item"><a class="menu__link" href="autoquiz/autoquiz_leaderboard.php ">Autoquiz Leaderboard</a></li>
-                                              <li class="menu__item"><a class="menu__link" href="leaderboard.php">Leaderboard</a></li>
+                                              <li class="menu__item"><a class="menu__link" href="tables/leaderboard.php">Leaderboard</a></li>
                                               <li class="menu__item"><a class="menu__link" href="logout.php">Logout</a></li>
 						
                                             <?php }

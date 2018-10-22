@@ -1,7 +1,12 @@
+
+<?php 
+require 'includes/common.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 	<head>
-		<meta charset="UTF-8" />
+		
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>SAE ONLINE EVENT</title>
 		<meta name="description" content="An experimental 3D room template that aims to show exhibition details in an interesting way" />

@@ -172,15 +172,15 @@ $( document ).ready(function() {
                         TABLES
 			<ul class="dropdown">
                              <?php if($arr[0]=='1'){ ?>
-                            <a href='r1table.php'><li>ROUND 1 TABLE</li>
+                            <a href='../tables/r1table.php'><li>ROUND 1 TABLE</li>
                                  <?php } if($arr[1]=='1'){ ?></a>
-                        <a href='r2table.php'>	<li>ROUND 2 TABLE</li></a>
+                        <a href='../tables/r2table.php'>	<li>ROUND 2 TABLE</li></a>
                                 <?php } if($arr[2]=='1'){ ?>
-                        <a href='r3table.php'>	<li>ROUND 3 TABLE</li></a>
+                        <a href='../tables/r3table.php'>	<li>ROUND 3 TABLE</li></a>
                                   <?php } if($arr[3]=='1'){ ?>
-                        <a href='r4table.php'> <li>ROUND 4 TABLE</li></a>
+                        <a href='../tables/r4table.php'> <li>ROUND 4 TABLE</li></a>
                                  <?php } ?>
-                        <a href='leaderboard.php'> <li>LEADERBOARD</li></a>
+                        <a href='../tables/leaderboard.php'> <li>LEADERBOARD</li></a>
                                  
 			</ul>			
 		</li>

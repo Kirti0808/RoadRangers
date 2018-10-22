@@ -1,7 +1,12 @@
+
 <!DOCTYPE html>
+<?php 
+require 'includes/common.php';
+
+?>
 <html lang="en" class="no-js">
 	<head>
-		<meta charset="UTF-8" />
+		
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<meta name="description" content="An experimental 3D room template that aims to show exhibition details in an interesting way" />

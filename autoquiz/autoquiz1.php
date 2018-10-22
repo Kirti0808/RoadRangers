@@ -1,12 +1,12 @@
 <?php
-require 'C:/wamp/www/sae_event/includes/common.php';
+require '../includes/common.php';
 $qid=$_GET['id'];
 $uid=$_SESSION['id'];
 $se="Select submit from users where id='$uid' ";
 $ser=mysqli_query($con,$se) or die(mysqli_error($con));
 $row=mysqli_fetch_array($ser);
 if($row[0]=='1')
-    header("Location:C:/wamp/www/sae_event/index.php");
+    header("Location:../index.php");
 
 ?>
 <html>
@@ -59,11 +59,11 @@ if($row[0]=='1')
   <title>Fabricate your dream </title>
     </head>
     <?php
-        include 'C:/wamp/www/sae_event/autoquiz/header1.php';
+        include 'header1.php';
         ?>
     <body>
         <?php
-        include 'C:/wamp/www/sae_event/autoquiz/if_answered.php';
+        include 'if_answered.php';
         ?>
         <div class="container">
            <h1 style="text-align:center; font-family: 'Georgia', serif; color:#CB4335  ;">AUTOQUIZ</h1>
