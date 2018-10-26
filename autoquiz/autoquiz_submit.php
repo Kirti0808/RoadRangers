@@ -8,56 +8,55 @@ $email=$_SESSION['email'];
     <head>
        
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style>
-      body{
-          background-color:#E5E7E9;
-      }
-      .caption{
-          position: absolute;
-          left:35%;
-          bottom: 45%;
-      }
-      .container1{
-          text-align: center;
-          position: relative;
-      }
-      body{
-      background: url(img4.jpg) no-repeat center;
-      background-size: 100% 130%;
-      background-position-y: 5px;
-      }
-      td,th{
-           padding: 30px;
-           width: 20%;
-          text-align: center;
-          font-family: 'Gill Sans', sans-serif;
-      }
-      
-  </style>      
+       
+  <script>
+      confirm("Are you sure you want to submit?")
+  </script>
+  <script>
+      (function(window, location) {
+history.replaceState(null, document.title, location.pathname+"#!/history");
+history.pushState(null, document.title, location.pathname);
+
+window.addEventListener("popstate", function() {
+  if(location.hash === "#!/history") {
+    history.replaceState(null, document.title, location.pathname);
+    setTimeout(function(){
+      location.replace("../index.php");
+    },0);
+  }
+}, false);
+}(window, location));
+</script>
+   
   <title>Fabricate your dream </title>
+   <link rel="stylesheet" href="css4/style.css">
+     
     </head>
     <body>
        
         <?php
-        include 'header1.php';
+       
         $c=1;
+        $uid=$_SESSION['id'];
         $sel="Select name,score,submitdate from users order by score desc,submitdate asc";
         $selres=mysqli_query($con,$sel);    
+        $select="Select submitdate from users where id='$uid'";
+        $selre=mysqli_query($con,$select);    
+        $arr=mysqli_fetch_array($selre);
         
         ?>
          <h1 style="text-align:center; font-family: 'Georgia', serif; color:#CB4335  ;">LEADERBOARD</h1>
-        <table class="table table-hover"  >
+        <table >
+            <thead>
             <tr>
-            <th style="text-align: center; color:red; font-family: 'Verdana', sans-serif;">No</th>
-            <th style="text-align: center; color:red;">Name</th>
-            <th style="text-align: center; color:red;">Score</th>
-           <th style="text-align: center; color:red;">Time</th>
+            <th >Position</th>
+            <th>Name</th>
+            <th >Score</th>
+           <th>Time</th>
            
             </tr>
+            </thead>
+            <tbody>
         <?php while($row=mysqli_fetch_array($selres))
         
         
@@ -65,18 +64,19 @@ $email=$_SESSION['email'];
                 { ?>
         
             <tr>
-                <td style="color:#F39C12    ; font-family: 'Verdana', sans-serif;"><b><?php echo $c; ?></b></td>
-                <td style="color:#F39C12    ; font-family: 'Verdana', sans-serif;"><b><?php echo $row['name']; ?></b></td>
+                <td><?php echo $c; ?></td>
+                <td ><?php echo $row['name']; ?></td>
                 
-                <td  style="color:#F39C12    ; font-family: 'Verdana', sans-serif;"><b><?php echo $row['score']; ?></b></td>
-                <td  style="color:#F39C12    ; font-family: 'Verdana', sans-serif;"><b><?php echo $row['submitdate']; ?></b></td>
+                <td ><?php echo $row['score']; ?></td>
+                <td ><?php echo $row['submitdate']; ?></td>
             </tr>
             
         
             <?php 
             $c+=1;
         } ?>
-        </table>
+            </tbody>
+        <table/>
          <?php
          $sel="Select * from users order by score desc, submitdate asc";
          $sel_q=mysqli_query($con,$sel) or die(mysqli_error($con));
@@ -102,7 +102,7 @@ $email=$_SESSION['email'];
              $upd="Update users set qual=1 where id='$uid'";
          $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
          ?>
-             <input type='button' class="btn btn-primary"onclick="location.href='../shop.php'" value="Move to next round" />
+             <input type='button' class="btn btn-primary"onclick="location.href='../round1/shop.php'" value="Move to next round" />
          </div>
          <?php 
                 break;
