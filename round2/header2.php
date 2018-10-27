@@ -11,6 +11,7 @@
                 a{
                     text-decoration: none;
                 }
+               
                 </style>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -50,7 +51,7 @@
 					<li class="ml-2 mb-4 flex">
                                             <a href="../index.php">
 						<img src="./images/home-default.svg" alt="home-icon" class="w-4 h-4 mr-2">
-						<div class="hover:cursor-pointer text-white lg:text-indigo-darkest no-underline font-medium mobile-home-trigger">Home</div>
+						<div style="color:blue;">HOME</div>
                                             </a>
 					</li>
 					<li class="ml-2 mb-4">

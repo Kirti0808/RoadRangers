@@ -59,7 +59,7 @@ else if($arr[1]==0)
 					</div>
                                      <div style="float: right ;">    <b>Time left: <span id="time" class="font-normal"></span></b></div>
 						
-					<button class="bg-indigo-dark hover:bg-indigo-darker text-white text-sm py-2 px-4 rounded-full transition-normal hover:shadow hover:translate-y-1 active:translate-y-1 focus:outline-none" onclick="location.href='addedlist1.php'">Check added list</button>
+					<button class="bg-indigo-dark hover:bg-indigo-darker text-white text-sm py-2 px-4 rounded-full transition-normal hover:shadow hover:translate-y-1 active:translate-y-1 focus:outline-none" onclick="location.href='addedlist.php'">Check added list</button>
 				</div>
                                 <div class="inline-block md:hidden no-underline border-indigo pb-2 px-2 text-sm mr-2 text-indigo-darkest hover:cursor-pointer js-tab relative" data-tab="section-stats">Items</div>
 						
@@ -125,9 +125,15 @@ else if($arr[1]==0)
 							</g>
 						</g>
 					</svg>
+					 <?php
+                                          $uid=$_SESSION['id'];
+                                        $select="Select name from users where id='$uid'";
+                                        $seq=mysqli_query($con,$select) or die(mysqli_error($con));
+                                        $a=mysqli_fetch_array($seq);
+                                        ?>
 					<div class="ml-3">
 						<p>Welcome</p>
-						<p class="text-grey-dark mt-1 text-sm">abc</p>
+						<p class="text-grey-dark mt-1 text-sm"><?php echo $a[0]; ?></p>
 					</div>
 				</div>
                     <?php 

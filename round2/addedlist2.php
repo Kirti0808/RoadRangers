@@ -14,6 +14,8 @@ else if($arr[1]==0 || $arr[2]==0)
 <html >
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Responsive Table</title>
   
   
@@ -44,7 +46,7 @@ else if($arr[1]==0 || $arr[2]==0)
   
 </head>
 <body>
-   
+    <div class="container">
 	 <div>
              <button class="button button3" onclick="location.href='shop2.php'">Find items</button>
              <h2 style="color:#3498DB   ; float: right; font-family: Verdana, Arial, Helvetica, sans-serif"><b>Time left: <span id="time" class="text-danger"></span></b></h2></div>
@@ -116,7 +118,7 @@ else if($arr[1]==0 || $arr[2]==0)
 					</tbody>
     <table/>
       
-   
+    </div>
   
   
 </body>

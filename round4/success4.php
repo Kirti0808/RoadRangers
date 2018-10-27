@@ -5,6 +5,8 @@ require 'includes/common.php';
 <html >
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Responsive Table</title>
   
   
@@ -51,7 +53,7 @@ window.addEventListener("popstate", function() {
 </head>
 <body>
    
-	
+    
           
     <table>			
         <thead>
@@ -113,8 +115,8 @@ window.addEventListener("popstate", function() {
                    
 					</tbody>
     </table>
-      <h3 class="text-danger">Your rating for this round is: <?php echo $r; ?></h3>
-       <button class="button button3" onclick="location.href='../tables/leaderboard.php'">Leaderboard</button>
+      <h2 style="font-family: 'Georgia', serif; color:#CB4335 ;">Your rating for this round <?php echo $r; ?></h2>
+      <button class="button button3" onclick="location.href='../tables/leaderboard.php'">Leaderboard</button>
         <?php
        
         $upd="Update users set points4='$r' where id='$user_id'";
@@ -130,6 +132,47 @@ window.addEventListener("popstate", function() {
          $upd="Update users set submit4='1' where id='$user_id'";
         $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
         ?>
+                <?php
+         $sel="Select * from users order by totalpoints desc";
+         $sel_q=mysqli_query($con,$sel) or die(mysqli_error($con));
+         $uid=$_SESSION['id'];
         
+         $i=0;
+         $k=0;
+         while($row=mysqli_fetch_array($sel_q))
+         {
+             
+             if($i==3)
+                 break;
+             else{
+                 if($_SESSION['id']==$row['id']){
+                     $k=1;
+                 ?>
+         
+      <div class="container">
+         <div class="jumbotron">
+           <h2 style="font-family: 'Georgia', serif; color:#CB4335 ;">Congratulations! You've qualified for final round of Transmission!</h2>
+      
+         </div>
+         <?php 
+                break;
+             }
+             $i+=1;
+             }
+             
+         }
+         ?>
+<?php         if($k!=1){
+    ?>
+      </div>
+         <div class="container">
+         <div class="jumbotron" >
+       <h2 style="font-family: 'Georgia', serif; color:#CB4335  ;">Sorry! You've been eliminated!</h2>
+     
+</div>
+         <?php
+}
+         ?>
+    </div>
     </body>
   </html>

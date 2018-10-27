@@ -3,8 +3,14 @@
 
 <?php
 require 'includes/common.php';
-$qid=$_GET['id'];
-$ans=$_POST['ans'];
+$_SESSION["post_id"] = "";
+if($_POST) {
+    if($_POST["post_id"] != $_SESSION["post_id"]) {
+        $_SESSION["post_id"] = $_POST["post_id"];
+        // do database submission here
+    }
+}
+
 
 $uid=$_SESSION['id'];
 $se="Select submit from users where id='$uid' ";
@@ -51,15 +57,31 @@ window.addEventListener("popstate", function() {
 
     <!-- Custom styles for this template -->
     <link href="css/landing-page.min.css" rel="stylesheet">
+ <script src="autoquiz-submit.js"></script>
+  <script>
+         function confirmation()
+         {
+              if(!confirm("Are you sure you want to submit?"))
+        window.location="../index.php";
+    else
+        window.location="autoquiz_submit.php";
 
+
+         }
+         </script>
+
+     
   </head>
 
   <body>
-
+      
     <!-- Navigation -->
     <nav class="navbar navbar-light bg-light static-top">
       <div class="container">
         <a class="navbar-brand" href="../index.php">HOME</a>
+        <p>Time after which it will automatically submit:
+        <span id="time" class="font-normal"></span>
+        </p> 
         <a class="btn btn-primary" href="autoquiz_leaderboard.php">Autoquiz Leaderboard</a>
       </div>
     </nav>
@@ -69,6 +91,12 @@ window.addEventListener("popstate", function() {
         ?>
         
   <?php         
+
+
+
+$qid=$_GET['id'];
+$ans=$_POST['ans'];
+
 
 
 
@@ -91,7 +119,10 @@ $sel="Select * from users where email='$email'";
 $selres=mysqli_query($con,$sel) or die(mysqli_error($con));
 $row= mysqli_fetch_array($selres);
 $score=$row['score']+10;
-
+date_default_timezone_set('Asia/Kolkata');
+$time = date('Y-m-d H:i:s');
+$upd="Update users set submitdate='$time' where id='$userid'";
+$updq=mysqli_query($con,$upd) or die(mysqli_error($con));
 $up="Update users set score='$score'where email='$email'";
 $GLOBALS['q1']=1;
 $upres=mysqli_query($con,$up) or die(mysqli_error($con));
@@ -106,15 +137,16 @@ $_COOKIE['a']=1;
           </div>
           <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
             <?php  if($qid==1) { ?>
-                <div class="col-12 col-md-6">
+                <div >
                   <button  class="btn btn-block btn-lg btn-primary" onclick="location.href='autoquiz.php?id=<?php echo $qid+1; ?>'" > NEXT QUESTION </button>
                   <br />
-                </div>
-              <button  class="btn btn-block btn-lg btn-primary" onclick="location.href='autoquiz_submit.php'" > FINAL SUBMIT </button>
-               
+                
+              <button  class="btn btn-block btn-lg btn-primary" onclick="confirmation();" > FINAL SUBMIT </button>
+              <br />
+              </div>
                <?php } else
              { ?>
-               <button  class="btn btn-block btn-lg btn-primary" onclick="location.href='autoquiz_submit.php'" > FINAL SUBMIT </button>
+               <button  class="btn btn-block btn-lg btn-primary" onclick="confirmation();" > FINAL SUBMIT </button>
              <?php } ?>
              <button  class="btn btn-block btn-lg btn-primary" onclick="location.href='autoquiz_leaderboard.php'" > LEADERBOARD </button>
       
@@ -141,14 +173,15 @@ else{
           </div>
           <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
             
-                <div class="col-12 col-md-3">
+                <div>
                   <button  class="btn btn-block btn-lg btn-primary" onclick="location.href='autoquiz.php?id=<?php echo $qid; ?>'" > GO BACK</button>
-                <br/>  
-                </div>
+                
+                
              
            
-               <button  class="btn btn-block btn-lg btn-primary" onclick="location.href='autoquiz_submit.php'" > FINAL SUBMIT </button>
-             
+               <button  class="btn btn-block btn-lg btn-primary" onclick="confirmation();" > FINAL SUBMIT </button>
+                <br />
+                </div>
              <button  class="btn btn-block btn-lg btn-primary" onclick="location.href='autoquiz_leaderboard.php'" > LEADERBOARD </button>
       
             

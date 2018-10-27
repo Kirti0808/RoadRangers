@@ -31,15 +31,31 @@ if($row[0]=='1')
 
     <!-- Custom styles for this template -->
     <link href="css/landing-page.min.css" rel="stylesheet">
+     <script src="autoquiz-submit.js"></script>
+     <script>
+         function confirmation()
+         {
+              if(!confirm("Are you sure you want to submit?"))
+        history.go(0);
+    else
+        window.location="autoquiz_submit.php";
+
+
+         }
+         </script>
 
   </head>
 
   <body>
-
+<p>
+                                          </p>
     <!-- Navigation -->
     <nav class="navbar navbar-light bg-light static-top">
       <div class="container">
         <a class="navbar-brand" href="../index.php">HOME</a>
+        <p>Time after which it will automatically submit:
+        <span id="time" class="font-normal"></span>
+        </p>                   
         <a class="btn btn-primary" href="autoquiz_leaderboard.php">Autoquiz Leaderboard</a>
       </div>
     </nav>
@@ -85,15 +101,15 @@ if($row[0]=='1')
                     <br />
                   </div>
                   
+                  </div>
+            </form>
                   
-                  
-                  <button  class="btn btn-block btn-lg btn-primary " onclick="location.href='autoquiz_submit.php'">Final Submit!</button>
+                  <button  class="btn btn-block btn-lg btn-primary " onclick="confirmation();">Final Submit!</button>
                  
                   
                 
                  <?php } ?>
-              </div>
-            </form>
+              
           </div>
         </div>
       </div>

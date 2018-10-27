@@ -5,6 +5,8 @@ require 'includes/common.php';
 <html >
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Responsive Table</title>
   
   
@@ -116,8 +118,8 @@ window.addEventListener("popstate", function() {
                    
 					</tbody>
     </table>
-      <h3 class="text-danger">Your rating for this round is: <?php echo $r; ?></h3>
-         <?php
+       <h2 style="font-family: 'Georgia', serif; color:#3949AB  ;">Your rating for this round is: <?php echo $r; ?> </h2>
+        <?php
        
         $upd="Update users set points2='$r' where id='$user_id'";
         $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
@@ -144,7 +146,7 @@ window.addEventListener("popstate", function() {
          while($row=mysqli_fetch_array($sel_q))
          {
              
-             if($i==3)
+             if($i==15)
                  break;
              else{
                  if($_SESSION['id']==$row['id']){
@@ -153,8 +155,8 @@ window.addEventListener("popstate", function() {
          
       <div class="container">
          <div class="jumbotron">
-             <h3 class="text-danger">Congratulations! You've qualified for next round! </h3>
-             <?php
+             <h2 style="font-family: 'Georgia', serif; color:#3949AB  ;">Congratulations! You've qualified for next round! </h2>
+      <?php
              $upd="Update users set qual2=1 where id='$uid'";
          $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
          ?>
@@ -173,9 +175,8 @@ window.addEventListener("popstate", function() {
       </div>
          <div class="container">
          <div class="jumbotron" >
-        <h3 class="text-danger">
-            Sorry! You've been eliminated!
-        </h3>
+        <h2 style="font-family: 'Georgia', serif; color:#3949AB  ;">Sorry! You've been eliminated! </h2>
+     
 </div>
          <?php
 }

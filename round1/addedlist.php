@@ -42,6 +42,7 @@ if($arr[0]==1)
   
 </head>
 <body>
+    <div class="container">
    
 	 <div>
              <button class="button button3" onclick="location.href='shop.php'">Find items</button>
@@ -114,7 +115,7 @@ if($arr[0]==1)
 					</tbody>
     <table/>
       
-   
+    </div>
   
   
 </body>

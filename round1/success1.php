@@ -6,6 +6,8 @@ require 'includes/common.php';
 <html >
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Responsive Table</title>
   
   
@@ -115,8 +117,8 @@ window.addEventListener("popstate", function() {
                    
 					</tbody>
     </table>
-      <h3 class="text-danger">Your rating for this round is: <?php echo $r; ?></h3>
-        <button class="button button3" onclick="location.href='../round2/shop2.php'">Round 2</button>
+       <h2 style="font-family: 'Georgia', serif; color:#CB4335  ;">Your rating for this round is: <?php echo $r; ?> </h2>
+           <button class="button button3" onclick="location.href='../round2/shop2.php'">Round 2</button>
     <?php
        
         $upd="Update users set points1='$r' where id='$user_id'";

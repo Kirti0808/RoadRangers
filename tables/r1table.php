@@ -6,6 +6,8 @@ require 'includes/common.php';
 <html >
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Responsive Table</title>
   
   
@@ -39,7 +41,7 @@ require 'includes/common.php';
     <body>
         
         <div class="container">
-       
+       <h1 style="text-align:center; font-family: 'Georgia', serif; color:#CB4335  ;">ROUND 1 TABLE</h1>
         <table class="table table-hover">
             <thead>    
             <tr>

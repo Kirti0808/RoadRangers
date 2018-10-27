@@ -14,6 +14,8 @@ else if($arr[1]==0 || $arr[2]==0 || $arr[3]==0)
 <html >
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Responsive Table</title>
   
   
@@ -44,6 +46,7 @@ else if($arr[1]==0 || $arr[2]==0 || $arr[3]==0)
   
 </head>
 <body>
+    <div class="container">
    
 	 <div>
              <button class="button button3" onclick="location.href='shop3.php'">Find items</button>
@@ -117,7 +120,7 @@ else if($arr[1]==0 || $arr[2]==0 || $arr[3]==0)
     <table/>
       
    
-  
+    </div>
   
 </body>
 </html>

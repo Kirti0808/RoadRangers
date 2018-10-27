@@ -9,9 +9,7 @@ $email=$_SESSION['email'];
        
         <meta charset="UTF-8">
        
-  <script>
-      confirm("Are you sure you want to submit?")
-  </script>
+  
   <script>
       (function(window, location) {
 history.replaceState(null, document.title, location.pathname+"#!/history");
@@ -27,10 +25,30 @@ window.addEventListener("popstate", function() {
 }, false);
 }(window, location));
 </script>
+  <style>
+.button {
+    background-color: #008CBA; /* Green */
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button1 {border-radius: 2px;}
+.button2 {border-radius: 4px;}
+.button3 {border-radius: 8px;}
+.button4 {border-radius: 12px;}
+.button5 {border-radius: 50%;}
+</style>
    
   <title>Fabricate your dream </title>
    <link rel="stylesheet" href="css4/style.css">
-     
+   
     </head>
     <body>
        
@@ -88,7 +106,7 @@ window.addEventListener("popstate", function() {
          while($row=mysqli_fetch_array($sel_q))
          {
              
-             if($i==3)
+             if($i==20)
                  break;
              else{
                  if($_SESSION['id']==$row['id']){
@@ -97,13 +115,12 @@ window.addEventListener("popstate", function() {
          
       <div class="container">
          <div class="jumbotron">
-             <h3>Congratulations! You've qualified for next round! </h3>
+             <h2 style="font-family: 'Georgia', serif; color:#CB4335  ;">Congratulations! You've qualified for next round! </h2>
              <?php
              $upd="Update users set qual=1 where id='$uid'";
          $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
          ?>
-             <input type='button' class="btn btn-primary"onclick="location.href='../round1/shop.php'" value="Move to next round" />
-         </div>
+            <button class="button button3" onclick="location.href='../round1/shop.php'">MOVE TO NEXT ROUND!</button>     </div>
          <?php 
                 break;
              }
@@ -117,14 +134,13 @@ window.addEventListener("popstate", function() {
       </div>
          <div class="container">
          <div class="jumbotron" >
-        <h3>
-            Sorry! You've been eliminated!
-        </h3>
+         <h2 style="font-family: 'Georgia', serif; color:#CB4335  ;">Sorry! You've been eliminated! </h2>
+         
 </div>
          <?php
 }
          ?>
-    </div>
+    
     </body>
 </html>
 

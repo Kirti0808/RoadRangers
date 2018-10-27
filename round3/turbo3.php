@@ -124,9 +124,15 @@ else if($arr[1]==0 || $arr[2]==0 || $arr[3]==0)
 							</g>
 						</g>
 					</svg>
+					 <?php
+                                          $uid=$_SESSION['id'];
+                                        $select="Select name from users where id='$uid'";
+                                        $seq=mysqli_query($con,$select) or die(mysqli_error($con));
+                                        $a=mysqli_fetch_array($seq);
+                                        ?>
 					<div class="ml-3">
 						<p>Welcome</p>
-						<p class="text-grey-dark mt-1 text-sm">abc</p>
+						<p class="text-grey-dark mt-1 text-sm"><?php echo $a[0]; ?></p>
 					</div>
 				</div>
                     <?php 

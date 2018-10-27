@@ -84,7 +84,8 @@ table td.r, table th.r {
   
 }
 body {
-  background: #9BC86A;
+  background: url("../img1.jpg") no-repeat;
+  background-size: cover;
   font: 400 14px 'Calibri','Arial';
   padding: 20px;
 }
