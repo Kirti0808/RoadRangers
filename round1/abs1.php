@@ -24,6 +24,8 @@ else if($arr[1]==0)
 	<head>
 		
                 <script src="auto_submit.js"></script>
+                <title>ROADRANGERS</title>
+
 	</head>
 	
                                 <?php

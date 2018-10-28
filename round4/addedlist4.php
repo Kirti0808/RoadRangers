@@ -17,7 +17,8 @@ else if($arr[1]==0 || $arr[2]==0 || $arr[3]==0)
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Responsive Table</title>
+  <title>ROADRANGERS</title>
+
   
   
   

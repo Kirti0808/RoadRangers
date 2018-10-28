@@ -30,8 +30,8 @@ if($row[0]=='1')
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Landing Page - Start Bootstrap Theme</title>
-    <script>
+   <title>ROADRANGERS</title>
+c <script>
       (function(window, location) {
 history.replaceState(null, document.title, location.pathname+"#!/history");
 history.pushState(null, document.title, location.pathname);
@@ -136,7 +136,7 @@ $_COOKIE['a']=1;
             <h1 class="mb-5">Correct Answer!</h1>
           </div>
           <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-            <?php  if($qid==1) { ?>
+            <?php  if($qid<20 || ($qid>20 && $qid<40) || ($qid>40 && $qid<60) ) { ?>
                 <div >
                   <button  class="btn btn-block btn-lg btn-primary" onclick="location.href='autoquiz.php?id=<?php echo $qid+1; ?>'" > NEXT QUESTION </button>
                   <br />
@@ -144,7 +144,14 @@ $_COOKIE['a']=1;
               <button  class="btn btn-block btn-lg btn-primary" onclick="confirmation();" > FINAL SUBMIT </button>
               <br />
               </div>
-               <?php } else
+               <?php }
+               else if($qid==20 || $qid==40){ ?>
+               <div >
+                 <br />
+                
+              <br />
+               </div> <?php }
+               else
              { ?>
                <button  class="btn btn-block btn-lg btn-primary" onclick="confirmation();" > FINAL SUBMIT </button>
              <?php } ?>

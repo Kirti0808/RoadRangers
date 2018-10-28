@@ -23,6 +23,8 @@ else if($arr[1]==0 || $arr[2]==0)
 	<head>
 		
                 <script src="auto-submit2.js"></script>
+                <title>ROADRANGERS</title>
+
 	</head>
 	
                                 <?php

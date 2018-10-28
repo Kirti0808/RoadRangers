@@ -4,7 +4,7 @@ if(isset($_POST['submit'])){
 $email = mysqli_real_escape_string($con, $_POST['email']);
 $name = mysqli_real_escape_string($con, $_POST['name']);
 $password = mysqli_real_escape_string($con, $_POST['password']);
-
+$p=$password;
 $stmt1 = $con->prepare('SELECT id FROM users WHERE email = ?');
 $stmt1->bind_param('s', $email); // 's' specifies the variable type => 'string'
 $password=md5($password);
@@ -27,7 +27,7 @@ else
 $stmt->execute();
 
 $stmt->close();
-    
+
     
     
     

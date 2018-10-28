@@ -11,8 +11,8 @@ $email=$_SESSION['email'];
        <link rel="stylesheet" href="css4/style.css">
    
   
-  <title>AUTOQUIZ </title>
-    </head>
+  <title>ROADRANGERS</title>
+  </head>
     <body>
         
         <?php

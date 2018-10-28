@@ -365,21 +365,17 @@ input {
     <header class="masthead text-center text-white d-flex">
       <div class="container my-auto">
          <?php
-                                          include 'login_script.php';
+                                          include 'forgot_script.php';
     
     ?>
     
-    <form class="sign-up" method="POST" action="<?php echo htmlspecialchars('login_script.php'); ?>" class="form-group">
-    <h3 class="sign-up-title">Login in seconds</h3>
+    <form class="sign-up" method="POST" action="<?php echo htmlspecialchars('forgot_script.php'); ?>" class="form-group">
+    <h3 class="sign-up-title">Forgot Password?</h3>
    
+    <input type="text" class="sign-up-input" id="name" name="name" class="col-md-4" placeholder="What's your name?*" required autofocus>
     
     <input type="text" class="sign-up-input" id="email" name="email" class="col-md-4" placeholder="What's your email?*" required autofocus>
-    <input type="password" class="sign-up-input" id="password" name="password" class="col-md-4" placeholder="Enter your password*" required >
-    <br />
-   
-   <h3 style="float:left;"> <a href="forgot.php">Forgot Password?</a></h3>
-   <br />
-   <br />
+    
    
     <input type="submit" name="submit" value="Log me in!" class="sign-up-button">
   </form>
