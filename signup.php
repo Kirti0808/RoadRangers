@@ -12,7 +12,7 @@ require 'includes/common.php';
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Creative - Start Bootstrap Theme</title>
+   <title>ROADRANGERS</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -375,6 +375,8 @@ input {
     <input type="text" class="sign-up-input" name="name" id="name" class="col-md-4" placeholder="What's your username?*" required autofocus>
    
     <input type="text" class="sign-up-input" id="email" name="email" class="col-md-4" placeholder="What's your email?*" required autofocus>
+    <input type="text" class="sign-up-input" id="contact" name="contact" class="col-md-4" placeholder="What's your contact number?*" required autofocus>
+    
     <input type="password" class="sign-up-input" id="password" name="password" class="col-md-4" placeholder="Choose a password*" required >
     
     <input type="submit" name="submit" value="Sign me up!" class="sign-up-button">

@@ -3,6 +3,8 @@ require 'includes/common.php';
 if(isset($_POST['submit'])){
 $email = mysqli_real_escape_string($con, $_POST['email']);
 $name = mysqli_real_escape_string($con, $_POST['name']);
+$contact = mysqli_real_escape_string($con, $_POST['contact']);
+
 $password = mysqli_real_escape_string($con, $_POST['password']);
 $p=$password;
 $stmt1 = $con->prepare('SELECT id FROM users WHERE email = ?');
@@ -21,8 +23,8 @@ if($row>0)
 }
 else
 {
-    if($stmt=$con->prepare("Insert into users(email,name,password) values (?,?,?)")){
-    $stmt->bind_param("sss", $email,$name,$password); // 's' specifies the variable type => 'string'
+    if($stmt=$con->prepare("Insert into users(email,name,password,contact) values (?,?,?,?)")){
+    $stmt->bind_param("ssss", $email,$name,$password,$contact); // 's' specifies the variable type => 'string'
 
 $stmt->execute();
 

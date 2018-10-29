@@ -8,13 +8,13 @@ if(isset($_POST['submit'])){
     $pwd= mysqli_real_escape_string($con, $_POST['password']);
     $pwd=md5($pwd);
 
-$stmt = $con->prepare('SELECT id,email,password FROM users WHERE email = ? and password=?');
+if($stmt = $con->prepare('SELECT id,email,password FROM users WHERE email = ? and password=?')){
 $stmt->bind_param('ss', $email,$pwd); // 's' specifies the variable type => 'string'
 
 $stmt->execute();
 $stmt->store_result();
 $stmt->bind_result($id,$emaill,$password);
-$row = $stmt->num_rows;
+$row = $stmt->num_rows;}
 
 if($row>0)
 {

@@ -53,7 +53,7 @@ if($row[0]=='1')
     <nav class="navbar navbar-light bg-light static-top">
       <div class="container">
         <a class="navbar-brand" href="../index.php">HOME</a>
-        <p>Time after which it will automatically submit:
+        <p>Time left to submit:
         <span id="time" class="font-normal"></span>
         </p>                   
         <a class="btn btn-primary" href="autoquiz_leaderboard.php">Autoquiz Leaderboard</a>
