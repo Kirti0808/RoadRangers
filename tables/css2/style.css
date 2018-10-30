@@ -83,9 +83,9 @@ table td.r, table th.r {
   }
   
 }
-body {
-  background: url("../img1.jpg");
-  background-size: cover;
+header {
+  background: url("../img2.jpg")  ;
+ background-size: cover;
     background-position: center;
     height:100%;
   font: 400 14px 'Calibri','Arial';
@@ -94,5 +94,5 @@ body {
 
 blockquote {
   color: white;
-  text-align: center;
+  text-align: center;   
 }

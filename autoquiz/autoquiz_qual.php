@@ -113,13 +113,13 @@ window.addEventListener("popstate", function() {
          
       <div class="container">
          <div class="jumbotron">
-             <h2 style="font-family: 'Georgia', serif; color:#CB4335  ;">Congratulations! You've qualified for next round! </h2>
+             <h2 style="font-family: 'Georgia', serif; color:white ; text-align :center;" >Congratulations! You've qualified for next round! </h2>
              <?php
               $uid=$_SESSION['id'];
              $upd="Update users set qual=1 where id='$uid'";
          $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
-         ?>
-            <button class="button button3" onclick="location.href='../round1/shop.php'">MOVE TO NEXT ROUND!</button>     </div>
+         ?><div style="text-align: center  ;">
+              <button class="button button3" onclick="location.href='../round1/shop.php'" >MOVE TO NEXT ROUND!</button></div>     </div>
          <?php 
                 break;
              }
@@ -133,7 +133,7 @@ window.addEventListener("popstate", function() {
       </div>
          <div class="container">
          <div class="jumbotron" >
-         <h2 style="font-family: 'Georgia', serif; color:#CB4335  ;">Sorry! You've been eliminated! </h2>
+         <h2 style="font-family: 'Georgia', serif; color:white  ;text-align :center;">Sorry! You've been eliminated! </h2>
          
 </div>
          <?php

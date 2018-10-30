@@ -116,7 +116,7 @@ window.addEventListener("popstate", function() {
                    
 					</tbody>
     </table>
-      <h2 style="font-family: 'Georgia', serif; color:#3949AB  ;">Your rating for this round <?php echo $r; ?></h2>
+      <h2 style="font-family: 'Georgia', serif; color:white ;text-align: center;">Your rating for this round <?php echo $r; ?></h2>
        <?php
        
         $upd="Update users set points3='$r' where id='$user_id'";
@@ -153,11 +153,11 @@ window.addEventListener("popstate", function() {
          
       <div class="container">
          <div class="jumbotron">
-              <h2 style="font-family: 'Georgia', serif; color:#3949AB  ;">Congratulations! You've qualified for next round! </h2>
+              <h2 style="font-family: 'Georgia', serif; color:white ;text-align: center;">Congratulations! You've qualified for next round! </h2>
        <?php
              $upd="Update users set qual3=1 where id='$uid'";
          $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
-         ?>
+         ?><div style="text-align: center;">
              <button class="button button3" onclick="location.href='../round4/shop4.php'">Round 4</button>
          </div>
          <?php 

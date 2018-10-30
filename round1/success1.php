@@ -118,8 +118,10 @@ window.addEventListener("popstate", function() {
                    
 					</tbody>
     </table>
-       <h2 style="font-family: 'Georgia', serif; color:#CB4335  ;">Your rating for this round is: <?php echo $r; ?> </h2>
+    <div style="text-align:center;">
+       <h2 style="font-family: 'Georgia', serif; color:white  ;">Your rating for this round is: <?php echo $r; ?> </h2>
            <button class="button button3" onclick="location.href='../round2/shop2.php'">Round 2</button>
+    </div>
     <?php
        
         $upd="Update users set points1='$r' where id='$user_id'";

@@ -116,8 +116,12 @@ window.addEventListener("popstate", function() {
                    
 					</tbody>
     </table>
-      <h2 style="font-family: 'Georgia', serif; color:#CB4335 ;">Your rating for this round <?php echo $r; ?></h2>
-      <button class="button button3" onclick="location.href='../tables/leaderboard.php'">Leaderboard</button>
+      <h2 style="font-family: 'Georgia', serif; color:white ; text-align: center;">Your rating for this round <?php echo $r; ?></h2>
+      <div style="text-align:center;">
+      <button class="button button3" onclick="location.href='../tables/leaderboard.php'">VIEW LEADERBOARD</button>
+      <button class="button button3" onclick="location.href='../index.php'">HOME</button>
+      
+      </div>
         <?php
        
         $upd="Update users set points4='$r' where id='$user_id'";
@@ -152,7 +156,7 @@ window.addEventListener("popstate", function() {
          
       <div class="container">
          <div class="jumbotron">
-           <h2 style="font-family: 'Georgia', serif; color:#CB4335 ;">Congratulations! You've qualified for final round of Transmission!</h2>
+           <h2 style="font-family: 'Georgia', serif; color:white;text-align: center;">Congratulations! You've qualified for final round of Transmission!</h2>
       
          </div>
          <?php 

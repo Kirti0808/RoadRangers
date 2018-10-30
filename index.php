@@ -32,95 +32,8 @@ require 'includes/common.php';
    <body id="page-top">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="https://avskr.in">AAVISHKAR</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-        <?php 
-                                            if(isset($_SESSION['email'])) {?>
-                                               
-                                                 <?php $uid=$_SESSION['id'];
-                                              $sel="Select submit1,submit2,submit3,submit4,score,submit,qual from users where id='$uid'";
-                                              $selres=mysqli_query($con,$sel) or die(mysqli_error($con));
-                                              $arr=mysqli_fetch_array($selres);
-                                              $s=$arr['score'];
-                                              $i=($s/10)+1;
-                                              
-              if($arr['submit']=='0' ){ ?>
-            
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="autoquiz/autoquiz.php?id=<?php echo $i; ?>">Play</a>
-              </li> <?php }
-            else if($arr['submit']=='1' && $arr['qual']=='0'){ ?>
-            
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="autoquiz/autoquiz_submit.php">Play</a>
-            </li> 
-            <?php } else if($arr[0]=='0') { ?>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="round1/shop.php">Play</a>
-            </li>
-            <?php }
-                                               else if($arr[0]=='1' &&$arr[1]=='0') { ?>
-           
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="round2/shop2.php">Play</a>
-            </li>
-             <?php } 
-                                              else if($arr[0]=='1' && $arr[1]=='1' && $arr[2]=='0') { ?>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="round3/shop3.php">Play</a>
-            </li>
-             <?php }
-                                              else if($arr[0]=='1' && $arr[1]=='1' && $arr[2]=='1' && $arr[3]=='0') { ?>
-             <li class="nav-item">
-                 <a class="nav-link js-scroll-trigger" href="round4/shop4.php">Play</a>
-            </li>
-                                              <?php }
-             else if($arr[0]=='1' && $arr[1]=='1' && $arr[2]=='1' && $arr[3]=='1') { ?>
-             <li class="nav-item">
-                 <a class="nav-link js-scroll-trigger" href="round4/success4.php">Play</a>
-            </li>
-            <?php } ?> 
-            <?php if($arr['submit']=='0') {  ?>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="autoquiz/autoquiz_leaderboard.php">Leaderboard</a>
-            </li>  <?php } 
-             else if($arr['submit']=='1' && $arr['qual']=='0') {  ?>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="autoquiz/autoquiz_leaderboard.php">Leaderboard</a>
-            </li>  <?php } 
-            else if($arr['submit']==1) { ?>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="tables/leaderboard.php">leaderboard</a>
-            </li><?php } ?>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="settings.php">Settings</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="logout.php">Logout</a>
-            </li>
-             
-             <?php }                                   else { ?>
-            
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="signup.php">Signup</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="login.php">Login</a>
-            </li>
-              <?php  } ?>
-            </ul>				 
-						
-          
-        </div>
-      </div>
-    </nav>
-
+    <?php include 'navbar.php';
+    ?>
     <header class="masthead text-center text-white d-flex">
       <div class="container my-auto">
         <div class="row">
@@ -132,29 +45,48 @@ require 'includes/common.php';
           </div>
           <div class="col-lg-8 mx-auto">
             <p class="text-faded mb-5">DESIGN THE BEST CAR OUT OF THE GIVEN BUDGET!</p>
-             <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">CHECK OUT THE RULES!</a>
-             </div>
+             <?php if($arr['submit']=='0' ){ ?>
+            
+           
+                <a class="btn btn-primary btn-xl js-scroll-trigger" href="autoquiz/autoquiz.php?id=<?php echo $i; ?>">Play now!</a>
+               <?php }
+            else if($arr['submit']=='1' && $arr['qual']=='0'){ ?>
+            
+         
+                <a class="btn btn-primary btn-xl js-scroll-trigger" href="autoquiz/autoquiz_submit.php">Play now!</a>
+            
+            <?php } else if($arr[0]=='0') { ?>
+           
+                <a class="btn btn-primary btn-xl js-scroll-trigger" href="round1/shop.php">Play now!</a>
+          
+            <?php }
+                                               else if($arr[0]=='1' &&$arr[1]=='0') { ?>
+           
+            
+                <a class="btn btn-primary btn-xl js-scroll-trigger" href="round2/shop2.php">Play now!</a>
+         
+             <?php } 
+                                              else if($arr[0]=='1' && $arr[1]=='1' && $arr[2]=='0') { ?>
+           
+                <a class="btn btn-primary btn-xl js-scroll-trigger" href="round3/shop3.php">Play now!</a>
+            
+             <?php }
+                                              else if($arr[0]=='1' && $arr[1]=='1' && $arr[2]=='1' && $arr[3]=='0') { ?>
+             
+                 <a class="btn btn-primary btn-xl js-scroll-trigger" href="round4/shop4.php">Play now!</a>
+            
+                                              <?php }
+             else if($arr[0]=='1' && $arr[1]=='1' && $arr[2]=='1' && $arr[3]=='1') { ?>
+             
+                 <a class="btn btn-primary btn-xl js-scroll-trigger" href="round4/success4.php">Play now!</a>
+           
+            <?php } ?> 
+              </div>
         </div>
       </div>
     </header>
-     <section class="bg-primary" id="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading text-white">RULES and How to Play!</h2>
-            <hr class="light my-4">
-            <h3 class="section-heading text-white">Round 1(AUTOQUIZ)</h3>
-          
-            <p class="text-faded mb-4">1. It will be an online quiz event.<br />
-                2. There will be questions of various types.<br />3. Correct answer will lead to <b>+10 marks</b>.<b> No negative marking</b> for incorrect answers.<br />4. Solving the current question is necessary in order to proceed to the next question.<br/>5. This round will run for 2 days. A question set will be uploaded after a specific time slot.<br />6. Time left for the event is shown at the top, before which you need to submit using the <b>"FINAL SUBMIT"</b> button. Note that it won't be submitting automatically.<br />7. Qualification of this round is necessary in order to proceed for Round 2. Top 20 gets qualified.</p>
-            <h3 class="section-heading text-white">Round 2</h3>
-          
-            <p class="text-faded mb-4">1. This round will test your knowledge related to cars and automobiles.<br/>2. It is an onsite online round.<br />3. The partcipants will be dealt with a fixed budget which they need to use in order to buy different parts related to cars best suited for a given track.<br />4. All buying and selling would be on their own and there won't be any dealing of any kind among participants.<br />5. The participants have to buy all the parts in a specific track within the stipulated time, after which it will automatically submit.<br/>6. For the 1st subround, the partcipants can buy and sell any number of times, while for the 2nd,3rd and 4th subrounds, the selling money that they will get will be 50% with what they bought for actually.<br />7. The part that they bought in a subround will be continued for the next subrounds unless the participant sells them in the next subrounds.<br />8. There are no eliminations in the 1st subround, 5 gets eliminated in 2nd and 3rd subround and the top 3 from the last subround will be qualified for the last round of our flagship event, Transmission directly.<br />9. Ties will be broken on the basis of the balance remaining.<br />10. Separate leaderboards will be kept for each subround. Budget increment is awarded to the top 3 partcipants in a subround.</p>  
-            <a class="btn btn-light btn-xl js-scroll-trigger" href="#page-top">Get Started!</a>
-          </div>
-        </div>
-      </div>
-    </section>
+    
+     
      <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

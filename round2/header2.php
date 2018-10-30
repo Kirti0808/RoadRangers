@@ -15,8 +15,8 @@
                 </style>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Personal Library - Codrops Template</title>
-		<meta name="description" content="A responsive web app template with common components like profile, list, tabs, menu views. Made for Codrops exclusively.">
+		 <title>ROADRANGERS</title>
+<meta name="description" content="A responsive web app template with common components like profile, list, tabs, menu views. Made for Codrops exclusively.">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="output.css">
 		<link rel="stylesheet" href="node_modules/tippy.js/dist/themes/light.css">
@@ -54,6 +54,11 @@
 						<div style="color:blue;">HOME</div>
                                             </a>
 					</li>
+                                        <li class="ml-2 mb-4 flex">
+                                            <a href="../rules.php">
+						<div style="color:blue;">RULES</div>
+                                            </a>
+					</li>
 					<li class="ml-2 mb-4">
 						<div class="flex" id="sidenav-categories-trigger">
 							<img src="./images/category-default.svg" alt="home-icon" class="w-4 h-4 mr-2">
@@ -78,7 +83,7 @@
                                                         <li class="hover:text-indigo-dark hover:cursor-pointer transition-normal ml-1 border-l border-grey-dark pl-4">ROUND 1</li>
                                                         <?php } else { ?>
 							<li class="text-indigo-lighter lg:text-indigo-darker font-medium flex justify-between items-center hover:cursor-pointer transition-normal ml-1 border-l border-grey-dark pl-4 mobile-home-trigger">
-                                                            <a href="shop.php"><span style="color:blue;">ROUND 1</span>
+                                                            <a href="shop.php"><span style="color:blue;">ROUND 1 TRACK:PLANE</span>
                                                             </a>
 							</li>
                                                         <?php } ?>
@@ -88,7 +93,7 @@
                                                         <li class="hover:text-indigo-dark hover:cursor-pointer transition-normal ml-1 border-l border-grey-dark pl-4">ROUND 2</li>
                                                         <?php } else { ?>
 							<li class="text-indigo-lighter lg:text-indigo-darker font-medium flex justify-between items-center hover:cursor-pointer transition-normal ml-1 border-l border-grey-dark pl-4 mobile-home-trigger">
-                                                            <a href="shop2.php"><span style="color:blue;">ROUND 2</span>
+                                                            <a href="shop2.php"><span style="color:blue;">ROUND 2 TRACK:SANDY</span>
                                                             </a>
 							</li>
                                                         <?php } ?>
@@ -98,7 +103,7 @@
                                                         <li class="hover:text-indigo-dark hover:cursor-pointer transition-normal ml-1 border-l border-grey-dark pl-4">ROUND 3</li>
                                                         <?php } else { ?>
 							<li class="text-indigo-lighter lg:text-indigo-darker font-medium flex justify-between items-center hover:cursor-pointer transition-normal ml-1 border-l border-grey-dark pl-4 mobile-home-trigger">
-                                                            <a href="shop3.php"><span style="color:blue;">ROUND 3</span>
+                                                            <a href="shop3.php"><span style="color:blue;">ROUND 3 TRACK:HILLY</span>
                                                             </a>
 							</li>
                                                         <?php } ?>
@@ -108,7 +113,7 @@
                                                         <li class="hover:text-indigo-dark hover:cursor-pointer transition-normal ml-1 border-l border-grey-dark pl-4">ROUND 4</li>
                                                         <?php } else { ?>
 							<li class="text-indigo-lighter lg:text-indigo-darker font-medium flex justify-between items-center hover:cursor-pointer transition-normal ml-1 border-l border-grey-dark pl-4 mobile-home-trigger">
-                                                            <a href="shop4.php"><span style="color:blue;">ROUND 4</span>
+                                                            <a href="shop4.php"><span style="color:blue;">ROUND 4 TRACK:ICY</span>
                                                             </a>
 							</li>
                                                         <?php } ?>

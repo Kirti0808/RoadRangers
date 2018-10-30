@@ -31,7 +31,7 @@ if($row[0]=='1')
     <meta name="author" content="">
 
    <title>ROADRANGERS</title>
-c <script>
+<script>
       (function(window, location) {
 history.replaceState(null, document.title, location.pathname+"#!/history");
 history.pushState(null, document.title, location.pathname);
@@ -56,7 +56,7 @@ window.addEventListener("popstate", function() {
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template -->
-    <link href="css/landing-page.min.css" rel="stylesheet">
+    <link href="css1/landing-page.min.css" rel="stylesheet">
  <script src="autoquiz-submit.js"></script>
   <script>
          function confirmation()
@@ -82,7 +82,7 @@ window.addEventListener("popstate", function() {
         <p>Time left to submit:
         <span id="time" class="font-normal"></span>
         </p> 
-        <a class="btn btn-primary" href="autoquiz_leaderboard.php">Autoquiz Leaderboard</a>
+        <a class="btn btn-primary" href="autoquiz_leaderboard.php">Leaderboard</a>
       </div>
     </nav>
         <?php
@@ -135,13 +135,13 @@ $_COOKIE['a']=1;
           <div class="col-xl-9 mx-auto">
             <h1 class="mb-5">Correct Answer!</h1>
           </div>
-          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <div class=" col-md-4 col-lg-4 col-xl-4 mx-auto">
             <?php  if($qid<20 || ($qid>20 && $qid<40) || ($qid>40 && $qid<60) ) { ?>
                 <div >
-                  <button  class="btn btn-block btn-lg btn-primary" onclick="location.href='autoquiz.php?id=<?php echo $qid+1; ?>'" > NEXT QUESTION </button>
+                  <button  class="btn btn-block btn-md btn-primary" onclick="location.href='autoquiz.php?id=<?php echo $qid+1; ?>'" > NEXT QUESTION </button>
                   <br />
                 
-              <button  class="btn btn-block btn-lg btn-primary" onclick="confirmation();" > FINAL SUBMIT </button>
+              <button  class="btn btn-block btn-md btn-primary" onclick="confirmation();" > FINAL SUBMIT </button>
               <br />
               </div>
                <?php }
@@ -178,18 +178,18 @@ else{
             <br />
             
           </div>
-          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 mx-auto">
             
                 <div>
-                  <button  class="btn btn-block btn-lg btn-primary" onclick="location.href='autoquiz.php?id=<?php echo $qid; ?>'" > GO BACK</button>
+                  <button  class="btn btn-block btn-md btn-primary" onclick="location.href='autoquiz.php?id=<?php echo $qid; ?>'" > GO BACK</button>
                 
                 
              
            
-               <button  class="btn btn-block btn-lg btn-primary" onclick="confirmation();" > FINAL SUBMIT </button>
+               <button  class="btn btn-block btn-md btn-primary" onclick="confirmation();" > FINAL SUBMIT </button>
                 <br />
                 </div>
-             <button  class="btn btn-block btn-lg btn-primary" onclick="location.href='autoquiz_leaderboard.php'" > LEADERBOARD </button>
+             <button  class="btn btn-block btn-md btn-primary" onclick="location.href='autoquiz_leaderboard.php'" > LEADERBOARD </button>
       
             
           </div>
