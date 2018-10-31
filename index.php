@@ -44,7 +44,7 @@ require 'includes/common.php';
             <hr>
           </div>
           <div class="col-lg-8 mx-auto">
-            <p class="text-faded mb-5">DESIGN THE BEST CAR OUT OF THE GIVEN BUDGET!</p>
+            <p class="text-faded mb-5"></p>
              <?php if($arr['submit']=='0' ){ ?>
             
            
