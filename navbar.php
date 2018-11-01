@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<?php 
-require 'includes/common.php';
-
-?>
 <html lang="en">
 
   <head>
