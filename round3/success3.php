@@ -205,13 +205,17 @@ window.addEventListener("popstate", function() {
                      $sel_q=mysqli_query($con,$sel) or die(mysqli_error($con));
                      $arr=mysqli_fetch_array($sel_q);
                      if($i==1){
-                        $bal=$arr[1]+25;
+                        $bal=$arr[1]+250;
                         break;
                      }
                      else if($i==2){
-                         $bal=$arr[1]+20;
+                         $bal=$arr[1]+200;
+                         break;
+                     }else if($i==3){
+                         $bal=$arr[1]+150;
                          break;
                      }
+                    
                     
                  }
                  $i+=1;

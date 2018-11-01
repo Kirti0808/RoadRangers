@@ -113,8 +113,7 @@ else if($arr[1]==0 || $arr[2]==0 || $arr[3]==0)
                 
                 if($arr[0]==11){
                ?>
-									<td><button class="button button3" onclick="location.href='success3.php'">Confirm</button></td>
-                <?php } ?>
+									 <?php } ?>
                                                                 </tr>
                    
 					</tbody>
