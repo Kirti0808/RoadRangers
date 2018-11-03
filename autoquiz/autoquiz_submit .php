@@ -13,7 +13,7 @@ require '../includes/common.php';
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ROADRANGERS</title>
+    <title>Landing Page - Start Bootstrap Theme</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -24,8 +24,7 @@ require '../includes/common.php';
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template -->
-    <link href="css1/landing-page.min.css" rel="stylesheet">
-     <script src="autoquiz-submit.js"></script>
+    <link href="css/landing-page.min.css" rel="stylesheet">
     <script>
       (function(window, location) {
 history.replaceState(null, document.title, location.pathname+"#!/history");
