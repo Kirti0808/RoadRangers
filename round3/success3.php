@@ -74,6 +74,7 @@ window.addEventListener("popstate", function() {
     $select_query_2="Select *from users u inner join items_users iu on u.id=iu.userid";
     $select_query_res=mysqli_query($con,$select_query_1) or die(mysqli_error($con));
     $no_of_rows= mysqli_num_rows($select_query_res);
+    $r=0;
     if($no_of_rows==0)
     {
         ?>

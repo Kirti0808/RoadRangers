@@ -1,6 +1,9 @@
 <?php
 require 'includes/common.php';
 $email=$_SESSION['email'];
+$uid=$_SESSION['id'];
+$sel="Update users set submit='1' where id='$uid'";
+$re=mysqli_query($con,$sel) or diemysqli_error($con);
 
 
 ?>

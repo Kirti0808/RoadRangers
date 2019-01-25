@@ -1,12 +1,7 @@
 
-<!DOCTYPE html>
-<?php 
-require 'includes/common.php';
-
-?>
 <html lang="en" class="no-js">
 	<head>
-            
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -27,8 +22,8 @@ require 'includes/common.php';
 
     <!-- Custom styles for this template -->
     <link href="css/creative.min.css" rel="stylesheet">
-		
-		
+
+
                 <title>Signup</title>
                  <style>
       html, body, div, span, applet, object, iframe,
@@ -84,7 +79,7 @@ table {
 .about {
   margin: 70px auto 40px;
   padding: 8px;
-  width: 260px;
+  width: 200px;
   font: 10px/18px 'Lucida Grande', Arial, sans-serif;
   color: #666;
   text-align: center;
@@ -148,7 +143,7 @@ body {
 .sign-up {
   position: relative;
   margin: 50px auto;
-  width: 400px;
+  width: 350px;
   padding: 33px 25px 29px;
   background: white;
   border-bottom: 1px solid #c4c4c4;
@@ -289,27 +284,24 @@ input {
     ?>
     <header class="masthead text-center text-white d-flex">
       <div class="container my-auto">
-         <?php
-                                          include 'signup_script.php';
-    
-    ?>
-    
+
+
     <form class="sign-up" method="POST" action="<?php echo htmlspecialchars('signup_script.php'); ?>" class="form-group">
     <h3 class="sign-up-title">Sign up in seconds</h3>
-   
+
     <input type="text" class="sign-up-input" name="name" id="name" class="col-md-4" placeholder="What's your username?*" required autofocus>
-   
+
     <input type="text" class="sign-up-input" id="email" name="email" class="col-md-4" placeholder="What's your email?*" required autofocus>
-    <input type="text" class="sign-up-input" id="contact" name="contact" class="col-md-4" placeholder="What's your contact number?*" required autofocus>
-    
-    <input type="password" class="sign-up-input" id="password" name="password" class="col-md-4" placeholder="Choose a password*" required >
-    
+    <input type="text" class="sign-up-input" id="contact" name="contact" class="col-md-4" placeholder="What's your contact number?*" maxlength="10" required autofocus>
+
+    <input type="password" class="sign-up-input" id="password" name="password" class="col-md-4" placeholder="Choose a password*" minlength="8" required >
+
     <input type="submit" name="submit" value="Sign me up!" class="sign-up-button">
   </form>
       </div>
     </header>
 
-                                           
+
        <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -321,8 +313,8 @@ input {
 
     <!-- Custom scripts for this template -->
     <script src="js/creative.min.js"></script>
-  
-                
-               
+
+
+
 	</body>
 </html>

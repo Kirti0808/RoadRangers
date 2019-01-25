@@ -1,12 +1,9 @@
-
-<!DOCTYPE html>
-<?php 
+<?php
 require 'includes/common.php';
-
 ?>
 <html lang="en" class="no-js">
 	<head>
-            
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -27,8 +24,8 @@ require 'includes/common.php';
 
     <!-- Custom styles for this template -->
     <link href="css/creative.min.css" rel="stylesheet">
-		
-		
+
+
                 <title>ROADRANGERS</title>
                  <style>
       html, body, div, span, applet, object, iframe,
@@ -148,7 +145,7 @@ body {
 .sign-up {
   position: relative;
   margin: 50px auto;
-  width: 400px;
+  width: 350px;
   padding: 33px 25px 29px;
   background: white;
   border-bottom: 1px solid #c4c4c4;
@@ -289,28 +286,28 @@ input {
     <header class="masthead text-center text-white d-flex">
       <div class="container my-auto">
          <?php
-                                         
-    
+
+
     $uid=$_SESSION['id'];
     $sel="Select * from users where id='$uid'";
     $selre=mysqli_query($con,$sel) or diemysqli_error($con);
     $ar=mysqli_fetch_array($selre);
     ?>
-    
-    
-    
+
+
+
     <form class="sign-up" method="POST" action="<?php echo htmlspecialchars('settings_script.php'); ?>" class="form-group">
     <h3 class="sign-up-title">Change settings!</h3>
-    <input type="text" class="sign-up-input" name="name" class="col-md-4" value="<?php echo $ar[2]; ?>"  required autofocus>
-    <input type="text" class="sign-up-input" name="email" class="col-md-4" value="<?php echo $ar[1]; ?>" required autofocus>
-    <input type="password" class="sign-up-input" name="password" class="col-md-4" value="<?php echo $ar[3]; ?>" required>
-    
+    <input type="text" class="sign-up-input" name="name" class="col-md-4" value="<?php echo $ar['name']; ?>"  required autofocus>
+    <input type="text" class="sign-up-input" name="email" class="col-md-4" value="<?php echo $ar['email']; ?>" required autofocus>
+    <input type="password" class="sign-up-input" name="password" class="col-md-4" value="<?php echo $ar['password']; ?>" required>
+
     <input type="submit" value="Change settings!" class="sign-up-button">
   </form>
       </div>
     </header>
 
-                                           
+
        <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -322,8 +319,8 @@ input {
 
     <!-- Custom scripts for this template -->
     <script src="js/creative.min.js"></script>
-  
-                
-               
+
+
+
 	</body>
 </html>
