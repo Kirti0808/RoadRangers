@@ -1,7 +1,5 @@
 <?php
 require '../includes/common.php';
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,7 +40,7 @@ window.addEventListener("popstate", function() {
 }(window, location));
 </script>
      <script src="autoquiz-qual.js"></script>
-   
+
 
   </head>
 
@@ -53,26 +51,24 @@ window.addEventListener("popstate", function() {
     <nav class="navbar navbar-light bg-light static-top">
       <div class="container">
         <a class="navbar-brand" href="../index.php">HOME</a>
-        
-                          
-        <a class="btn btn-primary" href="autoquiz_leaderboard.php">Autoquiz Leaderboard</a>
+
+
+        <a class="btn btn-primary" href="autoquiz_leaderboard.php">Leaderboard</a>
       </div>
     </nav>
 
         <?php
         include 'if_answered.php';
         ?>
-          
+
            <?php
             $uid=$_SESSION['id'];
          $upd="Update users set submit=1 where id='$uid'";
          $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
-           $sel="Select question from quiz where id='$qid'";
-           $sel_query=mysqli_query($con,$sel) or die(mysqli_error($con));
-           $arr=mysqli_fetch_array($sel_query);
+
            ?>
-        
-              
+
+
 <header class="masthead text-white text-center">
       <div class="overlay"></div>
       <div class="container">
@@ -81,21 +77,21 @@ window.addEventListener("popstate", function() {
             <h3 class="mb-5">Successfully submitted</h3>
           </div>
           <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-            
-              <p>Check results in:     
+
+              <p>Check results in:
                    <span id="time" class="font-normal"></span>
         </p>
-                  
-                
-                 
+
+
+
           </div>
         </div>
       </div>
     </header>
-        
-        
+
+
     </body>
-    
-    
-    
+
+
+
 </html>

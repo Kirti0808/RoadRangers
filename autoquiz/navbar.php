@@ -41,9 +41,9 @@
               <li class="nav-item">
                   <a class="nav-link js-scroll-trigger" href="../index.php">Home</a>
             </li>
-               <?php 
+               <?php
                                             if(isset($_SESSION['email'])) {?>
-                                               
+
                                                  <?php $uid=$_SESSION['id'];
                                               $sel="Select submit1,submit2,submit3,submit4,score,submit,qual from users where id='$uid'";
                                               $selres=mysqli_query($con,$sel) or die(mysqli_error($con));
@@ -53,16 +53,16 @@
                                               ?>
                      <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="../rules.php">Rules</a>
-            </li>                          
-             
+            </li>
+
             <?php if($arr['submit']=='0') {  ?>
             <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="autoquiz_leaderboard.php">Leaderboard</a>
-            </li>  <?php } 
+            </li>  <?php }
              else if($arr['submit']=='1' && $arr['qual']=='0') {  ?>
             <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="autoquiz_leaderboard.php">Leaderboard</a>
-            </li>  <?php } 
+            </li>  <?php }
             else if($arr['submit']==1) { ?>
             <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="../tables/leaderboard.php">leaderboard</a>
@@ -73,9 +73,9 @@
             <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="logout.php">Logout</a>
             </li>
-             
+
              <?php }                                   else { ?>
-            
+
             <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="../signup.php">Signup</a>
             </li>
@@ -83,9 +83,9 @@
                 <a class="nav-link js-scroll-trigger" href="../login.php">Login</a>
             </li>
               <?php  } ?>
-            </ul>				 
-						
-          
+            </ul>
+
+
         </div>
       </div>
     </nav>

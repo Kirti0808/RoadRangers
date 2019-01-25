@@ -6,10 +6,10 @@ $email=$_SESSION['email'];
 ?>
 <html>
     <head>
-       
+
         <meta charset="UTF-8">
-       
-  
+
+
   <script>
       (function(window, location) {
 history.replaceState(null, document.title, location.pathname+"#!/history");
@@ -45,23 +45,23 @@ window.addEventListener("popstate", function() {
 .button4 {border-radius: 12px;}
 .button5 {border-radius: 50%;}
 </style>
-   
+
   <title>ROADRANGERS</title>
   <link rel="stylesheet" href="css4/style.css">
-   
+
     </head>
     <body>
-       
+
         <?php
-       
+
         $c=1;
         $uid=$_SESSION['id'];
         $sel="Select name,score,submitdate from users order by score desc,submitdate asc";
-        $selres=mysqli_query($con,$sel);    
+        $selres=mysqli_query($con,$sel);
         $select="Select submitdate from users where id='$uid'";
-        $selre=mysqli_query($con,$select);    
+        $selre=mysqli_query($con,$select);
         $arr=mysqli_fetch_array($selre);
-        
+
         ?>
          <h1 style="text-align:center; font-family: 'Georgia', serif; color:#CB4335  ;">LEADERBOARD</h1>
         <table >
@@ -71,26 +71,26 @@ window.addEventListener("popstate", function() {
             <th>Name</th>
             <th >Score</th>
            <th>Time</th>
-           
+
             </tr>
             </thead>
             <tbody>
         <?php while($row=mysqli_fetch_array($selres))
-        
-        
-             
+
+
+
                 { ?>
-        
+
             <tr>
                 <td><?php echo $c; ?></td>
                 <td ><?php echo $row['name']; ?></td>
-                
+
                 <td ><?php echo $row['score']; ?></td>
                 <td ><?php echo $row['submitdate']; ?></td>
             </tr>
-            
-        
-            <?php 
+
+
+            <?php
             $c+=1;
         } ?>
             </tbody>
@@ -98,19 +98,19 @@ window.addEventListener("popstate", function() {
          <?php
          $sel="Select * from users order by score desc, submitdate asc";
          $sel_q=mysqli_query($con,$sel) or die(mysqli_error($con));
-        
-         $i=0;
+
+         $i=1;
          $k=0;
          while($row=mysqli_fetch_array($sel_q))
          {
-             
-             if($i==20)
+
+             if($i>=22)
                  break;
              else{
                  if($_SESSION['id']==$row['id']){
                      $k=1;
                  ?>
-         
+
       <div class="container">
          <div class="jumbotron">
              <h2 style="font-family: 'Georgia', serif; color:white ; text-align :center;" >Congratulations! You've qualified for next round! </h2>
@@ -120,12 +120,12 @@ window.addEventListener("popstate", function() {
          $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
          ?><div style="text-align: center  ;">
               <button class="button button3" onclick="location.href='../round1/shop.php'" >MOVE TO NEXT ROUND!</button></div>     </div>
-         <?php 
+         <?php
                 break;
              }
              $i+=1;
              }
-             
+
          }
          ?>
 <?php         if($k!=1){
@@ -134,12 +134,11 @@ window.addEventListener("popstate", function() {
          <div class="container">
          <div class="jumbotron" >
          <h2 style="font-family: 'Georgia', serif; color:white  ;text-align :center;">Sorry! You've been eliminated! </h2>
-         
+
 </div>
          <?php
 }
          ?>
-    
+
     </body>
 </html>
-

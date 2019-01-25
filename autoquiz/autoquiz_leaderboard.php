@@ -6,7 +6,7 @@ $email=$_SESSION['email'];
 ?>
 <html>
     <head>
-       
+
         <meta charset="UTF-8">
        <link rel="stylesheet" href="css4/style.css">
        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,18 +25,18 @@ $email=$_SESSION['email'];
 
     <!-- Custom styles for this template -->
     <link href="css1/landing-page.min.css" rel="stylesheet">
-   
-  
+
+
    <link rel="stylesheet" href="css4/style.css">
   </head>
     <body>
-      
+
         <?php
         include 'navbar.php';
           $c=1;
         $sel="Select name,score,submitdate from users order by score desc, submitdate asc";
-        $selres=mysqli_query($con,$sel);    
-        
+        $selres=mysqli_query($con,$sel);
+
         ?>
         <header>
         <br />
@@ -54,22 +54,22 @@ $email=$_SESSION['email'];
             </thead>
             <tbody>
         <?php while($row=mysqli_fetch_array($selres))
-        
-        
-             
+
+
+
                 { ?>
-        
+
             <tr>
                 <td><b><?php echo $c; ?></b></td>
                 <td><b><?php echo $row['name']; ?></b></td>
-                
+
                 <td><b><?php echo $row['score']; ?></b></td>
                  <td><b><?php echo $row['submitdate'] ; ?></b></td>
-                
+
             </tr>
-            
-        
-            <?php 
+
+
+            <?php
             $c+=1;
         } ?>
             </tbody>
@@ -85,6 +85,6 @@ $email=$_SESSION['email'];
 
     <!-- Custom scripts for this template -->
     <script src="js1/creative.min.js"></script>
-        
+
     </body>
 </html>

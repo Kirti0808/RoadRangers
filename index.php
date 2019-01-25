@@ -1,7 +1,5 @@
-<!DOCTYPE html>
-<?php 
+<?php
 require 'includes/common.php';
-
 ?>
 <html lang="en">
 
@@ -45,48 +43,56 @@ require 'includes/common.php';
           </div>
           <div class="col-lg-8 mx-auto">
             <p class="text-faded mb-5"></p>
-             <?php if($arr['submit']=='0' ){ ?>
-            
-           
+
+                                                 <?php  if(isset($_SESSION['email'])) { $uid=$_SESSION['id'];
+                                              $sel="Select submit1,submit2,submit3,submit4,score,submit,qual from users where id='$uid'";
+                                              $selres=mysqli_query($con,$sel) or die(mysqli_error($con));
+                                              $arr=mysqli_fetch_array($selres); ?>
+             <?php  if($arr['submit']=='0' && $i<16 ){ ?>
+
+
                 <a class="btn btn-primary btn-xl js-scroll-trigger" href="autoquiz/autoquiz.php?id=<?php echo $i; ?>">Play now!</a>
                <?php }
+
             else if($arr['submit']=='1' && $arr['qual']=='0'){ ?>
-            
-         
+
+
                 <a class="btn btn-primary btn-xl js-scroll-trigger" href="autoquiz/autoquiz_submit.php">Play now!</a>
-            
+
             <?php } else if($arr[0]=='0') { ?>
-           
+
                 <a class="btn btn-primary btn-xl js-scroll-trigger" href="round1/shop.php">Play now!</a>
-          
+
             <?php }
                                                else if($arr[0]=='1' &&$arr[1]=='0') { ?>
-           
-            
+
+
                 <a class="btn btn-primary btn-xl js-scroll-trigger" href="round2/shop2.php">Play now!</a>
-         
-             <?php } 
+
+             <?php }
                                               else if($arr[0]=='1' && $arr[1]=='1' && $arr[2]=='0') { ?>
-           
+
                 <a class="btn btn-primary btn-xl js-scroll-trigger" href="round3/shop3.php">Play now!</a>
-            
+
              <?php }
                                               else if($arr[0]=='1' && $arr[1]=='1' && $arr[2]=='1' && $arr[3]=='0') { ?>
-             
+
                  <a class="btn btn-primary btn-xl js-scroll-trigger" href="round4/shop4.php">Play now!</a>
-            
+
                                               <?php }
              else if($arr[0]=='1' && $arr[1]=='1' && $arr[2]=='1' && $arr[3]=='1') { ?>
-             
+
                  <a class="btn btn-primary btn-xl js-scroll-trigger" href="round4/success4.php">Play now!</a>
-           
-            <?php } ?> 
+
+            <?php }   }
+
+            ?>
               </div>
         </div>
       </div>
     </header>
-    
-     
+
+
      <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

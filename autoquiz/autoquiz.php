@@ -55,22 +55,22 @@ if($row[0]=='1')
         <a class="navbar-brand" href="../index.php">HOME</a>
         <p>Time left to submit:
         <span id="time" class="font-normal"></span>
-        </p>                   
-        <a class="btn btn-primary" href="autoquiz_leaderboard.php">Autoquiz Leaderboard</a>
+        </p>
+        <a class="btn btn-primary" href="autoquiz_leaderboard.php">Leaderboard</a>
       </div>
     </nav>
 
         <?php
         include 'if_answered.php';
         ?>
-          
+
            <?php
            $sel="Select question from quiz where id='$qid'";
            $sel_query=mysqli_query($con,$sel) or die(mysqli_error($con));
            $arr=mysqli_fetch_array($sel_query);
            ?>
-        
-              
+
+
 <header class="masthead text-white text-center">
       <div class="overlay"></div>
       <div class="container">
@@ -88,36 +88,36 @@ if($row[0]=='1')
                  if(if_answered($qid))
                  {?>
                 <div class="col-12 col-md-3">
-                  <input  class="btn btn-block btn-lg btn-primary disabled" value="Submit!" />
+                  <input  class="btn btn-block btn-lg btn-primary disabled" name="submit" value="Submit!" />
                   <br />
                 </div>
                   <button  class="btn btn-block btn-lg btn-primary " onclick="location.href='autoquiz.php?id=<?php echo $qid+1; ?>'">Move to Next Question!</button>
-              
-                
-                   <?php }    
+
+
+                   <?php }
                  else { ?>
                   <div class="col-12 col-md-3">
-                <input type="submit" class="btn btn-block btn-lg btn-primary" value="Submit!" />
+                <input type="submit" class="btn btn-block btn-lg btn-primary" name="submit" value="Submit!" />
                     <br />
                   </div>
-                  
+
                   </div>
             </form>
-                  
+
                   <button  class="btn btn-block btn-lg btn-primary " onclick="confirmation();">Final Submit!</button>
-                 
-                  
-                
+
+
+
                  <?php } ?>
-              
+
           </div>
         </div>
       </div>
     </header>
-        
-        
+
+
     </body>
-    
-    
-    
+
+
+
 </html>

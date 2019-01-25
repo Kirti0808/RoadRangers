@@ -1,6 +1,4 @@
 <?php
-
-
 function if_added($item_id)
 {
     $con=mysqli_connect("localhost","root","mysql","sae_event") or die(mysqli_error($con));
@@ -15,6 +13,5 @@ function if_added($item_id)
  else {
      return 0;
     }
-    
-}
 
+}

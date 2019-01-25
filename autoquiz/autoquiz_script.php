@@ -1,15 +1,7 @@
-
-
-
 <?php
 require 'includes/common.php';
 $_SESSION["post_id"] = "";
-if($_POST) {
-    if($_POST["post_id"] != $_SESSION["post_id"]) {
-        $_SESSION["post_id"] = $_POST["post_id"];
-        // do database submission here
-    }
-}
+
 
 
 $uid=$_SESSION['id'];
@@ -17,7 +9,7 @@ $se="Select submit from users where id='$uid' ";
 $ser=mysqli_query($con,$se) or die(mysqli_error($con));
 $row=mysqli_fetch_array($ser);
 if($row[0]=='1')
-    header("Location: index.php");
+    header("Location:../index.php");
 
 ?>
 <!DOCTYPE html>
@@ -32,7 +24,7 @@ if($row[0]=='1')
 
    <title>ROADRANGERS</title>
 <script>
-      (function(window, location) {
+   /*   (function(window, location) {
 history.replaceState(null, document.title, location.pathname+"#!/history");
 history.pushState(null, document.title, location.pathname);
 
@@ -44,7 +36,12 @@ window.addEventListener("popstate", function() {
     },0);
   }
 }, false);
-}(window, location));
+}(window, location)); */
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location."../index.php" );
+    }
+</script>
 </script>
 
     <!-- Bootstrap core CSS -->
@@ -70,30 +67,31 @@ window.addEventListener("popstate", function() {
          }
          </script>
 
-     
+
   </head>
 
   <body>
-      
+
     <!-- Navigation -->
     <nav class="navbar navbar-light bg-light static-top">
       <div class="container">
         <a class="navbar-brand" href="../index.php">HOME</a>
         <p>Time left to submit:
         <span id="time" class="font-normal"></span>
-        </p> 
+
+        </p>
         <a class="btn btn-primary" href="autoquiz_leaderboard.php">Leaderboard</a>
+
       </div>
     </nav>
         <?php
-       
+
         include 'if_answered.php';
         ?>
-        
-  <?php         
 
-
-
+  <?php
+if(isset($_POST['submit']))
+{
 $qid=$_GET['id'];
 $ans=$_POST['ans'];
 
@@ -118,7 +116,8 @@ $email=$_SESSION['email'];
 $sel="Select * from users where email='$email'";
 $selres=mysqli_query($con,$sel) or die(mysqli_error($con));
 $row= mysqli_fetch_array($selres);
-$score=$row['score']+10;
+//$score=$row['score']+10;
+$score=$qid*10;
 date_default_timezone_set('Asia/Kolkata');
 $time = date('Y-m-d H:i:s');
 $upd="Update users set submitdate='$time' where id='$userid'";
@@ -127,6 +126,7 @@ $up="Update users set score='$score'where email='$email'";
 $GLOBALS['q1']=1;
 $upres=mysqli_query($con,$up) or die(mysqli_error($con));
 $_COOKIE['a']=1;
+
 ?>
      <header class="masthead text-white text-center">
       <div class="overlay"></div>
@@ -136,33 +136,39 @@ $_COOKIE['a']=1;
             <h1 class="mb-5">Correct Answer!</h1>
           </div>
           <div class=" col-md-4 col-lg-4 col-xl-4 mx-auto">
-            <?php  if($qid<20 || ($qid>20 && $qid<40) || ($qid>40 && $qid<60) ) { ?>
+            <?php  if($qid<15 || ($qid>20 && $qid<40) || ($qid>40 && $qid<60) ) { ?>
                 <div >
                   <button  class="btn btn-block btn-md btn-primary" onclick="location.href='autoquiz.php?id=<?php echo $qid+1; ?>'" > NEXT QUESTION </button>
                   <br />
-                
+
               <button  class="btn btn-block btn-md btn-primary" onclick="confirmation();" > FINAL SUBMIT </button>
               <br />
               </div>
-               <?php }
-               else if($qid==20 || $qid==40){ ?>
+              <?php }
+
+              /* else if($qid==20 || $qid==40){ ?>
                <div >
                  <br />
-                
+
               <br />
-               </div> <?php }
+               </div>
                else
              { ?>
                <button  class="btn btn-block btn-lg btn-primary" onclick="confirmation();" > FINAL SUBMIT </button>
-             <?php } ?>
+             <?php }  */
+             else {
+                 $upd1="Update users set submit=1 where id='$userid'";
+                 $upres=mysqli_query($con,$upd1) or diemysqli_error($con);
+              ?>
+              <h2>Thank You for playing Round 1!</h2>
              <button  class="btn btn-block btn-lg btn-primary" onclick="location.href='autoquiz_leaderboard.php'" > LEADERBOARD </button>
-      
-            
+       <?php } ?>
+
           </div>
         </div>
       </div>
     </header>
-          
+
 <?php
 }
 else{
@@ -176,34 +182,34 @@ else{
           <div class="col-xl-9 mx-auto">
             <h1 class="mb-5">Incorrect Answer!</h1>
             <br />
-            
+
           </div>
           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 mx-auto">
-            
+
                 <div>
                   <button  class="btn btn-block btn-md btn-primary" onclick="location.href='autoquiz.php?id=<?php echo $qid; ?>'" > GO BACK</button>
-                
-                
-             
-           
+
+
+
+
                <button  class="btn btn-block btn-md btn-primary" onclick="confirmation();" > FINAL SUBMIT </button>
                 <br />
                 </div>
              <button  class="btn btn-block btn-md btn-primary" onclick="location.href='autoquiz_leaderboard.php'" > LEADERBOARD </button>
-      
-            
+
+
           </div>
         </div>
       </div>
     </header>
-  
-<?php     
+
+<?php
 }
+}
+
 ?>
  </body>
-    
-    
-    
+
+
+
 </html>
-
-

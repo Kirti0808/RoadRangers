@@ -1,12 +1,11 @@
 <?php
 require 'includes/common.php';
-
 $uid=$_SESSION['id'];
 $sel="Select submit4,qual,qual1,qual2,qual3 from users where id='$uid'";
 $sel_res=mysqli_query($con,$sel) or die(mysqli_error($con));
 $arr=mysqli_fetch_array($sel_res);
-if($arr[0]==1){
-header('Location:../index.php');}
+if($arr[0]==1)
+    header('Location:../index.php');
 else if($arr[1]==0 || $arr[2]==0 || $arr[3]==0)
 {header('Location:../index.php'); }
 ?>
@@ -19,9 +18,9 @@ else if($arr[1]==0 || $arr[2]==0 || $arr[3]==0)
 
   <title>ROADRANGERS</title>
 
-  
-  
-  
+
+
+
       <link rel="stylesheet" href="css2/style.css">
        <script src="auto-submit4.js"></script>
      <style>
@@ -45,16 +44,16 @@ else if($arr[1]==0 || $arr[2]==0 || $arr[3]==0)
 .button5 {border-radius: 50%;}
 </style>
 
-  
+
 </head>
 <body>
     <div class="container">
-   
+
 	 <div>
              <button class="button button3" onclick="location.href='shop4.php'">Find items</button>
              <h2 style="color:#3498DB   ; float: right; font-family: Verdana, Arial, Helvetica, sans-serif"><b>Time left: <span id="time" class="text-danger"></span></b></h2></div>
-   
-    <table>			
+
+    <table>
         <thead>
         <tr>
 								<th>Item Number</th>
@@ -65,8 +64,8 @@ else if($arr[1]==0 || $arr[2]==0 || $arr[3]==0)
         </tr>
                                             </thead>
                                             <tbody>
-							
-						
+
+
                                                              <?php
  $user_id=$_SESSION['id'];
     $select_query="Select * from items_users where userid='$user_id'";
@@ -85,11 +84,11 @@ else if($arr[1]==0 || $arr[2]==0 || $arr[3]==0)
     else{
         $sum=0;
         $c=0;
-       
+
         while($row= mysqli_fetch_array($select_query_res))
     {
         $sum=$sum+$row[3];
-        
+
         $c+=1;
         ?>
 								<tr>
@@ -104,26 +103,26 @@ else if($arr[1]==0 || $arr[2]==0 || $arr[3]==0)
 									<td></td>
 									<td>Total</td>
 									<td><?php echo $sum; } ?></td>
-                                                                        
+
                                                                             <?php
-                                                                        
+
                 $uid=$_SESSION['id'];
                 $sel="Select COUNT(DISTINCT type) from items_users where userid='$uid'";
                 $selres=mysqli_query($con,$sel) or diemysqli_error($con);
                 $arr=mysqli_fetch_array($selres);
-                
+
                 if($arr[0]==11){
                ?>
 									<td><button class="button button3" onclick="location.href='success4.php'">Confirm</button></td>
                 <?php } ?>
                                                                 </tr>
-                   
+
 					</tbody>
     <table/>
-      
-   
+
+
     </div>
-    
-  
+
+
 </body>
 </html>

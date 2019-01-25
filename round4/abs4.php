@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<?php 
-
-
+<?php
 require 'includes/common.php';
 $uid=$_SESSION['id'];
 $sel="Select submit4,qual,qual1,qual2,qual3 from users where id='$uid'";
@@ -21,22 +18,22 @@ else if($arr[1]==0 || $arr[2]==0 || $arr[3]==0)
 <html class="no-js">
 <!--<![endif]-->
 	<head>
-		
+
                 <script src="auto-submit4.js"></script>
                 <title>ROADRANGERS</title>
 
 	</head>
-	
+
                                 <?php
                                         include 'ifadded.php';
                                         include 'number_type.php';
                                         include 'header2.php';
-        
+
         ?>
-           
-            
-               
-       
+
+
+
+
         <?php
         $userid=$_SESSION['id'];
         $sel_query="Select balance from users where id='$userid'";
@@ -44,18 +41,18 @@ else if($arr[1]==0 || $arr[2]==0 || $arr[3]==0)
         $row=mysqli_fetch_array($sel_query_res);
         ?>
                         <br />
-       
+
             <div class="flex flex-1 flex-col md:px-4 pt-25" id="content">
-                
+
 				<!-- Title -->
 				<div class="px-6 md:px-0 flex justify-between items-center -order-1">
 					<div>
                                             <br />
                                             <h3 class="font-normal">BALANCE:<?php echo $row[0]; ?></h3>
-					<br />	
-                                            
-                                                
-                                                
+					<br />
+
+
+
                                           <!--     <p class="text-grey-dark mt-2">Interesting Stats</p>-->
 					</div>
                                     <p>
@@ -64,7 +61,7 @@ else if($arr[1]==0 || $arr[2]==0 || $arr[3]==0)
 					<button class="bg-indigo-dark hover:bg-indigo-darker text-white text-sm py-2 px-4 rounded-full transition-normal hover:shadow hover:translate-y-1 active:translate-y-1 focus:outline-none" onclick="location.href='addedlist4.php'">Check added list</button>
 				</div>
         <div class="inline-block md:hidden no-underline border-indigo pb-2 px-2 text-sm mr-2 text-indigo-darkest hover:cursor-pointer js-tab relative" data-tab="section-stats">Items</div>
-						
+
         <div class="hidden px-6 md:px-0 mt-4 md:flex flex-wrap order-1 md:-order-1 md:shadow-md js-tab-pane " id="section-stats" data-tab="section-stats">
 					<div class="p-4 px-6 w-full md:w-1/8 rounded md:rounded-r-none bg-white ">
 						<h4>6. ABS</h4>
@@ -82,7 +79,7 @@ else if($arr[1]==0 || $arr[2]==0 || $arr[3]==0)
             $bal=$row[0];
             $sel_query1="Select * from items where type=6";
             $sel_query_res1=mysqli_query($con,$sel_query1);
-           
+
             while($row1=mysqli_fetch_array($sel_query_res1))
             {
                 ?>
@@ -90,11 +87,11 @@ else if($arr[1]==0 || $arr[2]==0 || $arr[3]==0)
             <td class="py-2"><?php echo $row1['name']; ?></td>
             <td class="py-2"><?php echo $row1['type']; ?></td>
             <td class="py-2"><?php echo $row1['cost']; ?></td>
-            
+
             <?php if(if_added($row1['id'])==0 && $row1['cost']<=$bal)
             { ?>
             <?php if( count_type($row1['type'])<1){ ?>
-            
+
             <td> <button class="bg-indigo-dark hover:bg-indigo-darker text-white text-sm py-2 px-4 rounded-full transition-normal hover:shadow hover:translate-y-1 active:translate-y-1 focus:outline-none" class="disabled" onclick="location.href='additem4.php?id=<?php echo $row1[0]; ?>'" value="ADD ITEM"  >ADD ITEM</a></button></td>
             <?php } } }?>
                                                         </tbody>
@@ -102,14 +99,14 @@ else if($arr[1]==0 || $arr[2]==0 || $arr[3]==0)
             <br />
             <button class="bg-indigo-dark hover:bg-indigo-darker text-white text-sm py-2 px-4 rounded-full transition-normal hover:shadow hover:translate-y-1 active:translate-y-1 focus:outline-none" onclick="location.href='braking4.php'" value="Continue" >BACK</button>
            <button class="bg-indigo-dark hover:bg-indigo-darker text-white text-sm py-2 px-4 rounded-full transition-normal hover:shadow hover:translate-y-1 active:translate-y-1 focus:outline-none" onclick="location.href='steering4.php'" value="Continue" >CONTINUE</button>
-          
+
                                         </div>
                 </div>
-                                
+
             </div>
-                        		
-					
-                
+
+
+
                 <div class="hidden absolute pin-b z-10 lg:relative lg:block w-full lg:w-1/5 bg-grey-lighter-2 px-6 pt-10" id="profile">
 				<div class="flex items-center mb-6">
 					<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="avatar">
@@ -138,18 +135,18 @@ else if($arr[1]==0 || $arr[2]==0 || $arr[3]==0)
 						<p class="text-grey-dark mt-1 text-sm"><?php echo $a[0]; ?></p>
 					</div>
 				</div>
-                    <?php 
+                    <?php
                         $uid=$_SESSION['id'];
                         $sel="Select count(type) from items_users where userid='$uid'";
                         $selres=mysqli_query($con,$sel) or die(mysqli_error($con));
                         $arr=mysqli_fetch_array($selres);
-                        
+
                         ?>
                         <div class="my-4 border-t pt-4">
 					<h3 class="text-indigo-dark font-normal">You have bought <strong><?php echo $arr[0]; ?> of 11 items</strong> </h3>
                         </div>
                 </div>
-                        
+
                         </div>
            <script src="bundle.js" async defer></script>
 	</body>
