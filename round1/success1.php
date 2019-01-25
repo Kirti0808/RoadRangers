@@ -10,9 +10,9 @@ require 'includes/common.php';
 
 <title>ROADRANGERS</title>
 
-  
-  
-  
+
+
+
       <link rel="stylesheet" href="css2/style.css">
       <script>
       (function(window, location) {
@@ -51,13 +51,13 @@ window.addEventListener("popstate", function() {
 .button5 {border-radius: 50%;}
 </style>
 
-  
+
 </head>
 <body>
-   
-	
-          
-    <table>			
+
+
+
+    <table>
         <thead>
         <tr>
 								<th>Item Number</th>
@@ -68,8 +68,8 @@ window.addEventListener("popstate", function() {
         </tr>
                                             </thead>
                                             <tbody>
-							
-						
+
+
                                                              <?php
  $user_id=$_SESSION['id'];
     $select_query="Select * from items_users where userid='$user_id'";
@@ -89,13 +89,19 @@ window.addEventListener("popstate", function() {
         $sum=0;
         $c=0;
        $r=0;
+             $uid=$_SESSION['id'];
+            $sel="Select count(type) from items_users where userid='$uid'";
+            $selres=mysqli_query($con,$sel) or die(mysqli_error($con));
+            $arr10=mysqli_fetch_array($selres);
+
+
         while($row= mysqli_fetch_array($select_query_res))
     {
             $sum=$sum+$row[3];
         $r=$r+$row['rating1'];
-        
+
         $sum=$sum+$row[3];
-        
+
         $c+=1;
         ?>
 								<tr>
@@ -103,19 +109,23 @@ window.addEventListener("popstate", function() {
                                                                     <td><?php echo $row[1]; ?></td>
 									<td><?php echo $row[2];   ?></td>
                                                                         <td><?php echo $row[3]; ?></td>
-    <td>Confirmed!</td><?php } ?>
+    <td>Confirmed!</td><?php }
+    if($arr10[0]!=11)
+        $r=0;
+
+    ?>
 								</tr>
                                                                 <tr>
 									<td></td>
 									<td></td>
 									<td>Total</td>
 									<td><?php echo $sum; } ?></td>
-                                                                        
-                                                                          
-                                                                        
-               
+
+
+
+
                                                                 </tr>
-                   
+
 					</tbody>
     </table>
     <div style="text-align:center;">
@@ -123,7 +133,7 @@ window.addEventListener("popstate", function() {
            <button class="button button3" onclick="location.href='../round2/shop2.php'">Round 2</button>
     </div>
     <?php
-       
+
         $upd="Update users set points1='$r' where id='$user_id'";
         $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
          $sel="Select totalpoints,points1,points2,points3,points4,balance,submit1 from users where id='$user_id'";
@@ -140,46 +150,48 @@ window.addEventListener("popstate", function() {
         $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
         ?>
          <?php
-       
+
          $sel="Select * from users order by points1 desc";
          $sel_q=mysqli_query($con,$sel) or die(mysqli_error($con));
          $uid=$_SESSION['id'];
-        
+
          $i=1;
          $k=0;
-         
+
          $sel1="Select balance,bal1 from users where id='$uid'";
                      $sel_q1=mysqli_query($con,$sel1) or die(mysqli_error($con));
                      $arr=mysqli_fetch_array($sel_q1);
                      $bal=$arr[0];
          while($row=mysqli_fetch_array($sel_q))
          {
-             
-             
+
+
                  if($_SESSION['id']==$row['id']){
                      $k=1;
                      $sel="Select balance,bal1 from users where id='$uid'";
                      $sel_q=mysqli_query($con,$sel) or die(mysqli_error($con));
                      $arr=mysqli_fetch_array($sel_q);
                      if($i==1){
-                        $bal=$arr[1]+25;
+                        $bal=$arr[1]+250;
                         break;
                      }
                      else if($i==2){
-                         $bal=$arr[1]+20;
+                         $bal=$arr[1]+150;
                          break;
                      }
-                    
+                      else if($i==3){
+                         $bal=$arr[1]+100;
+                         break;
+                     }
+
                  }
                  $i+=1;
          }
                      $upd="Update users set balance='$bal' where id='$uid'";
                      $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
-                     
-                    
+
+
                  ?>
-        
+
     </body>
   </html>
-  
-  

@@ -9,9 +9,9 @@ require 'includes/common.php';
 
   <title>ROADRANGERS</title>
 
-  
-  
-  
+
+
+
       <link rel="stylesheet" href="css2/style.css">
       <script>
       (function(window, location) {
@@ -50,13 +50,13 @@ window.addEventListener("popstate", function() {
 .button5 {border-radius: 50%;}
 </style>
 
-  
+
 </head>
 <body>
-   
-    
-          
-    <table>			
+
+
+
+    <table>
         <thead>
         <tr>
 								<th>Item Number</th>
@@ -86,14 +86,19 @@ window.addEventListener("popstate", function() {
         $sum=0;
         $c=0;
         $r=0;
-       
+             $uid=$_SESSION['id'];
+                        $sel="Select count(type) from items_users where userid='$uid'";
+                        $selres=mysqli_query($con,$sel) or die(mysqli_error($con));
+                        $arr10=mysqli_fetch_array($selres);
+
+
         while($row= mysqli_fetch_array($select_query_res))
     {
             $sum=$sum+$row[3];
         $r=$r+$row['rating4'];
-        
+
         $sum=$sum+$row[3];
-        
+
         $c+=1;
         ?>
 								<tr>
@@ -101,29 +106,32 @@ window.addEventListener("popstate", function() {
                                                                     <td><?php echo $row[1]; ?></td>
 									<td><?php echo $row[2];   ?></td>
                                                                         <td><?php echo $row[3]; ?></td>
-    <td>Confirmed!</td><?php } ?>
+    <td>Confirmed!</td><?php }
+    if($arr10[0]!=11)
+        $r=0;
+    ?>
 								</tr>
                                                                 <tr>
 									<td></td>
 									<td></td>
 									<td>Total</td>
 									<td><?php echo $sum; } ?></td>
-                                                                        
-                                                                          
-                                                                        
-               
+
+
+
+
                                                                 </tr>
-                   
+
 					</tbody>
     </table>
       <h2 style="font-family: 'Georgia', serif; color:white ; text-align: center;">Your rating for this round <?php echo $r; ?></h2>
       <div style="text-align:center;">
       <button class="button button3" onclick="location.href='../tables/leaderboard.php'">VIEW LEADERBOARD</button>
       <button class="button button3" onclick="location.href='../index.php'">HOME</button>
-      
+
       </div>
         <?php
-       
+
         $upd="Update users set points4='$r' where id='$user_id'";
         $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
          $sel="Select totalpoints,points1,points2,points3,points4,balance,submit4 from users where id='$user_id'";
@@ -133,38 +141,38 @@ window.addEventListener("popstate", function() {
         $tp=$arr[1]+$arr[2]+$arr[3]+$arr[4];
         $upd="Update users set totalpoints='$tp' where id='$user_id'";
         $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
-       
+
          $upd="Update users set submit4='1' where id='$user_id'";
         $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
         ?>
-                <?php
+                <?php /*
          $sel="Select * from users order by totalpoints desc";
          $sel_q=mysqli_query($con,$sel) or die(mysqli_error($con));
          $uid=$_SESSION['id'];
-        
+
          $i=0;
          $k=0;
          while($row=mysqli_fetch_array($sel_q))
          {
-             
+
              if($i==3)
                  break;
              else{
                  if($_SESSION['id']==$row['id']){
                      $k=1;
                  ?>
-         
+
       <div class="container">
          <div class="jumbotron">
            <h2 style="font-family: 'Georgia', serif; color:white;text-align: center;">Congratulations! You've qualified for final round of Transmission!</h2>
-      
+
          </div>
-         <?php 
+         <?php
                 break;
              }
              $i+=1;
              }
-             
+
          }
          ?>
 <?php         if($k!=1){
@@ -173,11 +181,11 @@ window.addEventListener("popstate", function() {
          <div class="container">
          <div class="jumbotron" >
        <h2 style="font-family: 'Georgia', serif; color:#CB4335  ;">Sorry! You've been eliminated!</h2>
-     
+
 </div>
          <?php
 }
-         ?>
+    */     ?>
     </div>
     </body>
   </html>

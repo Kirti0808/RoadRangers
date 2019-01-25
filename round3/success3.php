@@ -9,9 +9,9 @@ require 'includes/common.php';
 
   <title>ROADRANGERS</title>
 
-  
-  
-  
+
+
+
       <link rel="stylesheet" href="css2/style.css">
       <script>
       (function(window, location) {
@@ -50,13 +50,13 @@ window.addEventListener("popstate", function() {
 .button5 {border-radius: 50%;}
 </style>
 
-  
+
 </head>
 <body>
-   
+
     <div class="container">
-          
-    <table>			
+
+    <table>
         <thead>
         <tr>
 								<th>Item Number</th>
@@ -86,14 +86,19 @@ window.addEventListener("popstate", function() {
         $sum=0;
         $c=0;
         $r=0;
-       
+             $uid=$_SESSION['id'];
+                        $sel="Select count(type) from items_users where userid='$uid'";
+                        $selres=mysqli_query($con,$sel) or die(mysqli_error($con));
+                        $arr10=mysqli_fetch_array($selres);
+
+
         while($row= mysqli_fetch_array($select_query_res))
     {
             $sum=$sum+$row[3];
         $r=$r+$row['rating3'];
-        
+
         $sum=$sum+$row[3];
-        
+
         $c+=1;
         ?>
 								<tr>
@@ -101,24 +106,27 @@ window.addEventListener("popstate", function() {
                                                                     <td><?php echo $row[1]; ?></td>
 									<td><?php echo $row[2];   ?></td>
                                                                         <td><?php echo $row[3]; ?></td>
-    <td>Confirmed!</td><?php } ?>
+    <td>Confirmed!</td><?php }
+    if($arr10[0]!=11)
+        $r=0;
+    ?>
 								</tr>
                                                                 <tr>
 									<td></td>
 									<td></td>
 									<td>Total</td>
 									<td><?php echo $sum; } ?></td>
-                                                                        
-                                                                          
-                                                                        
-               
+
+
+
+
                                                                 </tr>
-                   
+
 					</tbody>
     </table>
       <h2 style="font-family: 'Georgia', serif; color:white ;text-align: center;">Your rating for this round <?php echo $r; ?></h2>
        <?php
-       
+
         $upd="Update users set points3='$r' where id='$user_id'";
         $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
          $sel="Select totalpoints,points1,points2,points3,points4,balance,submit3 from users where id='$user_id'";
@@ -138,19 +146,19 @@ window.addEventListener("popstate", function() {
          $sel="Select * from users order by totalpoints desc";
          $sel_q=mysqli_query($con,$sel) or die(mysqli_error($con));
          $uid=$_SESSION['id'];
-        
-         $i=0;
+
+         $i=1;
          $k=0;
          while($row=mysqli_fetch_array($sel_q))
          {
-             
-             if($i==10)
+
+             if($i>=6)
                  break;
              else{
                  if($_SESSION['id']==$row['id']){
                      $k=1;
                  ?>
-         
+
       <div class="container">
          <div class="jumbotron">
               <h2 style="font-family: 'Georgia', serif; color:white ;text-align: center;">Congratulations! You've qualified for next round! </h2>
@@ -160,12 +168,12 @@ window.addEventListener("popstate", function() {
          ?><div style="text-align: center;">
              <button class="button button3" onclick="location.href='../round4/shop4.php'">Round 4</button>
          </div>
-         <?php 
+         <?php
                 break;
              }
              $i+=1;
              }
-             
+
          }
          ?>
 <?php         if($k!=1){
@@ -174,21 +182,21 @@ window.addEventListener("popstate", function() {
          <div class="container">
          <div class="jumbotron" >
          <h2 style="font-family: 'Georgia', serif; color:#3949AB  ;">Congratulations! You've qualified for next round! </h2>
-     
+
 </div>
          <?php
 }
          ?>
     </div>
-        
-        
+
+
         </div>
      <?php
-       
+
          $sel="Select * from users order by points3 desc";
          $sel_q=mysqli_query($con,$sel) or die(mysqli_error($con));
          $uid=$_SESSION['id'];
-        
+
          $i=1;
          $k=0;
           $sel1="Select balance,bal3 from users where id='$uid'";
@@ -197,8 +205,8 @@ window.addEventListener("popstate", function() {
          $bal=$arr[0];
          while($row=mysqli_fetch_array($sel_q))
          {
-             
-             
+
+
                  if($_SESSION['id']==$row['id']){
                      $k=1;
                      $sel="Select balance,bal3 from users where id='$uid'";
@@ -209,23 +217,23 @@ window.addEventListener("popstate", function() {
                         break;
                      }
                      else if($i==2){
-                         $bal=$arr[1]+200;
-                         break;
-                     }else if($i==3){
                          $bal=$arr[1]+150;
                          break;
+                     }else if($i==3){
+                         $bal=$arr[1]+100;
+                         break;
                      }
-                    
-                    
+
+
                  }
                  $i+=1;
          }
                      $upd="Update users set balance='$bal' where id='$uid'";
                      $upd_q=mysqli_query($con,$upd) or die(mysqli_error($con));
-                     
-                    
+
+
                  ?>
 
-        
+
     </body>
   </html>
