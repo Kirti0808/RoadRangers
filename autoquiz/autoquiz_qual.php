@@ -107,7 +107,7 @@ window.addEventListener("popstate", function() {
          while($row=mysqli_fetch_array($sel_q))
          {
 
-             if($i>=22)
+             if($i>=21)
                  break;
              else{
                  if($_SESSION['id']==$row['id']){

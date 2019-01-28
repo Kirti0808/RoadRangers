@@ -159,7 +159,7 @@ window.addEventListener("popstate", function() {
          while($row=mysqli_fetch_array($sel_q))
          {
 
-             if($i>=11)
+             if($i>=16)
                  break;
              else{
                  if($_SESSION['id']==$row['id']){

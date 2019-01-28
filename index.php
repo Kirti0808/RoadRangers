@@ -37,7 +37,7 @@ require 'includes/common.php';
         <div class="row">
           <div class="col-lg-10 mx-auto">
             <h1 class="text-uppercase">
-              <strong>ROADRANGERS</strong>
+              <strong>AUTOMANIA</strong>
             </h1>
             <hr>
           </div>
