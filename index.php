@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 <?php
 require 'includes/common.php';
 ?>
 <!--<html lang="en">
+=======
+
+<html lang="en">
+>>>>>>> a320a121a75225e71e9aeaf14445b3a35f2fb39e
 
   <head>
 
@@ -94,13 +99,13 @@ require 'includes/common.php';
 
 
      <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor1/jquery/jquery.min.js"></script>
+    <script src="vendor1/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
-    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="vendor1/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor1/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor1/magnific-popup/jquery.magnific-popup.min.js"></script>
 
     <!-- Custom scripts for this template -->
     <script src="js/creative.min.js"></script>
