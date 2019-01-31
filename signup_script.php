@@ -27,7 +27,7 @@ else
     $stmt->bind_param("ssss", $email,$name,$password,$contact); // 's' specifies the variable type => 'string'
 
 if($stmt->execute()){
-
+	
 	$stmt->close();
     header('Location:login.php');
 }
