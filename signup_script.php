@@ -23,11 +23,11 @@ if($row>0)
 }
 else
 {
-    if($stmt=$con->prepare("INSERT into users(email,name,password,contact) values (?,?,?,?)")){
+    if($stmt=$con->prepare("INSERT into users set email=?,name=?,password=?,contact=?")){
     $stmt->bind_param("ssss", $email,$name,$password,$contact); // 's' specifies the variable type => 'string'
 
 if($stmt->execute()){
-	
+
 	$stmt->close();
     header('Location:login.php');
 }
