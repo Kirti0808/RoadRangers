@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-   <title>ROADRANGERS</title>
+   <title>Automania</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
